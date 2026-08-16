@@ -1,0 +1,58 @@
+[
+  {
+    "header": "party ledgername",
+    "dataKey": "partyledgername",
+    "options": {
+      "width": "50%",
+      "sortable": true,
+      "summaryLabel": "Total:"
+    }
+  },
+  {
+    "header": "voucher typename",
+    "dataKey": "vouchertypename",
+    "options": {
+      "width": "25%",
+      "align": "center",
+      "vAlign": "top",
+      "sortable": true
+    }
+  },
+  {
+    "header": "Voucher Number",
+    "dataKey": "vouchernumber",
+    "options": {
+      "width": "10%",
+      "sortable": true,
+      "summary": "sum"
+    }
+  },
+  {
+    "header": "date",
+    "dataKey": "date",
+    "isVisible": false
+  },
+  {
+    "header": "all ledger entries",
+    "dataKey": "allledgerentries",
+    "isVisible": true,
+    "options": {
+      "width": "10%"
+    }
+  },
+  {
+    "header": "allinventoryentries",
+    "dataKey": "allinventoryentries",
+    "isVisible": false
+  },
+  {
+    "header": "ledgerentries",
+    "dataKey": "ledgerentries",
+    "isVisible": false
+  },
+  {
+    "header": "inventoryentriesin",
+    "dataKey": "inventoryentriesin",
+    "isVisible": false
+  }
+]

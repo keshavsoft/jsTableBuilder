@@ -1,0 +1,28 @@
+{
+  "name": "jsTableBuilder",
+  "version": "1.1.1",
+  "description": "",
+  "main": "TableBuilder.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nknnkumar/jsTableBuilder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/nknnkumar/jsTableBuilder/issues"
+  },
+  "homepage": "https://github.com/nknnkumar/jsTableBuilder#readme",
+  "devDependencies": {
+    "vite": "^8.2.1"
+  }
+}

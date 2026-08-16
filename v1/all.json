@@ -1,0 +1,530 @@
+[
+    {
+        "partyledgername": "Koda Ramana (Pudimadaka)",
+        "vouchertypename": "Slip Receipt",
+        "vouchernumber": "1",
+        "date": "20260401",
+        "allledgerentries": [
+            {
+                "ledgername": "Koda Ramana (Pudimadaka)",
+                "amount": "18125.00"
+            },
+            {
+                "ledgername": "Cash",
+                "amount": "-18125.00"
+            }
+        ],
+        "allinventoryentries": [],
+        "ledgerentries": [],
+        "inventoryentriesin": []
+    },
+    {
+        "partyledgername": "Cash",
+        "vouchertypename": "Sales/CA",
+        "vouchernumber": "1",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [
+            {
+                "stockitemname": "Shading Net Kgs",
+                "rate": "280.90/kgs",
+                "amount": "1000.00",
+                "actualqty": " 3.560 kgs",
+                "billedqty": " 3.560 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Rishi-Rs.205/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 3.560 kgs",
+                        "billedqty": " 3.560 kgs",
+                        "amount": "1000.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "ROPE",
+                "rate": "312.50/kgs",
+                "amount": "100.00",
+                "actualqty": " 0.320 kgs",
+                "billedqty": " 0.320 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Tuf-Rs.170",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 0.320 kgs",
+                        "billedqty": " 0.320 kgs",
+                        "amount": "100.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "ROPE",
+                "rate": "259.26/kgs",
+                "amount": "420.00",
+                "actualqty": " 1.620 kgs",
+                "billedqty": " 1.620 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Tuf-Rs.170",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 1.620 kgs",
+                        "billedqty": " 1.620 kgs",
+                        "amount": "420.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "ROPE",
+                "rate": "250.00/kgs",
+                "amount": "200.00",
+                "actualqty": " 0.800 kgs",
+                "billedqty": " 0.800 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Tuf-Rs.170",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 0.800 kgs",
+                        "billedqty": " 0.800 kgs",
+                        "amount": "200.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Nylon Cheeses",
+                "rate": "180.00/Nos",
+                "amount": "1440.00",
+                "actualqty": " 8 Nos",
+                "billedqty": " 8 Nos",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Kumaran-250gms-Rs.126/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 8 Nos",
+                        "billedqty": " 8 Nos",
+                        "amount": "1440.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "0.75/90/50",
+                "rate": "430.46/kgs",
+                "amount": "1300.00",
+                "actualqty": " 3.020 kgs",
+                "billedqty": " 3.020 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Nalam Godown",
+                        "batchname": "Tri-Rs.273/-",
+                        "destinationgodownname": "Nalam Godown",
+                        "actualqty": " 3.020 kgs",
+                        "billedqty": " 3.020 kgs",
+                        "amount": "1300.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Export Surplus New",
+                "rate": "576.92/kgs",
+                "amount": "300.00",
+                "actualqty": " 0.520 kgs",
+                "billedqty": " 0.520 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "1.20-275/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 0.520 kgs",
+                        "billedqty": " 0.520 kgs",
+                        "amount": "300.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Gloves",
+                "rate": "10.00/Nos",
+                "amount": "100.00",
+                "actualqty": " 10 Nos",
+                "billedqty": " 10 Nos",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Blue-RRR-Rs.6/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 10 Nos",
+                        "billedqty": " 10 Nos",
+                        "amount": "100.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Gloves",
+                "rate": "12.00/Nos",
+                "amount": "240.00",
+                "actualqty": " 20 Nos",
+                "billedqty": " 20 Nos",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Blue-60gms-RR-Rs.8.50",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 20 Nos",
+                        "billedqty": " 20 Nos",
+                        "amount": "240.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Anchor Gaff Hooks",
+                "rate": "140.00/Nos",
+                "amount": "840.00",
+                "actualqty": " 6 Nos",
+                "billedqty": " 6 Nos",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "8/0-8mm-Rs.85/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 6 Nos",
+                        "billedqty": " 6 Nos",
+                        "amount": "840.00"
+                    }
+                ]
+            }
+        ],
+        "ledgerentries": [
+            {
+                "ledgername": "Cash",
+                "amount": "-5940.00"
+            }
+        ],
+        "inventoryentriesin": []
+    },
+    {
+        "partyledgername": "Sri Pruthvi Aqua Needs , Nemam",
+        "vouchertypename": "Sales/Cr Mani",
+        "vouchernumber": "1",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [
+            {
+                "stockitemname": "3.50 White F.Line",
+                "rate": "470.00/kgs",
+                "amount": "9635.00",
+                "actualqty": " 20.500 kgs",
+                "billedqty": " 20.500 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Gd-Rs.250/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 20.500 kgs",
+                        "billedqty": " 20.500 kgs",
+                        "amount": "9635.00"
+                    }
+                ]
+            }
+        ],
+        "ledgerentries": [
+            {
+                "ledgername": "Sri Pruthvi Aqua Needs , Nemam",
+                "amount": "-9635.00"
+            }
+        ],
+        "inventoryentriesin": []
+    },
+    {
+        "partyledgername": "Phonepe Business (Axis)",
+        "vouchertypename": "Sales/Cr Mani",
+        "vouchernumber": "2",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [
+            {
+                "stockitemname": "Water Proof Tape Mtrs",
+                "rate": "65.00/mtr",
+                "amount": "325.00",
+                "actualqty": " 5.00 mtr",
+                "billedqty": " 5.00 mtr",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "4\"maruthi-5mtr Roll-Rs32/- Mtr",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 5.00 mtr",
+                        "billedqty": " 5.00 mtr",
+                        "amount": "325.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "PPMF TWINE",
+                "rate": "500.00/kgs",
+                "amount": "160.00",
+                "actualqty": " 0.320 kgs",
+                "billedqty": " 0.320 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "1/2-Glon-Rs.325/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 0.320 kgs",
+                        "billedqty": " 0.320 kgs",
+                        "amount": "160.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Shading Net Kgs",
+                "rate": "333.33/kgs",
+                "amount": "500.00",
+                "actualqty": " 1.500 kgs",
+                "billedqty": " 1.500 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Rishi-Rs.205/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 1.500 kgs",
+                        "billedqty": " 1.500 kgs",
+                        "amount": "500.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "GD Connected",
+                "rate": "586.21/kgs",
+                "amount": "170.00",
+                "actualqty": " 0.290 kgs",
+                "billedqty": " 0.290 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Conn-Rs.370/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 0.290 kgs",
+                        "billedqty": " 0.290 kgs",
+                        "amount": "170.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "NYLON",
+                "rate": "608.70/kgs",
+                "amount": "140.00",
+                "actualqty": " 0.230 kgs",
+                "billedqty": " 0.230 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Dyed-Kk-Rs.455/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 0.230 kgs",
+                        "billedqty": " 0.230 kgs",
+                        "amount": "140.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "ROPE",
+                "rate": "260.87/kgs",
+                "amount": "180.00",
+                "actualqty": " 0.690 kgs",
+                "billedqty": " 0.690 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Tuf-Rs.170",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 0.690 kgs",
+                        "billedqty": " 0.690 kgs",
+                        "amount": "180.00"
+                    }
+                ]
+            }
+        ],
+        "ledgerentries": [
+            {
+                "ledgername": "Phonepe Business (Axis)",
+                "amount": "-1475.00"
+            }
+        ],
+        "inventoryentriesin": []
+    },
+    {
+        "partyledgername": "Nekkanti Sea Foods Ltd, Peddapudi",
+        "vouchertypename": "Sales/E",
+        "vouchernumber": "1",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [
+            {
+                "stockitemname": "Shading Net Kgs",
+                "rate": "300.00/kgs",
+                "amount": "2700.00",
+                "actualqty": " 9.000 kgs",
+                "billedqty": " 9.000 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Rishi-Rs.205/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 9.000 kgs",
+                        "billedqty": " 9.000 kgs",
+                        "amount": "2700.00"
+                    }
+                ]
+            }
+        ],
+        "ledgerentries": [
+            {
+                "ledgername": "Nekkanti Sea Foods Ltd, Peddapudi",
+                "amount": "-2700.00"
+            }
+        ],
+        "inventoryentriesin": []
+    },
+    {
+        "partyledgername": "Koda Ramana (Pudimadaka)",
+        "vouchertypename": "Sales/slip",
+        "vouchernumber": "1",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [
+            {
+                "stockitemname": "Tube Octopus",
+                "rate": "145.00/Nos",
+                "amount": "18125.00",
+                "actualqty": " 125 Nos",
+                "billedqty": " 125 Nos",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "30cm-Young-Rs.70/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 125 Nos",
+                        "billedqty": " 125 Nos",
+                        "amount": "18125.00"
+                    }
+                ]
+            }
+        ],
+        "ledgerentries": [
+            {
+                "ledgername": "Koda Ramana (Pudimadaka)",
+                "amount": "-18125.00"
+            }
+        ],
+        "inventoryentriesin": []
+    },
+    {
+        "vouchertypename": "Stock Journal",
+        "vouchernumber": "2",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [],
+        "ledgerentries": [],
+        "inventoryentriesin": [
+            {
+                "stockitemname": "40 Mesh",
+                "rate": "1.00/mtr",
+                "amount": "-128.00",
+                "actualqty": " 128.00 mtr",
+                "billedqty": " 128.00 mtr",
+                "batchallocations": [
+                    {
+                        "godownname": "Nalam Godown",
+                        "batchname": "PF-42\"-36/-",
+                        "destinationgodownname": "Nalam Godown",
+                        "actualqty": " 128.00 mtr",
+                        "billedqty": " 128.00 mtr",
+                        "amount": "-128.00"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "vouchertypename": "Stock Journal",
+        "vouchernumber": "1",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [],
+        "ledgerentries": [],
+        "inventoryentriesin": [
+            {
+                "stockitemname": "Shading Net Kgs",
+                "rate": "1.00/kgs",
+                "amount": "-11.81",
+                "actualqty": " 11.810 kgs",
+                "billedqty": " 11.810 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "RP-Rs.168/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 11.810 kgs",
+                        "billedqty": " 11.810 kgs",
+                        "amount": "-11.81"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "vouchertypename": "Stock Journal",
+        "vouchernumber": "3",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [],
+        "ledgerentries": [],
+        "inventoryentriesin": [
+            {
+                "stockitemname": "SUTALI",
+                "rate": "1.00/kgs",
+                "amount": "-25.02",
+                "actualqty": " 25.020 kgs",
+                "billedqty": " 25.020 kgs",
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "50gms-Swastik-Rs155/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 4.960 kgs",
+                        "billedqty": " 4.960 kgs",
+                        "amount": "-4.96"
+                    },
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Kamal",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 15.420 kgs",
+                        "billedqty": " 15.420 kgs",
+                        "amount": "-15.42"
+                    },
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Zen Superpower-Rs.83/-",
+                        "destinationgodownname": "Main Location",
+                        "actualqty": " 4.640 kgs",
+                        "billedqty": " 4.640 kgs",
+                        "amount": "-4.64"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "vouchertypename": "Stock Journal",
+        "vouchernumber": "4",
+        "date": "20260401",
+        "allledgerentries": [],
+        "allinventoryentries": [],
+        "ledgerentries": [],
+        "inventoryentriesin": []
+    }
+]

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v6 TableBuilder Test</title>
+    <!-- Tailwind is required for TableBuilder styling to look correct -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8 h-screen overflow-auto flex flex-col relative">
+    <div id="table-root">
+    </div>
+
+    <!-- Scroll Buttons -->
+    <div class="fixed bottom-8 right-8 flex flex-col gap-3 z-50">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center"
+            title="Scroll to Top">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
+                </path>
+            </svg>
+        </button>
+        <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})"
+            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center"
+            title="Scroll to Bottom">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <script src="./dist/tableBuilder.umd.cjs"></script>
+    <script>
+        async function init() {
+            try {
+                // Fetch the data and columns files
+                const [dataResponse, columnsResponse] = await Promise.all([
+                    fetch("./all.json"),
+                    fetch("./columns.json")
+                ]);
+
+                if (!dataResponse.ok) {
+                    throw new Error(`Failed to fetch all.json: ${dataResponse.status} ${dataResponse.statusText}`);
+                }
+                if (!columnsResponse.ok) {
+                    throw new Error(`Failed to fetch columns.json: ${columnsResponse.status} ${columnsResponse.statusText}`);
+                }
+
+                const data = await dataResponse.json();
+                const columnsData = await columnsResponse.json();
+
+                // Check if data is nested inside an object (e.g., tallymessage) or is the array itself
+                const tableData = Array.isArray(data) ? data : (data.tallymessage || data);
+
+                if (!Array.isArray(tableData)) {
+                    throw new Error("Data is not an array. Cannot build table.");
+                };
+
+                const config1 = {
+                    htmlId: "table-root",
+                    data: tableData,
+                    columns: columnsData,
+                    tableOptions: {
+                        common: {
+                            tableWidth: "800px", // This forces the table to be 800px!
+                            tableBorder: "0px",
+                            showSerialNo: true
+                        },
+                        head: {
+                            headerHeight: "200px"
+                        },
+                        body: {
+                            rowHeight: "100px"
+                        },
+                        foot: {
+                            showFooter: true
+                        }
+                    },
+                    topHeader: {
+                        label: "My Beautiful Table",
+                        placeholder: "Search anything..."
+                    },
+                    inTableOptions1: {
+                        inTableWidth: "800px", // This forces the table to be 800px!
+                        inRowHeight: 100, // Demonstration of row height
+                        inHeaderHeight: 150, // Demonstration of header height
+                        inTableBorder: "4px solid blue" // Demonstration of outer table border
+                    }
+                };
+
+                const config2 = {
+                    htmlId: "table-root",
+                    data: tableData,
+                    columns: columnsData,
+                    tableOptions: {
+                        commonOptions: {
+                            tableWidth: "800px", // This forces the table to be 800px!
+                            tableBorder: "0px",
+                            showSerialNo: true
+                        },
+                        headOptions: {
+                            headerHeight: "150px"
+                        },
+                        bodyOptions: {
+                            rowHeight: "50px"
+                        },
+                        footOptions: {
+                            showFooter: true
+                        }
+                    },
+                    topHeader: {
+                        label: "My Beautiful Table",
+                        placeholder: "Search anything..."
+                    }
+                };
+
+                const config3 = {
+                    htmlId: "table-root",
+                    data: tableData,
+                    columns: columnsData,
+                    tableOptions: {
+                        commonOptions: {
+                            tableWidth: "800px", // This forces the table to be 800px!
+                            tableBorder: "0px",
+                            showSerialNo: true
+                        },
+                        headOptions: {
+                        },
+                        bodyOptions: {
+                        },
+                        footOptions: {
+                            showFooter: true
+                        }
+                    },
+                    topHeader: {
+                        label: "My Beautiful Table",
+                        placeholder: "Search anything..."
+                    }
+                };
+
+                const tableBuilder = new window.ks.TableBuilder(config3);
+                tableBuilder.appendToDom();
+
+            } catch (error) {
+                console.error(error);
+                document.getElementById("table-root").innerHTML = `
+                    <div class="flex items-center justify-center h-full p-8 text-red-500 font-semibold bg-red-50">
+                        Error loading data: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
