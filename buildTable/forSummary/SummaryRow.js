@@ -1,5 +1,5 @@
 import applyCellOptions from "../utils/style/applyCellOptions.js";
-import "../forBody/KsTableCellContent.js";
+import "../forBody/v1/KsTableCellContent.js";
 
 function buildSummaryRow({ inData, inColumns, inClasses = {}, inFootOptions = {} }) {
     const localData = inData;

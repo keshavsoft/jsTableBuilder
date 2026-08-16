@@ -5,7 +5,7 @@ const DEFAULT_OPTIONS = {
 };
 
 import "./KsTableCellContent.js";
-import applyCellOptions from "../utils/style/applyCellOptions.js";
+import applyCellOptions from "../../utils/style/applyCellOptions.js";
 
 function buildTableCell({
     inCellValue,

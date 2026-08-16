@@ -1,5 +1,5 @@
 import { buildTableHeader } from "./forHead/TableHeader.js";
-import { buildTableBody } from "./forBody/TableBody.js";
+import { buildTableBody } from "./forBody/index.js";
 import { buildEmptyState } from "./buildEmptyState.js";
 import { buildTableElement } from "./buildTableElement.js";
 import { buildTableSummary } from "./forSummary/TableSummary.js";
