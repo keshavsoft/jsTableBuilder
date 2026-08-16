@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsTableBuilder - JSON Upload Test</title>
+    <!-- Tailwind is required for TableBuilder styling to look correct -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://keshavsoft.github.io/jsTableBuilder/dist/v2/tableBuilder.umd.cjs"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center py-10 px-4">
+    
+    <div class="max-w-4xl w-full bg-white rounded-xl shadow-md p-8 mb-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">jsTableBuilder Playground</h1>
+        <p class="text-gray-500 mb-8 text-center">Upload your <code>data.json</code> and <code>columns.json</code> files to render the table dynamically.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Data File Input -->
+            <div class="flex flex-col">
+                <label for="dataFile" class="text-sm font-semibold text-gray-700 mb-2">1. Upload Data JSON</label>
+                <input type="file" id="dataFile" accept=".json" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer border border-gray-200 rounded-md p-2">
+            </div>
+
+            <!-- Columns File Input -->
+            <div class="flex flex-col">
+                <label for="columnsFile" class="text-sm font-semibold text-gray-700 mb-2">2. Upload Columns JSON</label>
+                <input type="file" id="columnsFile" accept=".json" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 cursor-pointer border border-gray-200 rounded-md p-2">
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <button id="generateBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all transform hover:-translate-y-1">
+                Generate Table
+            </button>
+        </div>
+        
+        <div id="error-message" class="hidden mt-6 bg-red-50 text-red-600 p-4 rounded-md text-center font-medium"></div>
+    </div>
+
+    <!-- The container where the table will be rendered -->
+    <div class="w-full max-w-6xl bg-white rounded-xl shadow-md overflow-hidden p-6 relative">
+        <div id="table-root" class="min-h-[200px] flex items-center justify-center text-gray-400">
+            Table will appear here...
+        </div>
+    </div>
+
+    <script>
+        const dataFileInput = document.getElementById('dataFile');
+        const columnsFileInput = document.getElementById('columnsFile');
+        const generateBtn = document.getElementById('generateBtn');
+        const errorMessage = document.getElementById('error-message');
+        const tableRoot = document.getElementById('table-root');
+
+        // Helper function to read file as JSON
+        function readJSONFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const json = JSON.parse(e.target.result);
+                        resolve(json);
+                    } catch (err) {
+                        reject(new Error(`Invalid JSON in file: ${file.name}`));
+                    }
+                };
+                reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
+                reader.readAsText(file);
+            });
+        }
+
+        generateBtn.addEventListener('click', async () => {
+            // Reset error and table container
+            errorMessage.classList.add('hidden');
+            errorMessage.textContent = '';
+            tableRoot.innerHTML = '';
+            tableRoot.classList.remove('flex', 'items-center', 'justify-center', 'text-gray-400');
+
+            const dataFile = dataFileInput.files[0];
+            const columnsFile = columnsFileInput.files[0];
+
+            if (!dataFile || !columnsFile) {
+                errorMessage.textContent = 'Please select both Data and Columns JSON files.';
+                errorMessage.classList.remove('hidden');
+                tableRoot.innerHTML = '<div class="flex items-center justify-center h-full text-gray-400">Table will appear here...</div>';
+                return;
+            }
+
+            try {
+                // Read both files concurrently
+                const [data, columnsData] = await Promise.all([
+                    readJSONFile(dataFile),
+                    readJSONFile(columnsFile)
+                ]);
+
+                // Check if data is nested inside an object (e.g., tallymessage) or is the array itself
+                const tableData = Array.isArray(data) ? data : (data.tallymessage || data);
+
+                if (!Array.isArray(tableData)) {
+                    throw new Error("Data is not an array. Cannot build table.");
+                }
+
+                // Define the table configuration
+                const config = {
+                    htmlId: "table-root",
+                    data: tableData,
+                    columns: columnsData,
+                    tableOptions: {
+                        commonOptions: {
+                            tableWidth: "100%", 
+                            tableBorder: "0px",
+                            showSerialNo: true 
+                        },
+                        footOptions: {
+                            showFooter: true
+                        }
+                    },
+                    topHeader: {
+                        label: "Uploaded Custom Table",
+                        placeholder: "Search anything..."
+                    }
+                };
+
+                // Initialize and render the table
+                const tableBuilder = new window.ks.TableBuilder(config);
+                tableBuilder.appendToDom();
+
+            } catch (error) {
+                console.error("Error building table:", error);
+                errorMessage.textContent = error.message;
+                errorMessage.classList.remove('hidden');
+                tableRoot.innerHTML = '<div class="flex items-center justify-center h-full text-gray-400">Table will appear here...</div>';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -8,6 +8,15 @@ A versatile and highly customizable JavaScript library to build dynamic HTML tab
 - Customizable table appearance (borders, widths, etc.)
 - Auto-generated serial numbers
 - Optional footer row
+## Links
+- **NPM Package**: [js-table-builder](https://www.npmjs.com/package/js-table-builder)
+- **Documentation**: [Full Docs](https://keshavsoft.github.io/jsTableBuilder/docs.html)
+
+## Installation via NPM
+
+```bash
+npm install js-table-builder
+```
 
 ## Usage via CDN
 
