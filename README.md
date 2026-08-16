@@ -9,6 +9,7 @@ A versatile and highly customizable JavaScript library to build dynamic HTML tab
 - Auto-generated serial numbers
 - Optional footer row
 ## Links
+- **Landing Page**: [jsTableBuilder Site](https://keshavsoft.github.io/jsTableBuilder/)
 - **NPM Package**: [js-table-builder](https://www.npmjs.com/package/js-table-builder)
 - **Documentation**: [Full Docs](https://keshavsoft.github.io/jsTableBuilder/docs.html)
 
@@ -16,6 +17,14 @@ A versatile and highly customizable JavaScript library to build dynamic HTML tab
 
 ```bash
 npm install js-table-builder
+```
+
+## Scaffold CLI Usage (shadcn-like)
+
+You can use `npx` to paste the raw source files directly into your project! This will create a `buildTable` folder in your current directory, allowing you to completely customize the internal components of `jsTableBuilder`.
+
+```bash
+npx js-table-builder
 ```
 
 ## Usage via CDN
