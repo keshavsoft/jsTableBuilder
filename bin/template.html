@@ -6,17 +6,35 @@
     <title>jsTableBuilder Setup</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8 flex flex-col h-screen">
-    <div id="table-root"></div>
+<body class="bg-gray-100 p-8 flex flex-col min-h-screen">
+    <div class="max-w-6xl mx-auto w-full flex-grow">
+        <div id="table-root" class="mb-8"></div>
+    </div>
+    
+    <footer class="mt-auto py-6 flex justify-center space-x-6 text-sm text-gray-500">
+        <a href="https://keshavsoft.github.io/jsTableBuilder/" target="_blank" class="hover:text-blue-600 transition-colors">Website</a>
+        <a href="https://github.com/keshavsoft/jsTableBuilder" target="_blank" class="hover:text-gray-900 transition-colors">GitHub</a>
+        <a href="https://www.npmjs.com/package/js-table-builder" target="_blank" class="hover:text-red-500 transition-colors">NPM</a>
+    </footer>
+
     <script type="module">
         import { TableBuilder } from "./TableBuilder.js";
 
         // Example data - Replace with your own logic!
-        const data = [{ id: 1, name: "Sample Item", status: "Active" }];
+        const data = [{
+            name: "KeshavSoft",
+            founder: "Keshav Nalam",
+            website: "keshavsoft.github.io/jsTableBuilder",
+            github: "github.com/keshavsoft/jsTableBuilder",
+            npm: "npmjs.com/package/js-table-builder"
+        }];
+
         const columns = [
-            { id: "id", name: "ID", type: "number" },
-            { id: "name", name: "Name", type: "string" },
-            { id: "status", name: "Status", type: "string" }
+            { dataKey: "name", header: "Name", type: "string" },
+            { dataKey: "founder", header: "Founder", type: "string" },
+            { dataKey: "website", header: "Website", type: "string" },
+            { dataKey: "github", header: "GitHub", type: "string" },
+            { dataKey: "npm", header: "NPM", type: "string" }
         ];
 
         const tableBuilder = new TableBuilder({

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsTableBuilder - Developer Internals</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <style>
+        body {
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <main class="max-w-4xl mx-auto bg-white p-10 rounded-xl shadow-lg prose prose-indigo">
+        <h1>jsTableBuilder: Developer Internals</h1>
+        <p class="lead">This document outlines the internal architecture, design patterns, and coding conventions used within the <code>jsTableBuilder</code> library. It is intended for contributors and maintainers.</p>
+        
+        <h2>Architecture Overview</h2>
+        <p>The library is split into two primary layers:</p>
+        <ol>
+            <li><strong>External API Layer (<code>TableBuilder.js</code>)</strong>: A class-based wrapper that exposes a clean, user-friendly API. It manages state (like sorting and the original/processed data array) and handles DOM injection.</li>
+            <li><strong>Internal Functional Layer (<code>buildTable/</code>)</strong>: A set of pure and side-effect-managed functions responsible for rendering individual HTML elements (headers, body rows, footer).</li>
+        </ol>
+
+        <h2>Naming Convention (The "in" & "local" Pattern)</h2>
+        <p>To enforce strict boundary checks and avoid unintended mutation of parameters, the internal functions strictly adhere to the following naming convention:</p>
+        <ul>
+            <li><strong>Parameters Object</strong>: All internal functions accept a <em>single object</em> as their argument.</li>
+            <li><strong><code>in</code> Prefix</strong>: Every property destructured from the argument object must be prefixed with <code>in</code> (e.g., <code>inData</code>, <code>inColumns</code>, <code>inClasses</code>).</li>
+            <li><strong><code>local</code> Prefix</strong>: Inside the function body, these properties must immediately be assigned to variables prefixed with <code>local</code> (e.g., <code>const localData = inData;</code>).</li>
+        </ul>
+        <pre><code class="language-javascript">// Example of the standard convention
+function buildTableHeader({ inColumns, inClasses }) {
+    const localColumns = inColumns;
+    const localClasses = inClasses;
+    // ...
+}</code></pre>
+
+        <h2>Directory Structure (<code>buildTable/</code>)</h2>
+        <p>The internal renderer is split modularly:</p>
+        <ul>
+            <li><code>index.js</code>: The main entry point for the functional table builder. Aggregates all parts (head, body, empty state).</li>
+            <li><code>forHead/</code>: Contains logic for rendering the <code>&lt;thead&gt;</code>, including sorting icons and column labels.</li>
+            <li><code>forBody/</code>: Contains logic for rendering the <code>&lt;tbody&gt;</code> and iterating over data rows.</li>
+            <li><code>forSummary/</code>: Contains logic for rendering the <code>&lt;tfoot&gt;</code>, which can sum up column data.</li>
+            <li><code>utils/</code>: Contains reusable utilities for DOM manipulation (<code>appendToDom.js</code>), data processing (<code>sortUtils.js</code>, <code>searchUtils.js</code>, <code>prepareDataAndColumns.js</code>), and config extraction.</li>
+            <li><code>config/</code>: Stores the default classes and configuration defaults.</li>
+        </ul>
+
+        <h2>Data Flow</h2>
+        <ol>
+            <li><strong>Initialization</strong>: User calls <code>new TableBuilder(config)</code>. The config is mapped to the strict internal representation using config mappers (like <code>mapTableOptions</code>).</li>
+            <li><strong>Preparation</strong>: <code>prepareDataAndColumns</code> runs. If serial numbers are enabled, it injects a new column definition and modifies the data to include the index.</li>
+            <li><strong>Rendering</strong>: When <code>appendToDom()</code> is called, <code>buildTableElements()</code> triggers the functional pipeline (<code>buildTable</code> -> <code>buildTableHeader</code>, <code>buildTableBody</code>, etc.), returning standard DOM nodes.</li>
+            <li><strong>Injection</strong>: The constructed DOM nodes are appended to the user-specified <code>htmlId</code> container.</li>
+            <li><strong>Interactivity</strong>: Sorting and searching invoke methods on the <code>TableBuilder</code> instance, which recalculates the <code>data</code> array and rebuilds the DOM.</li>
+        </ol>
+    </main>
+</body>
+</html>
