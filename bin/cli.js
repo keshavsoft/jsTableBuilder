@@ -47,6 +47,14 @@ try {
     copyDirectory(sourceDir, targetDir);
     console.log(`✅ Successfully copied buildTable to ./buildTable`);
 
+    // Copy TableBuilder.js
+    const sourceTableBuilder = path.join(__dirname, '..', 'TableBuilder.js');
+    const destTableBuilder = path.join(process.cwd(), 'TableBuilder.js');
+    if (fs.existsSync(sourceTableBuilder)) {
+        fs.copyFileSync(sourceTableBuilder, destTableBuilder);
+        console.log(`✅ Successfully copied TableBuilder.js to ./TableBuilder.js`);
+    }
+
     // Scaffold a sample index.html
     const indexHtmlPath = path.join(process.cwd(), 'index.html');
     if (!fs.existsSync(indexHtmlPath)) {
