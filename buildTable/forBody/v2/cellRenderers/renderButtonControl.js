@@ -1,7 +1,7 @@
-export function renderButtonControl(shadowRoot, tdConfig) {
+export function renderButtonControl(shadowRoot, tdConfig, rowData, val) {
     const btn = document.createElement("button");
     const controlOptions = tdConfig.controlOptions || {};
-    btn.textContent = controlOptions.label || "Button";
+    btn.textContent = controlOptions.label || val || "Button";
     
     // Basic Tailwind-like inline styles for the custom button
     btn.style.cssText = "padding: 0.375rem 0.75rem; font-size: 0.875rem; font-weight: 500; color: #ffffff; background-color: #3b82f6; border-radius: 0.375rem; border: none; cursor: pointer; transition: background-color 0.2s;";
@@ -22,7 +22,10 @@ export function renderButtonControl(shadowRoot, tdConfig) {
         }
         
         if (clickHandler) {
-            btn.addEventListener("click", clickHandler);
+            btn.addEventListener("click", (e) => {
+                // Call the handler with the rowData as 'this' context
+                clickHandler.call(rowData, e);
+            });
         }
     }
     

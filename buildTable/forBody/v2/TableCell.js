@@ -9,10 +9,12 @@ import applyCellOptions from "../../utils/style/applyCellOptions.js";
 
 function buildTableCell({
     inCellValue,
+    inRowData,
     inOptions = DEFAULT_OPTIONS,
     inClasses = {}
 }) {
     let localCellValue = inCellValue;
+    let localRowData = inRowData;
     const localOptions = inOptions;
     const localClasses = inClasses;
 
@@ -29,9 +31,10 @@ function buildTableCell({
     }
 
     // Create the Web Component and pass the inputs to it
-    const contentComponent = document.createElement("ks-table-cell-content");
+    const contentComponent = document.createElement("ks-table-cell-content-v2");
     contentComponent.inputs = {
         cellValue: localCellValue,
+        rowData: localRowData,
         options: localOptions,
         classes: localClasses
     };

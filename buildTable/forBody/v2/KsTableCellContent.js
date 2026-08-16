@@ -1,4 +1,5 @@
 import { renderButtonControl } from "./cellRenderers/renderButtonControl.js";
+import { renderAnchorControl } from "./cellRenderers/renderAnchorControl.js";
 import { renderArrayView } from "./cellRenderers/renderArrayView.js";
 import { renderDefault } from "./cellRenderers/renderDefault.js";
 
@@ -16,16 +17,22 @@ class KsTableCellContent extends HTMLElement {
 
     render() {
         let val = this._inputs.cellValue;
+        let rowData = this._inputs.rowData;
         const options = this._inputs.options || {};
         
         // Clear previous content
         this.shadowRoot.innerHTML = '';
 
-        // 1. Check for custom control definition (e.g. Button)
+        // 1. Check for custom control definition
         const tdConfig = options.table?.tbody?.td;
-        if (tdConfig && tdConfig.controlType === "button") {
-            renderButtonControl(this.shadowRoot, tdConfig);
-            return;
+        if (tdConfig) {
+            if (tdConfig.controlType === "button") {
+                renderButtonControl(this.shadowRoot, tdConfig, rowData, val);
+                return;
+            } else if (tdConfig.controlType === "anchor") {
+                renderAnchorControl(this.shadowRoot, tdConfig, rowData, val);
+                return;
+            }
         }
 
         // 2. Check for Array Data
@@ -39,8 +46,8 @@ class KsTableCellContent extends HTMLElement {
     }
 }
 
-if (!customElements.get("ks-table-cell-content")) {
-    customElements.define("ks-table-cell-content", KsTableCellContent);
+if (!customElements.get("ks-table-cell-content-v2")) {
+    customElements.define("ks-table-cell-content-v2", KsTableCellContent);
 }
 
 export { KsTableCellContent };

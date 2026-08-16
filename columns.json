@@ -41,7 +41,22 @@
   {
     "header": "date",
     "dataKey": "date",
-    "isVisible": false
+    "options": {
+      "width": "15%",
+      "align": "center",
+      "vAlign": "top",
+      "sortable": true,
+      "table": {
+        "tbody": {
+          "td": {
+            "controlType": "anchor",
+            "controlOptions": {
+              "href": "function() { return '#'; }"
+            }
+          }
+        }
+      }
+    }
   },
   {
     "header": "all ledger entries",

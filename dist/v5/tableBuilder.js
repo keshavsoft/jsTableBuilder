@@ -109,14 +109,35 @@ function c({ inColumns: e, inClasses: t = {}, inHeadOptions: n = {}, inSortState
 	return d.appendChild(f), d;
 }
 //#endregion
-//#region buildTable/forBody/buildTableBodyElement.js
-function l({ inWrapperClass: e }) {
-	let t = document.createElement("tbody");
-	return e && (t.className = e), t;
+//#region buildTable/forBody/v1/cellRenderers/renderButtonControl.js
+function l(e, t) {
+	let n = document.createElement("button"), r = t.controlOptions || {};
+	if (n.textContent = r.label || "Button", n.style.cssText = "padding: 0.375rem 0.75rem; font-size: 0.875rem; font-weight: 500; color: #ffffff; background-color: #3b82f6; border-radius: 0.375rem; border: none; cursor: pointer; transition: background-color 0.2s;", n.onmouseover = () => n.style.backgroundColor = "#2563eb", n.onmouseout = () => n.style.backgroundColor = "#3b82f6", r.onClick) {
+		let e;
+		if (typeof r.onClick == "string") try {
+			e = Function("return (" + r.onClick + ")")();
+		} catch (e) {
+			console.error("Failed to parse onClick function:", e);
+		}
+		else typeof r.onClick == "function" && (e = r.onClick);
+		e && n.addEventListener("click", e);
+	}
+	e.appendChild(n);
 }
 //#endregion
-//#region buildTable/forBody/KsTableCellContent.js
-var u = class extends HTMLElement {
+//#region buildTable/forBody/v1/cellRenderers/renderArrayView.js
+function u(e, t) {
+	let n = document.createElement("button");
+	n.textContent = `View (${t.length})`, n.style.cssText = "padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; color: #374151; background-color: #f3f4f6; border-radius: 0.375rem; border: 1px solid #d1d5db; cursor: pointer;", n.onmouseover = () => n.style.backgroundColor = "#e5e7eb", n.onmouseout = () => n.style.backgroundColor = "#f3f4f6", e.appendChild(n);
+}
+//#endregion
+//#region buildTable/forBody/v1/cellRenderers/renderDefault.js
+function d(e, t) {
+	typeof t == "object" && t && (t = JSON.stringify(t)), t ??= "", e.textContent = t;
+}
+//#endregion
+//#region buildTable/forBody/v1/KsTableCellContent.js
+var f = class extends HTMLElement {
 	constructor() {
 		super(), this.attachShadow({ mode: "open" }), this._inputs = {};
 	}
@@ -128,56 +149,128 @@ var u = class extends HTMLElement {
 		this.shadowRoot.innerHTML = "";
 		let n = t.table?.tbody?.td;
 		if (n && n.controlType === "button") {
-			let e = document.createElement("button"), t = n.controlOptions || {};
-			if (e.textContent = t.label || "Button", e.style.cssText = "padding: 0.375rem 0.75rem; font-size: 0.875rem; font-weight: 500; color: #ffffff; background-color: #3b82f6; border-radius: 0.375rem; border: none; cursor: pointer; transition: background-color 0.2s;", e.onmouseover = () => e.style.backgroundColor = "#2563eb", e.onmouseout = () => e.style.backgroundColor = "#3b82f6", t.onClick) {
-				let n;
-				if (typeof t.onClick == "string") try {
-					n = Function("return (" + t.onClick + ")")();
-				} catch (e) {
-					console.error("Failed to parse onClick function:", e);
-				}
-				else typeof t.onClick == "function" && (n = t.onClick);
-				n && e.addEventListener("click", n);
-			}
-			this.shadowRoot.appendChild(e);
+			l(this.shadowRoot, n);
 			return;
 		}
 		if (Array.isArray(e)) {
-			let t = document.createElement("button");
-			t.textContent = `View (${e.length})`, t.style.cssText = "padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; color: #374151; background-color: #f3f4f6; border-radius: 0.375rem; border: 1px solid #d1d5db; cursor: pointer;", t.onmouseover = () => t.style.backgroundColor = "#e5e7eb", t.onmouseout = () => t.style.backgroundColor = "#f3f4f6", this.shadowRoot.appendChild(t);
+			u(this.shadowRoot, e);
 			return;
 		}
-		typeof e == "object" && e && (e = JSON.stringify(e)), e ??= "", this.shadowRoot.textContent = e;
+		d(this.shadowRoot, e);
 	}
 };
-customElements.get("ks-table-cell-content") || customElements.define("ks-table-cell-content", u);
+customElements.get("ks-table-cell-content") || customElements.define("ks-table-cell-content", f);
 //#endregion
-//#region buildTable/forBody/TableCell.js
-var d = {
+//#region buildTable/forBody/v2/buildTableBodyElement.js
+function p({ inWrapperClass: e }) {
+	let t = document.createElement("tbody");
+	return e && (t.className = e), t;
+}
+//#endregion
+//#region buildTable/forBody/v2/cellRenderers/renderButtonControl.js
+function m(e, t, n, r) {
+	let i = document.createElement("button"), a = t.controlOptions || {};
+	if (i.textContent = a.label || r || "Button", i.style.cssText = "padding: 0.375rem 0.75rem; font-size: 0.875rem; font-weight: 500; color: #ffffff; background-color: #3b82f6; border-radius: 0.375rem; border: none; cursor: pointer; transition: background-color 0.2s;", i.onmouseover = () => i.style.backgroundColor = "#2563eb", i.onmouseout = () => i.style.backgroundColor = "#3b82f6", a.onClick) {
+		let e;
+		if (typeof a.onClick == "string") try {
+			e = Function("return (" + a.onClick + ")")();
+		} catch (e) {
+			console.error("Failed to parse onClick function:", e);
+		}
+		else typeof a.onClick == "function" && (e = a.onClick);
+		e && i.addEventListener("click", (t) => {
+			e.call(n, t);
+		});
+	}
+	e.appendChild(i);
+}
+//#endregion
+//#region buildTable/forBody/v2/cellRenderers/renderAnchorControl.js
+function h(e, t, n, r) {
+	let i = document.createElement("a"), a = t.controlOptions || {};
+	i.textContent = a.label || r || "Link", i.style.cssText = "color: #2563eb; text-decoration: underline; cursor: pointer; transition: color 0.2s;", i.onmouseover = () => i.style.color = "#1d4ed8", i.onmouseout = () => i.style.color = "#2563eb";
+	let o = "#";
+	if (a.href) {
+		if (typeof a.href == "string") try {
+			o = Function("return (" + a.href + ")")().call(n);
+		} catch (e) {
+			console.error("Failed to parse href function:", e);
+		}
+		else typeof a.href == "function" && (o = a.href.call(n));
+	}
+	i.href = o, e.appendChild(i);
+}
+//#endregion
+//#region buildTable/forBody/v2/cellRenderers/renderArrayView.js
+function g(e, t) {
+	let n = document.createElement("button");
+	n.textContent = `View (${t.length})`, n.style.cssText = "padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; color: #374151; background-color: #f3f4f6; border-radius: 0.375rem; border: 1px solid #d1d5db; cursor: pointer;", n.onmouseover = () => n.style.backgroundColor = "#e5e7eb", n.onmouseout = () => n.style.backgroundColor = "#f3f4f6", e.appendChild(n);
+}
+//#endregion
+//#region buildTable/forBody/v2/cellRenderers/renderDefault.js
+function _(e, t) {
+	typeof t == "object" && t && (t = JSON.stringify(t)), t ??= "", e.textContent = t;
+}
+//#endregion
+//#region buildTable/forBody/v2/KsTableCellContent.js
+var v = class extends HTMLElement {
+	constructor() {
+		super(), this.attachShadow({ mode: "open" }), this._inputs = {};
+	}
+	set inputs(e) {
+		this._inputs = e, this.render();
+	}
+	render() {
+		let e = this._inputs.cellValue, t = this._inputs.rowData, n = this._inputs.options || {};
+		this.shadowRoot.innerHTML = "";
+		let r = n.table?.tbody?.td;
+		if (r) {
+			if (r.controlType === "button") {
+				m(this.shadowRoot, r, t, e);
+				return;
+			}
+			if (r.controlType === "anchor") {
+				h(this.shadowRoot, r, t, e);
+				return;
+			}
+		}
+		if (Array.isArray(e)) {
+			g(this.shadowRoot, e);
+			return;
+		}
+		_(this.shadowRoot, e);
+	}
+};
+customElements.get("ks-table-cell-content-v2") || customElements.define("ks-table-cell-content-v2", v);
+//#endregion
+//#region buildTable/forBody/v2/TableCell.js
+var y = {
 	width: "",
 	align: "",
 	vAlign: ""
 };
-function f({ inCellValue: e, inOptions: n = d, inClasses: r = {} }) {
-	let i = e, a = n, o = r, s = document.createElement("td");
-	o.cell && (s.className = o.cell), t({
-		inElement: s,
-		inOptions: a
-	}), typeof i == "object" && i && o.cellTruncate && (s.className += (s.className ? " " : "") + o.cellTruncate);
-	let c = document.createElement("ks-table-cell-content");
-	return c.inputs = {
-		cellValue: i,
-		options: a,
-		classes: o
-	}, s.appendChild(c), s;
+function b({ inCellValue: e, inRowData: n, inOptions: r = y, inClasses: i = {} }) {
+	let a = e, o = n, s = r, c = i, l = document.createElement("td");
+	c.cell && (l.className = c.cell), t({
+		inElement: l,
+		inOptions: s
+	}), typeof a == "object" && a && c.cellTruncate && (l.className += (l.className ? " " : "") + c.cellTruncate);
+	let u = document.createElement("ks-table-cell-content-v2");
+	return u.inputs = {
+		cellValue: a,
+		rowData: o,
+		options: s,
+		classes: c
+	}, l.appendChild(u), l;
 }
 //#endregion
-//#region buildTable/forBody/TableRow.js
-function p({ inItem: e, inColumns: t, inClasses: n = {}, inBodyOptions: r = {} }) {
+//#region buildTable/forBody/v2/TableRow.js
+function x({ inItem: e, inColumns: t, inClasses: n = {}, inBodyOptions: r = {} }) {
 	let i = e, a = t, o = n, s = r, c = document.createElement("tr");
 	o.row && (c.className = o.row), s.inRowHeight && (c.style.height = s.inRowHeight), a.forEach((e) => {
-		let t = i[e.dataKey], n = f({
+		let t = i[e.dataKey], n = b({
 			inCellValue: t,
+			inRowData: i,
 			inOptions: e.options || {},
 			inClasses: o
 		});
@@ -187,10 +280,10 @@ function p({ inItem: e, inColumns: t, inClasses: n = {}, inBodyOptions: r = {} }
 	return o.cell && (l.className = o.cell), c.appendChild(l), c;
 }
 //#endregion
-//#region buildTable/forBody/appendTableRows.js
-function m({ inBodyWrapperElement: e, inData: t, inColumns: n, inClasses: r, inBodyOptions: i }) {
+//#region buildTable/forBody/v2/appendTableRows.js
+function S({ inBodyWrapperElement: e, inData: t, inColumns: n, inClasses: r, inBodyOptions: i }) {
 	t.forEach((t) => {
-		let a = p({
+		let a = x({
 			inItem: t,
 			inColumns: n,
 			inClasses: r,
@@ -200,10 +293,10 @@ function m({ inBodyWrapperElement: e, inData: t, inColumns: n, inClasses: r, inB
 	});
 }
 //#endregion
-//#region buildTable/forBody/TableBody.js
-function h({ inData: e, inColumns: t, inClasses: n = {}, inBodyOptions: r = {} }) {
-	let i = e, a = t, o = n, s = r, c = l({ inWrapperClass: o?.wrapper });
-	return m({
+//#region buildTable/forBody/v2/TableBody.js
+function C({ inData: e, inColumns: t, inClasses: n = {}, inBodyOptions: r = {} }) {
+	let i = e, a = t, o = n, s = r, c = p({ inWrapperClass: o?.wrapper });
+	return S({
 		inBodyWrapperElement: c,
 		inData: i,
 		inColumns: a,
@@ -212,20 +305,23 @@ function h({ inData: e, inColumns: t, inClasses: n = {}, inBodyOptions: r = {} }
 	}), c;
 }
 //#endregion
+//#region buildTable/forBody/index.js
+var w = C;
+//#endregion
 //#region buildTable/buildEmptyState.js
-function g({ inClasses: e = {} }) {
+function T({ inClasses: e = {} }) {
 	let t = e, n = document.createElement("div");
 	return t.emptyState && (n.className = t.emptyState), n.textContent = "No data available", n;
 }
 //#endregion
 //#region buildTable/buildTableElement.js
-function _({ inClasses: e = {}, inCommonOptions: t = {} }) {
+function E({ inClasses: e = {}, inCommonOptions: t = {} }) {
 	let n = e, r = t, i = document.createElement("table");
 	return n.table && (i.className = n.table), r.inTableWidth && (i.style.width = r.inTableWidth), r.inTableBorder && (r.inTableBorder.includes(" ") ? i.style.border = r.inTableBorder : i.style.borderWidth = r.inTableBorder), i;
 }
 //#endregion
 //#region buildTable/forSummary/SummaryRow.js
-function v({ inData: e, inColumns: n, inClasses: r = {}, inFootOptions: i = {} }) {
+function D({ inData: e, inColumns: n, inClasses: r = {}, inFootOptions: i = {} }) {
 	let a = e, o = n, s = r, c = i, l = document.createElement("tr");
 	return s.tr && (l.className = s.tr), l.style.backgroundColor = "#f9fafb", l.style.borderTop = "2px solid #e5e7eb", o.forEach((e) => {
 		let n = document.createElement("td");
@@ -247,8 +343,8 @@ function v({ inData: e, inColumns: n, inClasses: r = {}, inFootOptions: i = {} }
 }
 //#endregion
 //#region buildTable/forSummary/TableSummary.js
-function y({ inData: e, inColumns: t, inClasses: n = {}, inFootOptions: r = {} }) {
-	let i = e, a = t, o = n, s = r, c = document.createElement("tfoot"), l = v({
+function O({ inData: e, inColumns: t, inClasses: n = {}, inFootOptions: r = {} }) {
+	let i = e, a = t, o = n, s = r, c = document.createElement("tfoot"), l = D({
 		inData: i,
 		inColumns: a,
 		inClasses: o,
@@ -258,40 +354,40 @@ function y({ inData: e, inColumns: t, inClasses: n = {}, inFootOptions: r = {} }
 }
 //#endregion
 //#region buildTable/index.js
-function b({ inData: e, inColumns: t, inClasses: n = {}, inTableOptions: r = {}, inSortState: i = [], inOnSort: a = () => {} }) {
-	let o = e, s = t, l = n, u = r, d = u.inCommonOptions || {}, f = u.inHeadOptions || {}, p = u.inBodyOptions || {}, m = u.inFootOptions || {}, v = i, b = a;
-	if (!o || o.length === 0) return g({ inClasses: l });
-	let x = _({
+function k({ inData: e, inColumns: t, inClasses: n = {}, inTableOptions: r = {}, inSortState: i = [], inOnSort: a = () => {} }) {
+	let o = e, s = t, l = n, u = r, d = u.inCommonOptions || {}, f = u.inHeadOptions || {}, p = u.inBodyOptions || {}, m = u.inFootOptions || {}, h = i, g = a;
+	if (!o || o.length === 0) return T({ inClasses: l });
+	let _ = E({
 		inClasses: l,
 		inCommonOptions: d
-	}), S = s.filter((e) => e.isVisible !== !1), C = c({
-		inColumns: S,
+	}), v = s.filter((e) => e.isVisible !== !1), y = c({
+		inColumns: v,
 		inClasses: l.head || {},
 		inHeadOptions: f,
-		inSortState: v,
-		inOnSort: b
+		inSortState: h,
+		inOnSort: g
 	});
-	x.appendChild(C);
-	let w = h({
+	_.appendChild(y);
+	let b = w({
 		inData: o,
-		inColumns: S,
+		inColumns: v,
 		inClasses: l.body || {},
 		inBodyOptions: p
 	});
-	if (x.appendChild(w), m.inShowFooter) {
-		let e = y({
+	if (_.appendChild(b), m.inShowFooter) {
+		let e = O({
 			inData: o,
-			inColumns: S,
+			inColumns: v,
 			inClasses: l.summary || {},
 			inFootOptions: m
 		});
-		x.appendChild(e);
+		_.appendChild(e);
 	}
-	return x;
+	return _;
 }
 //#endregion
 //#region buildTable/config/defaults.js
-var x = {
+var A = {
 	emptyState: "p-4 text-gray-500 italic",
 	table: "w-full border border-gray-200 divide-y divide-gray-200 table-fixed",
 	head: {
@@ -310,7 +406,7 @@ var x = {
 		label: "text-lg font-semibold text-gray-800",
 		input: "px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm w-64 transition-all"
 	}
-}, S = {
+}, j = {
 	inTableOptions: {
 		inCommonOptions: {
 			inTableWidth: "100%",
@@ -332,7 +428,7 @@ var x = {
 };
 //#endregion
 //#region buildTable/utils/data/sortUtils.js
-function C(e, t, n) {
+function M(e, t, n) {
 	let r = e.sortState.findIndex((e) => e.dataKey === t);
 	n ? r === -1 ? e.sortState.push({
 		dataKey: t,
@@ -340,9 +436,9 @@ function C(e, t, n) {
 	}) : e.sortState[r].direction = e.sortState[r].direction === "asc" ? "desc" : "asc" : r !== -1 && e.sortState.length === 1 ? e.sortState[0].direction = e.sortState[0].direction === "asc" ? "desc" : "asc" : e.sortState = [{
 		dataKey: t,
 		direction: "asc"
-	}], w(e);
+	}], N(e);
 }
-function w(e) {
+function N(e) {
 	if (e.sortState && e.sortState.length > 0 && e.data.sort((t, n) => {
 		for (let r of e.sortState) {
 			let e = t[r.dataKey], i = n[r.dataKey];
@@ -360,17 +456,17 @@ function w(e) {
 }
 //#endregion
 //#region buildTable/utils/data/searchUtils.js
-function T(e, t) {
+function P(e, t) {
 	let n = (t || "").toLowerCase().trim();
 	e.data = n ? e.originalData.filter((t) => e.columns.some((e) => {
 		if (e.dataKey === "$serial") return !1;
 		let r = t[e.dataKey];
 		return r != null && String(r).toLowerCase().includes(n);
-	})) : [...e.originalData], w(e);
+	})) : [...e.originalData], N(e);
 }
 //#endregion
 //#region buildTable/utils/data/applySerial.js
-function E(e, t, n) {
+function F(e, t, n) {
 	let r = Array.isArray(e) ? e : [e], i = Array.isArray(t) ? t : [];
 	return n && (r = r.map((e, t) => ({
 		...e,
@@ -390,27 +486,27 @@ function E(e, t, n) {
 }
 //#endregion
 //#region buildTable/utils/style/normalizeSize.js
-function D(e) {
+function I(e) {
 	return e != null && e !== "" && (typeof e == "number" || /^\d+$/.test(String(e).trim())) ? `${e}px` : e;
 }
 //#endregion
 //#region buildTable/utils/data/prepareDataAndColumns.js
-function O({ inData: e, inColumns: t, inShowSerialNo: n }) {
-	let { data: r, columns: i } = E(e, t, n);
+function L({ inData: e, inColumns: t, inShowSerialNo: n }) {
+	let { data: r, columns: i } = F(e, t, n);
 	return {
 		processedData: r,
 		processedColumns: i.map((e) => {
 			let t = { ...e };
 			return t.options && t.options.width && (t.options = {
 				...t.options,
-				width: D(t.options.width)
+				width: I(t.options.width)
 			}), t;
 		})
 	};
 }
 //#endregion
 //#region buildTable/buildTopHeader.js
-function k({ inLabel: e = "", inPlaceholder: t = "", inClasses: n = {}, inOnSearch: r = () => {} }) {
+function R({ inLabel: e = "", inPlaceholder: t = "", inClasses: n = {}, inOnSearch: r = () => {} }) {
 	let i = e, a = t, o = n, s = r, c = document.createElement("div");
 	o.wrapper && (c.className = o.wrapper);
 	let l = document.createElement("div");
@@ -422,37 +518,37 @@ function k({ inLabel: e = "", inPlaceholder: t = "", inClasses: n = {}, inOnSear
 }
 //#endregion
 //#region buildTable/utils/config/extractTableOptions.js
-function A({ inTableOptions: e = {} }) {
+function z({ inTableOptions: e = {} }) {
 	let t = {
-		...S.inTableOptions.inCommonOptions,
+		...j.inTableOptions.inCommonOptions,
 		...e.inCommonOptions || {}
 	}, n = {
-		...S.inTableOptions.inHeadOptions,
+		...j.inTableOptions.inHeadOptions,
 		...e.inHeadOptions || {}
 	}, r = {
-		...S.inTableOptions.inBodyOptions,
+		...j.inTableOptions.inBodyOptions,
 		...e.inBodyOptions || {}
 	}, i = {
-		...S.inTableOptions.inFootOptions,
+		...j.inTableOptions.inFootOptions,
 		...e.inFootOptions || {}
 	};
 	return {
 		inCommonOptions: {
-			inTableWidth: D(t.inTableWidth),
-			inTableBorder: D(t.inTableBorder),
+			inTableWidth: I(t.inTableWidth),
+			inTableBorder: I(t.inTableBorder),
 			inShowSerialNo: t.inShowSerialNo
 		},
-		inHeadOptions: { inHeaderHeight: D(n.inHeaderHeight) },
-		inBodyOptions: { inRowHeight: D(r.inRowHeight) },
+		inHeadOptions: { inHeaderHeight: I(n.inHeaderHeight) },
+		inBodyOptions: { inRowHeight: I(r.inRowHeight) },
 		inFootOptions: {
 			inShowFooter: i.inShowFooter,
-			inRowHeight: D(i.inRowHeight)
+			inRowHeight: I(i.inRowHeight)
 		}
 	};
 }
 //#endregion
 //#region buildTable/utils/config/mapTableOptions.js
-function j(e = {}) {
+function B(e = {}) {
 	let t = {
 		inCommonOptions: {},
 		inHeadOptions: {},
@@ -463,37 +559,37 @@ function j(e = {}) {
 }
 //#endregion
 //#region buildTable/utils/config/extractTopHeader.js
-function M({ inTopHeader: e }) {
-	return e === S.inTopHeader ? S.inTopHeader : {
+function V({ inTopHeader: e }) {
+	return e === j.inTopHeader ? j.inTopHeader : {
 		inShow: e.show === void 0 || e.show,
-		inLabel: e.label === void 0 ? S.inTopHeader.inLabel : e.label,
-		inPlaceholder: e.placeholder === void 0 ? S.inTopHeader.inPlaceholder : e.placeholder
+		inLabel: e.label === void 0 ? j.inTopHeader.inLabel : e.label,
+		inPlaceholder: e.placeholder === void 0 ? j.inTopHeader.inPlaceholder : e.placeholder
 	};
 }
 //#endregion
 //#region buildTable/utils/config/mergeClasses.js
-function N({ inClasses: e }) {
+function H({ inClasses: e }) {
 	let t = e || {};
 	return {
-		...x,
+		...A,
 		...t,
 		head: {
-			...x.head,
+			...A.head,
 			...t.head || {}
 		},
 		body: {
-			...x.body,
+			...A.body,
 			...t.body || {}
 		},
 		topHeader: {
-			...x.topHeader,
+			...A.topHeader,
 			...t.topHeader || {}
 		}
 	};
 }
 //#endregion
 //#region buildTable/utils/dom/appendToDom.js
-function P(e) {
+function U(e) {
 	if (!e.htmlId) {
 		console.error("inHtmlId was not provided to TableBuilder.");
 		return;
@@ -509,28 +605,28 @@ function P(e) {
 }
 //#endregion
 //#region TableBuilder.js
-var F = class {
-	constructor({ htmlId: e, data: t, columns: n = [], classes: r = {}, tableOptions: i = {}, topHeader: a = S.inTopHeader }) {
-		let o = e, s = t, c = n, l = r, u = j(i);
-		this.tableOptions = A({ inTableOptions: u }), this.topHeader = M({ inTopHeader: a }), this.htmlId = o;
-		let { processedData: d, processedColumns: f } = O({
+var W = class {
+	constructor({ htmlId: e, data: t, columns: n = [], classes: r = {}, tableOptions: i = {}, topHeader: a = j.inTopHeader }) {
+		let o = e, s = t, c = n, l = r, u = B(i);
+		this.tableOptions = z({ inTableOptions: u }), this.topHeader = V({ inTopHeader: a }), this.htmlId = o;
+		let { processedData: d, processedColumns: f } = L({
 			inData: s,
 			inColumns: c,
 			inShowSerialNo: this.tableOptions.inCommonOptions.inShowSerialNo
 		});
-		this.originalData = d, this.data = [...d], this.columns = f, this.classes = N({ inClasses: l }), this.sortState = [], this.tableElement = null;
+		this.originalData = d, this.data = [...d], this.columns = f, this.classes = H({ inClasses: l }), this.sortState = [], this.tableElement = null;
 	}
 	handleSort(e, t = !1) {
-		C(this, e, t);
+		M(this, e, t);
 	}
 	handleSearch(e) {
-		T(this, e);
+		P(this, e);
 	}
 	appendToDom() {
-		P(this);
+		U(this);
 	}
 	buildTableElements() {
-		return b({
+		return k({
 			inData: this.data,
 			inColumns: this.columns,
 			inClasses: this.classes,
@@ -540,7 +636,7 @@ var F = class {
 		});
 	}
 	buildTopHeaderElement() {
-		return !this.topHeader || this.topHeader.inShow === !1 ? null : k({
+		return !this.topHeader || this.topHeader.inShow === !1 ? null : R({
 			inLabel: this.topHeader.inLabel,
 			inPlaceholder: this.topHeader.inPlaceholder,
 			inClasses: this.classes.topHeader,
@@ -551,6 +647,6 @@ var F = class {
 		return this.appendToDom();
 	}
 };
-window.ks = {}, window.ks.TableBuilder = F, window.ks.TableBuilder.DEFAULT_CLASSES = x, window.ks.TableBuilder.DEFAULT_CONFIG = S, window.ks.TableBuilder.version = "v3.0";
+window.ks = {}, window.ks.TableBuilder = W, window.ks.TableBuilder.DEFAULT_CLASSES = A, window.ks.TableBuilder.DEFAULT_CONFIG = j, window.ks.TableBuilder.version = "v3.0";
 //#endregion
-export { x as DEFAULT_CLASSES, S as DEFAULT_CONFIG, F as TableBuilder };
+export { A as DEFAULT_CLASSES, j as DEFAULT_CONFIG, W as TableBuilder };

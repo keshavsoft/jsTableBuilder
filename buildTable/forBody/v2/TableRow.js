@@ -14,6 +14,7 @@ function buildTableRow({ inItem, inColumns, inClasses = {}, inBodyOptions = {} }
         const cellValue = localItem[columnData.dataKey];
         const cellElement = buildTableCell({ 
             inCellValue: cellValue, 
+            inRowData: localItem,
             inOptions: columnData.options || {},
             inClasses: localClasses 
         });
