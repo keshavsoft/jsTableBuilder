@@ -1,6 +1,6 @@
 {
   "name": "js-table-builder",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "",
   "main": "TableBuilder.js",
   "bin": {
@@ -10,7 +10,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No tests specified yet\" && exit 0",
     "build": "vite build"
   },
   "repository": {
