@@ -1,6 +1,6 @@
 {
-  "name": "jsTableBuilder",
-  "version": "1.1.1",
+  "name": "js-table-builder",
+  "version": "1.1.2",
   "description": "",
   "main": "TableBuilder.js",
   "directories": {
@@ -12,16 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nknnkumar/jsTableBuilder.git"
+    "url": "git+https://github.com/keshavsoft/jsTableBuilder.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/nknnkumar/jsTableBuilder/issues"
+    "url": "https://github.com/keshavsoft/jsTableBuilder/issues"
   },
-  "homepage": "https://github.com/nknnkumar/jsTableBuilder#readme",
+  "homepage": "https://github.com/keshavsoft/jsTableBuilder#readme",
   "devDependencies": {
     "vite": "^8.2.1"
   }

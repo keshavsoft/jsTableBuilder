@@ -32,7 +32,7 @@
             </svg>
         </button>
     </div>
-    <script src="./dist/tableBuilder.umd.cjs"></script>
+    <script src="https://keshavsoft.github.io/jsTableBuilder/dist/v2/tableBuilder.umd.cjs"></script>
     <script>
         async function init() {
             try {
@@ -57,64 +57,6 @@
 
                 if (!Array.isArray(tableData)) {
                     throw new Error("Data is not an array. Cannot build table.");
-                };
-
-                const config1 = {
-                    htmlId: "table-root",
-                    data: tableData,
-                    columns: columnsData,
-                    tableOptions: {
-                        common: {
-                            tableWidth: "800px", // This forces the table to be 800px!
-                            tableBorder: "0px",
-                            showSerialNo: true
-                        },
-                        head: {
-                            headerHeight: "200px"
-                        },
-                        body: {
-                            rowHeight: "100px"
-                        },
-                        foot: {
-                            showFooter: true
-                        }
-                    },
-                    topHeader: {
-                        label: "My Beautiful Table",
-                        placeholder: "Search anything..."
-                    },
-                    inTableOptions1: {
-                        inTableWidth: "800px", // This forces the table to be 800px!
-                        inRowHeight: 100, // Demonstration of row height
-                        inHeaderHeight: 150, // Demonstration of header height
-                        inTableBorder: "4px solid blue" // Demonstration of outer table border
-                    }
-                };
-
-                const config2 = {
-                    htmlId: "table-root",
-                    data: tableData,
-                    columns: columnsData,
-                    tableOptions: {
-                        commonOptions: {
-                            tableWidth: "800px", // This forces the table to be 800px!
-                            tableBorder: "0px",
-                            showSerialNo: true
-                        },
-                        headOptions: {
-                            headerHeight: "150px"
-                        },
-                        bodyOptions: {
-                            rowHeight: "50px"
-                        },
-                        footOptions: {
-                            showFooter: true
-                        }
-                    },
-                    topHeader: {
-                        label: "My Beautiful Table",
-                        placeholder: "Search anything..."
-                    }
                 };
 
                 const config3 = {
