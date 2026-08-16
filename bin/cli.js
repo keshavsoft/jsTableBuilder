@@ -54,9 +54,9 @@ try {
         if (fs.existsSync(templatePath)) {
             const indexHtmlContent = fs.readFileSync(templatePath, 'utf8');
             fs.writeFileSync(indexHtmlPath, indexHtmlContent);
-            console.log(\`✅ Scaffolding complete: Created ./index.html starter file\`);
+            console.log(`✅ Scaffolding complete: Created ./index.html starter file`);
         } else {
-            console.warn(\`⚠️ Could not find template.html at \${templatePath}. Skipping index.html creation.\`);
+            console.warn(`⚠️ Could not find template.html at ${templatePath}. Skipping index.html creation.`);
         }
     }
 
