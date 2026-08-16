@@ -1,6 +1,6 @@
 [
   {
-    "header": "party ledgername",
+    "header": "party ledger name",
     "dataKey": "partyledgername",
     "options": {
       "width": "50%",
@@ -15,7 +15,18 @@
       "width": "25%",
       "align": "center",
       "vAlign": "top",
-      "sortable": true
+      "sortable": true,
+      "table": {
+        "tbody": {
+          "td": {
+            "controlType": "button",
+            "controlOptions": {
+              "label": "Action",
+              "onClick": "function() { alert('Action'); }"
+            }
+          }
+        }
+      }
     }
   },
   {

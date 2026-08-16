@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary Footer - jsTableBuilder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">Summary Footer</h1>
+        <p class="text-gray-600 mb-6">Displaying a footer that automatically sums or counts numerical data.</p>
+        <div id="table-root" class="bg-white shadow rounded"></div>
+    </div>
+
+    <script type="module">
+        import { TableBuilder } from "../TableBuilder.js";
+
+        const data = [
+            { item: "Laptops", qty: 10, cost: 12000.00 },
+            { item: "Monitors", qty: 25, cost: 7500.00 },
+            { item: "Keyboards", qty: 50, cost: 2500.00 },
+            { item: "Mice", qty: 60, cost: 1200.00 }
+        ];
+
+        const columns = [
+            { 
+                dataKey: "item", 
+                header: "Item Name", 
+                options: { summaryLabel: "Total:", align: "right", width: "40%" } 
+            },
+            { 
+                dataKey: "qty", 
+                header: "Quantity", 
+                options: { summary: "sum", align: "center", width: "30%" } 
+            },
+            { 
+                dataKey: "cost", 
+                header: "Total Cost ($)", 
+                options: { summary: "sum", align: "right", width: "30%" } 
+            }
+        ];
+
+        const tableBuilder = new TableBuilder({
+            htmlId: "table-root",
+            data,
+            columns,
+            tableOptions: {
+                footOptions: {
+                    showFooter: true
+                }
+            }
+        });
+        tableBuilder.appendToDom();
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Options (Kitchen Sink) - jsTableBuilder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">Kitchen Sink (All Options)</h1>
+        <p class="text-gray-600 mb-6">Combining search, custom headers, auto-serial numbers, alignments, summaries, and sorting.</p>
+        <div id="table-root" class="shadow-lg rounded-lg"></div>
+    </div>
+
+    <script type="module">
+        import { TableBuilder } from "../TableBuilder.js";
+
+        const data = [
+            { product: "Widget A", category: "Hardware", price: 45.00, sales: 150 },
+            { product: "Widget B", category: "Hardware", price: 85.50, sales: 90 },
+            { product: "Service X", category: "Software", price: 200.00, sales: 25 },
+            { product: "Service Y", category: "Software", price: 150.00, sales: 40 },
+            { product: "Consulting", category: "Services", price: 500.00, sales: 10 }
+        ];
+
+        const columns = [
+            { 
+                dataKey: "product", 
+                header: "Product Name", 
+                options: { width: "35%", sortable: true, summaryLabel: "Total Output:" } 
+            },
+            { 
+                dataKey: "category", 
+                header: "Category", 
+                options: { width: "25%", sortable: true, align: "center" } 
+            },
+            { 
+                dataKey: "price", 
+                header: "Unit Price", 
+                options: { width: "20%", sortable: true, align: "right" } 
+            },
+            { 
+                dataKey: "sales", 
+                header: "Sales Volume", 
+                options: { width: "20%", sortable: true, align: "right", summary: "sum" } 
+            }
+        ];
+
+        const tableBuilder = new TableBuilder({
+            htmlId: "table-root",
+            data,
+            columns,
+            tableOptions: {
+                commonOptions: {
+                    showSerialNo: true,
+                    tableWidth: "100%",
+                    tableBorder: "0px"
+                },
+                headOptions: {
+                    headerHeight: "56px"
+                },
+                bodyOptions: {
+                    rowHeight: "56px"
+                },
+                footOptions: {
+                    showFooter: true,
+                    rowHeight: "56px"
+                }
+            },
+            topHeader: {
+                label: "Q3 Sales Report",
+                placeholder: "Search catalog..."
+            }
+        });
+        tableBuilder.appendToDom();
+    </script>
+</body>
+</html>

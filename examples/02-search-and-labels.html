@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search and Labels - jsTableBuilder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">Search & Custom Labels</h1>
+        <p class="text-gray-600 mb-6">Using the <code>topHeader</code> option to enable a search bar and custom table title.</p>
+        <div id="table-root" class="shadow-sm rounded-lg"></div>
+    </div>
+
+    <script type="module">
+        import { TableBuilder } from "../TableBuilder.js";
+
+        const data = [
+            { id: 1, name: "Alice", role: "Developer", city: "New York" },
+            { id: 2, name: "Bob", role: "Designer", city: "San Francisco" },
+            { id: 3, name: "Charlie", role: "Manager", city: "London" },
+            { id: 4, name: "Diana", role: "QA Engineer", city: "Berlin" }
+        ];
+
+        const columns = [
+            { dataKey: "name", header: "Name" },
+            { dataKey: "role", header: "Role" },
+            { dataKey: "city", header: "City" }
+        ];
+
+        const tableBuilder = new TableBuilder({
+            htmlId: "table-root",
+            data,
+            columns,
+            topHeader: {
+                label: "Employee Directory",
+                placeholder: "Search by name, role, or city..."
+            }
+        });
+        tableBuilder.appendToDom();
+    </script>
+</body>
+</html>

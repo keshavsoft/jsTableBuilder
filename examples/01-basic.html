@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Usage - jsTableBuilder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">Basic Table</h1>
+        <p class="text-gray-600 mb-6">The simplest way to use jsTableBuilder with minimal configuration.</p>
+        <div id="table-root" class="bg-white shadow rounded"></div>
+    </div>
+
+    <script type="module">
+        import { TableBuilder } from "../TableBuilder.js";
+
+        const data = [
+            { id: 1, name: "Alice", role: "Developer" },
+            { id: 2, name: "Bob", role: "Designer" },
+            { id: 3, name: "Charlie", role: "Manager" }
+        ];
+
+        const columns = [
+            { dataKey: "id", header: "ID" },
+            { dataKey: "name", header: "Name" },
+            { dataKey: "role", header: "Role" }
+        ];
+
+        const tableBuilder = new TableBuilder({
+            htmlId: "table-root",
+            data,
+            columns
+        });
+        tableBuilder.appendToDom();
+    </script>
+</body>
+</html>

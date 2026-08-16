@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styling & Alignment - jsTableBuilder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">Column Styling & Alignment</h1>
+        <p class="text-gray-600 mb-6">Configuring column widths, text alignment, and table borders.</p>
+        <div id="table-root" class="bg-white rounded"></div>
+    </div>
+
+    <script type="module">
+        import { TableBuilder } from "../TableBuilder.js";
+
+        const data = [
+            { code: "A123", description: "Mechanical Keyboard", price: 129.99, stock: 45 },
+            { code: "B456", description: "Wireless Mouse", price: 49.50, stock: 120 },
+            { code: "C789", description: "HD Monitor", price: 299.00, stock: 15 }
+        ];
+
+        const columns = [
+            { dataKey: "code", header: "Product Code", options: { width: "15%", align: "center" } },
+            { dataKey: "description", header: "Description", options: { width: "45%", align: "left" } },
+            { dataKey: "price", header: "Price ($)", options: { width: "20%", align: "right" } },
+            { dataKey: "stock", header: "Stock Count", options: { width: "20%", align: "right" } }
+        ];
+
+        const tableBuilder = new TableBuilder({
+            htmlId: "table-root",
+            data,
+            columns,
+            tableOptions: {
+                commonOptions: {
+                    tableWidth: "100%",
+                    tableBorder: "2px solid #cbd5e1" // Thicker slate border
+                }
+            }
+        });
+        tableBuilder.appendToDom();
+    </script>
+</body>
+</html>
