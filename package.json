@@ -1,6 +1,6 @@
 {
   "name": "js-table-builder",
-  "version": "1.4.1",
+  "version": "1.5.1",
   "description": "",
   "main": "TableBuilder.js",
   "bin": {
