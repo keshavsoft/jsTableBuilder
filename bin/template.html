@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsTableBuilder Setup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 flex flex-col h-screen">
+    <div id="table-root"></div>
+    <script type="module">
+        import { TableBuilder } from "./buildTable/index.js";
+
+        // Example data - Replace with your own logic!
+        const data = [{ id: 1, name: "Sample Item", status: "Active" }];
+        const columns = [
+            { id: "id", name: "ID", type: "number" },
+            { id: "name", name: "Name", type: "string" },
+            { id: "status", name: "Status", type: "string" }
+        ];
+
+        const tableBuilder = new TableBuilder({
+            htmlId: "table-root",
+            data,
+            columns,
+            tableOptions: {
+                commonOptions: { showSerialNo: true }
+            },
+            topHeader: {
+                label: "My Scaffolded Table",
+                placeholder: "Search..."
+            }
+        });
+        tableBuilder.appendToDom();
+    </script>
+</body>
+</html>

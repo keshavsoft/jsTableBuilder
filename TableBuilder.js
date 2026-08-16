@@ -90,6 +90,7 @@ window.ks = {};
 window.ks.TableBuilder = TableBuilder;
 window.ks.DEFAULT_CLASSES = DEFAULT_CLASSES;
 window.ks.DEFAULT_CONFIG = DEFAULT_CONFIG;
+window.ks.TableBuilderVersion = "v2"
 
 export { TableBuilder, DEFAULT_CLASSES, DEFAULT_CONFIG };
 

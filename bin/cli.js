@@ -46,6 +46,20 @@ try {
 
     copyDirectory(sourceDir, targetDir);
     console.log(`✅ Successfully copied buildTable to ./buildTable`);
+
+    // Scaffold a sample index.html
+    const indexHtmlPath = path.join(process.cwd(), 'index.html');
+    if (!fs.existsSync(indexHtmlPath)) {
+        const templatePath = path.join(__dirname, 'template.html');
+        if (fs.existsSync(templatePath)) {
+            const indexHtmlContent = fs.readFileSync(templatePath, 'utf8');
+            fs.writeFileSync(indexHtmlPath, indexHtmlContent);
+            console.log(\`✅ Scaffolding complete: Created ./index.html starter file\`);
+        } else {
+            console.warn(\`⚠️ Could not find template.html at \${templatePath}. Skipping index.html creation.\`);
+        }
+    }
+
     console.log(`\nYou can now import and customize the TableBuilder directly from your own project!`);
 } catch (error) {
     console.error(`❌ Failed to copy files: ${error.message}`);

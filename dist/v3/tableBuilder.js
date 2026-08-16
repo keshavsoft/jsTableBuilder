@@ -534,6 +534,6 @@ var F = class {
 		return this.appendToDom();
 	}
 };
-window.ks = {}, window.ks.TableBuilder = F, window.ks.DEFAULT_CLASSES = x, window.ks.DEFAULT_CONFIG = S;
+window.ks = {}, window.ks.TableBuilder = F, window.ks.DEFAULT_CLASSES = x, window.ks.DEFAULT_CONFIG = S, window.ks.TableBuilderVersion = "v2";
 //#endregion
 export { x as DEFAULT_CLASSES, S as DEFAULT_CONFIG, F as TableBuilder };
