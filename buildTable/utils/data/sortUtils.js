@@ -24,7 +24,7 @@ export function processSort(instance, dataKey, isMultiSort) {
 
 export function applyCurrentSort(instance) {
     if (instance.sortState && instance.sortState.length > 0) {
-        instance.data.sort((a, b) => {
+        instance.dataStore.data.sort((a, b) => {
             for (const sortConfig of instance.sortState) {
                 const valA = a[sortConfig.dataKey];
                 const valB = b[sortConfig.dataKey];

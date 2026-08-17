@@ -4,10 +4,10 @@ export function processSearch(instance, query) {
     const lowerQuery = (query || "").toLowerCase().trim();
     
     if (!lowerQuery) {
-        instance.data = [...instance.originalData];
+        instance.dataStore.data = [...instance.dataStore.originalData];
     } else {
-        instance.data = instance.originalData.filter(row => {
-            return instance.columns.some(col => {
+        instance.dataStore.data = instance.dataStore.originalData.filter(row => {
+            return instance.dataStore.columns.some(col => {
                 if (col.dataKey === "$serial") return false;
                 const val = row[col.dataKey];
                 if (val === null || val === undefined) return false;

@@ -2,7 +2,7 @@ import { buildTable } from "./buildTable/index.js";
 import { DEFAULT_CLASSES, DEFAULT_CONFIG } from "./buildTable/config/defaults.js";
 import { processSort } from "./buildTable/utils/data/sortUtils.js";
 import { processSearch } from "./buildTable/utils/data/searchUtils.js";
-import { prepareDataAndColumns } from "./buildTable/utils/data/prepareDataAndColumns.js";
+import { initializeDataStore } from "./buildTable/utils/data/initializeDataStore.js";
 import { buildTopHeader } from "./buildTable/buildTopHeader.js";
 import { extractTableOptions } from "./buildTable/utils/config/extractTableOptions.js";
 import { mapTableOptions } from "./buildTable/utils/config/mapTableOptions.js";
@@ -24,7 +24,7 @@ class TableBuilder {
         const localData = data;
         const localColumns = columns;
         const localClasses = classes;
-        console.log("ppppppppppppppppp : ", localHtmlId);
+        // console.log("ppppppppppppppppp : ", localHtmlId);
 
         // Map the clean external API (with subtrees) back to our strict internal 'in' naming convention
         const localTableOptionsMapped = mapTableOptions(tableOptions);
@@ -33,15 +33,7 @@ class TableBuilder {
         this.topHeader = extractTopHeader({ inTopHeader: topHeader });
         this.htmlId = localHtmlId;
 
-        const { processedData, processedColumns } = prepareDataAndColumns({
-            inData: localData,
-            inColumns: localColumns,
-            inShowSerialNo: this.tableOptions.inCommonOptions.inShowSerialNo
-        });
-
-        this.originalData = processedData;
-        this.data = [...processedData];
-        this.columns = processedColumns;
+        initializeDataStore(this, localData, localColumns);
 
         this.classes = mergeClasses({ inClasses: localClasses, inTheme: theme });
 
@@ -63,8 +55,8 @@ class TableBuilder {
 
     buildTableElements() {
         return buildTable({
-            inData: this.data,
-            inColumns: this.columns,
+            inData: this.dataStore.data,
+            inColumns: this.dataStore.columns,
             inClasses: this.classes,
             inTableOptions: this.tableOptions,
             inSortState: this.sortState,
