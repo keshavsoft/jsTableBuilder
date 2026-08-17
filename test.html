@@ -35,8 +35,10 @@
         </button>
     </div>
     <!-- <script src="./script.js" type="module"></script> -->
-    <script src="./dist/v5/tableBuilder.umd.cjs"></script>
-    <script>
+    <!-- <script src="./dist/v5/tableBuilder.umd.cjs"></script> -->
+    <script src="./TableBuilder.js" type="module"></script>
+
+    <script type="module">
         async function init() {
             try {
                 // Fetch the data and columns files
@@ -76,6 +78,7 @@
                     htmlId: "table-root",
                     data: tableData,
                     columns: columnsData,
+                    theme: "style2", // <--- Use your new style here!
                     tableOptions: {
                         commonOptions: {
                             tableWidth: "800px", // This forces the table to be 800px!
