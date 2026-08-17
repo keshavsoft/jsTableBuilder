@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jsTableBuilder - Attempt 2</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:auto;padding:40px;line-height:1.6;background:#f5f5f5;color:#222}
+.card{background:#fff;padding:24px;margin:20px 0;border:1px solid #ddd;border-radius:8px}
+h1,h2{color:#1f2937}pre{background:#1f2937;color:#fff;padding:16px;border-radius:6px;overflow:auto}
+.success{color:#047857;font-weight:bold}.note{background:#fffbeb;border-left:4px solid #f59e0b;padding:12px}
+</style>
+</head>
+<body>
+<h1>jsTableBuilder - Attempt 2</h1>
+<div class="card">
+<h2>npx serve</h2>
+<p><strong>Status:</strong> <span class="success">Passed</span></p>
+<p>This attempt tested serving the repository with <code>npx serve</code> without manually setting up a Python HTTP server.</p>
+</div>
+<div class="card">
+<h2>Steps</h2>
+<ol>
+<li>Clone the jsTableBuilder repository.</li>
+<li>Open PowerShell in the repository root.</li>
+<li>Run <code>npx serve</code>.</li>
+<li>Open the local URL displayed by the command.</li>
+<li>Open <code>test.html</code>.</li>
+<li>Verify the page and TableBuilder output.</li>
+</ol>
+<h3>Command</h3>
+<pre><code>npx serve</code></pre>
+<h3>Observed Local URL</h3>
+<pre><code>http://localhost:55030</code></pre>
+<p>The port was automatically selected because port 3000 was already in use.</p>
+</div>
+<div class="card">
+<h2>Observed Result</h2>
+<ul>
+<li>The npx server started successfully.</li>
+<li>The repository root was served successfully.</li>
+<li>test.html was accessible.</li>
+<li>Local TableBuilder source modules returned successful responses.</li>
+<li>The test page could be served without manually starting a Python server.</li>
+</ul>
+<div class="note"><strong>Note:</strong> Some configured <code>/ks/...</code> local resource paths returned 404 responses. These are resource-path/fallback observations and are separate from the npx server itself.</div>
+</div>
+<div class="card">
+<h2>Conclusion</h2>
+<p>The npx serve approach passed the server/testing workflow and is the preferred approach from these two trials because it provides a simple way to serve the repository without manually setting up a Python HTTP server.</p>
+</div>
+</body>
+</html>
