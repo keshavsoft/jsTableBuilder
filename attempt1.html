@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jsTableBuilder - Attempt 1</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:auto;padding:40px;line-height:1.6;background:#f5f5f5;color:#222}
+.card{background:#fff;padding:24px;margin:20px 0;border:1px solid #ddd;border-radius:8px}
+h1,h2{color:#1f2937}pre{background:#1f2937;color:#fff;padding:16px;border-radius:6px;overflow:auto}
+.failure{color:#b91c1c;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>jsTableBuilder - Attempt 1</h1>
+<div class="card">
+<h2>Python HTTP Server</h2>
+<p><strong>Status:</strong> <span class="failure">Failure / Not Preferred</span></p>
+<p>This attempt tested running the jsTableBuilder test HTML with Python's built-in HTTP server.</p>
+</div>
+<div class="card">
+<h2>Steps</h2>
+<ol>
+<li>Clone the jsTableBuilder repository.</li>
+<li>Open PowerShell in the repository root.</li>
+<li>Start the Python HTTP server.</li>
+<li>Open the test HTML in the browser.</li>
+<li>Check the browser output and console.</li>
+</ol>
+<h3>Command</h3>
+<pre><code>python -m http.server 8000</code></pre>
+<h3>Test URL</h3>
+<pre><code>http://localhost:8000/test.html</code></pre>
+</div>
+<div class="card">
+<h2>Observed Result</h2>
+<ul>
+<li>The Python server started successfully.</li>
+<li>test.html was accessible.</li>
+<li>The TableBuilder UI rendered.</li>
+<li>Several local resource paths returned 404 responses.</li>
+<li>The configured remote fallback resources were used.</li>
+</ul>
+</div>
+<div class="card">
+<h2>Conclusion</h2>
+<p>This attempt is recorded as a failure / not-preferred approach for the intended out-of-the-box workflow because it requires manually starting a separate Python server.</p>
+</div>
+</body>
+</html>
