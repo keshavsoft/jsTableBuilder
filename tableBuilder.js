@@ -24,7 +24,7 @@ class TableBuilder {
         const localData = data;
         const localColumns = columns;
         const localClasses = classes;
-        // console.log("ppppppppppppppppp : ", theme);
+        console.log("ppppppppppppppppp : ", localHtmlId);
 
         // Map the clean external API (with subtrees) back to our strict internal 'in' naming convention
         const localTableOptionsMapped = mapTableOptions(tableOptions);

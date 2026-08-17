@@ -1,0 +1,117 @@
+{
+    "htmlId": "table-root",
+    "data": [],
+    "columns": [
+        {
+            "header": "party ledger name",
+            "dataKey": "partyledgername",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "summaryLabel": "Total:"
+            }
+        },
+        {
+            "header": "voucher typename",
+            "dataKey": "vouchertypename",
+            "options": {
+                "width": "25%",
+                "align": "center",
+                "vAlign": "top",
+                "sortable": true,
+                "table": {
+                    "tbody": {
+                        "td": {
+                            "controlType": "button",
+                            "controlOptions": {
+                                "label": "Action",
+                                "onClick": "function() { alert('Action'); }"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "Voucher Number",
+            "dataKey": "vouchernumber",
+            "options": {
+                "width": "10%",
+                "sortable": true,
+                "summary": "sum"
+            }
+        },
+        {
+            "header": "date",
+            "dataKey": "date",
+            "options": {
+                "width": "15%",
+                "align": "center",
+                "vAlign": "top",
+                "sortable": true,
+                "table": {
+                    "tbody": {
+                        "td": {
+                            "controlType": "anchor",
+                            "controlOptions": {
+                                "href": "function() { return '#'; }"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "all ledger entries",
+            "dataKey": "allledgerentries",
+            "isVisible": true,
+            "options": {
+                "width": "10%"
+            }
+        },
+        {
+            "header": "allinventoryentries",
+            "dataKey": "allinventoryentries",
+            "isVisible": false
+        },
+        {
+            "header": "ledgerentries",
+            "dataKey": "ledgerentries",
+            "isVisible": false
+        },
+        {
+            "header": "inventoryentriesin",
+            "dataKey": "inventoryentriesin",
+            "isVisible": false
+        }
+    ],
+    "theme": "style2",
+    "tableOptions": {
+        "commonOptions": {
+            "tableWidth": "1000px",
+            "tableBorder": "0px",
+            "showSerialNo": true
+        },
+        "headOptions": {},
+        "bodyOptions": {},
+        "footOptions": {
+            "showFooter": true
+        }
+    },
+    "topHeader1": {
+        "label": "My Beautiful Table",
+        "placeholder": "Search anything..."
+    },
+    "endPoints": {
+        "create": "/Api/v5/BillsTable/insertWithMeta",
+        "update": "",
+        "delete": "/Api/v5/BillsTable/del",
+        "read": "/Api/v3/purchases/getBatchArray",
+        "groupBy": "/Api/v3/ItemsTable/forStock",
+        "read1": "/Api/V1/ItemsTable/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {}
+    }
+}

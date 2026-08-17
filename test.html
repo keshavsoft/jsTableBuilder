@@ -44,18 +44,8 @@
                 // Fetch the data and columns files
                 const [dataResponse, columnsResponse] = await Promise.all([
                     fetch("./all.json"),
-                    fetch("./columns.json")
+                    fetch("./config.json")
                 ]);
-
-                // const headerConfig = await headerResponse.json();
-                // console.log("hhhhhhhhh : ", headerConfig);
-
-                // window.ks.components.header(headerConfig).then(fromPromise => {
-                //     console.log("fromPromise : ", fromPromise);
-
-                //     // addListeners();
-                // });
-
 
                 if (!dataResponse.ok) {
                     throw new Error(`Failed to fetch all.json: ${dataResponse.status} ${dataResponse.statusText}`);
@@ -66,6 +56,7 @@
 
                 const data = await dataResponse.json();
                 const columnsData = await columnsResponse.json();
+                columnsData.data = data;
 
                 // Check if data is nested inside an object (e.g., tallymessage) or is the array itself
                 const tableData = Array.isArray(data) ? data : (data.tallymessage || data);
@@ -74,32 +65,7 @@
                     throw new Error("Data is not an array. Cannot build table.");
                 };
 
-                const config3 = {
-                    htmlId: "table-root",
-                    data: tableData,
-                    columns: columnsData,
-                    theme: "style2", // <--- Use your new style here!
-                    tableOptions: {
-                        commonOptions: {
-                            tableWidth: "1000px", // This forces the table to be 800px!
-                            tableBorder: "0px",
-                            showSerialNo: true
-                        },
-                        headOptions: {
-                        },
-                        bodyOptions: {
-                        },
-                        footOptions: {
-                            showFooter: true
-                        }
-                    },
-                    topHeader1: {
-                        label: "My Beautiful Table",
-                        placeholder: "Search anything..."
-                    }
-                };
-
-                const tableBuilder = new window.ks.TableBuilder(config3);
+                const tableBuilder = new window.ks.TableBuilder(columnsData);
                 tableBuilder.appendToDom();
 
             } catch (error) {

@@ -130,10 +130,10 @@ const ensureKSTableOnly = () => loadResource({
 
 const ensureTableBuilder = () => loadResource({
     name: "TableBuilder",
-    isLoaded: () => !!window.ks.TableBuilder,
+    isLoaded: () => !!window?.ks?.TableBuilder,
     sources: [
         { type: "js", url: "/ks/jsTableBuilder/v6/tableBuilder.js", label: "Local" },
-        { type: "js", url: "https://keshavsoft.github.io/js-table-builder/dist/v6/tableBuilder.js", label: "git" }
+        { type: "js", url: "https://keshavsoft.github.io/jsTableBuilder/dist/v6/tableBuilder.js", label: "git" }
     ]
 });
 
@@ -144,5 +144,6 @@ await Promise.all([
     ensureKSHeader(),
     ensureKSTable(),
     ensureKSVertical(),
-    ensureKSTableOnly()
+    ensureKSTableOnly(),
+    ensureTableBuilder()
 ]);
