@@ -1,24 +1,29 @@
+<!-- Project overview -->
 # jsTableBuilder
 
 A versatile and highly customizable JavaScript library to build dynamic HTML tables from JSON data.
 
+<!-- Library features -->
 ## Features
 - Dynamic column generation based on JSON configuration
 - Built-in search/filtering functionality
 - Customizable table appearance (borders, widths, etc.)
 - Auto-generated serial numbers
 - Optional footer row
+<!-- Project resources -->
 ## Links
 - **Landing Page**: [jsTableBuilder Site](https://keshavsoft.github.io/jsTableBuilder/)
 - **NPM Package**: [js-table-builder](https://www.npmjs.com/package/js-table-builder)
 - **Documentation**: [Full Docs](https://keshavsoft.github.io/jsTableBuilder/docs.html)
 
+<!-- Package installation -->
 ## Installation via NPM
 
 ```bash
 npm install js-table-builder
 ```
 
+<!-- CLI usage -->
 ## Scaffold CLI Usage (shadcn-like)
 
 You can use `npx` to paste the raw source files directly into your project! This will create a `buildTable` folder in your current directory, allowing you to completely customize the internal components of `jsTableBuilder`.
@@ -27,6 +32,7 @@ You can use `npx` to paste the raw source files directly into your project! This
 npx js-table-builder
 ```
 
+<!-- Browser/CDN usage -->
 ## Usage via CDN
 
 You can quickly get started by including `jsTableBuilder` directly in your HTML using our CDN link:
@@ -35,6 +41,7 @@ You can quickly get started by including `jsTableBuilder` directly in your HTML 
 <script src="https://keshavsoft.github.io/jsTableBuilder/dist/v2/tableBuilder.umd.cjs"></script>
 ```
 
+<!-- Quick start example -->
 ### Quick Start Example
 
 Here is a full example demonstrating how to fetch your data and columns configuration, initialize `jsTableBuilder`, and render the table into a DOM element.
@@ -106,6 +113,7 @@ Here is a full example demonstrating how to fetch your data and columns configur
 </html>
 ```
 
+<!-- TableBuilder configuration reference -->
 ## Configuration Details
 
 The `config` object passed to `new window.ks.TableBuilder(config)` accepts the following properties:
