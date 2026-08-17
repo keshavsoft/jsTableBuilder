@@ -130,7 +130,7 @@ const ensureKSTableOnly = () => loadResource({
 
 const ensureTableBuilder = () => loadResource({
     name: "TableBuilder",
-    isLoaded: () => !!window.buildTable,
+    isLoaded: () => !!window.ks.TableBuilder,
     sources: [
         { type: "js", url: "/ks/jsTableBuilder/v6/tableBuilder.js", label: "Local" },
         { type: "js", url: "https://keshavsoft.github.io/js-table-builder/dist/v6/tableBuilder.js", label: "git" }
