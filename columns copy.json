@@ -3,7 +3,7 @@
     "header": "party ledger name",
     "dataKey": "partyledgername",
     "options": {
-      "width": "150px",
+      "width": "50%",
       "sortable": true,
       "summaryLabel": "Total:"
     }
