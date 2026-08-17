@@ -86,7 +86,8 @@ class TableBuilder {
     }
 }
 
-window.ks = {};
+// window.ks = {};
+window.ks = window.ks || {};
 window.ks.TableBuilder = TableBuilder;
 window.ks.TableBuilder.DEFAULT_CLASSES = DEFAULT_CLASSES;
 window.ks.TableBuilder.DEFAULT_CONFIG = DEFAULT_CONFIG;

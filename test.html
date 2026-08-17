@@ -9,7 +9,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 p-8 h-screen overflow-auto flex flex-col relative">
+<body class1="bg-gray-100 p-8 h-screen overflow-auto flex flex-col relative"
+    class="ks bg-gray-100 flex flex-col min-h-screen">
+    <div id="header"></div>
     <div id="table-root">
     </div>
 
@@ -32,7 +34,8 @@
             </svg>
         </button>
     </div>
-    <script src="./dist/v9/tableBuilder.umd.cjs"></script>
+    <!-- <script src="./script.js" type="module"></script> -->
+    <script src="./dist/v5/tableBuilder.umd.cjs"></script>
     <script>
         async function init() {
             try {
@@ -41,6 +44,16 @@
                     fetch("./all.json"),
                     fetch("./columns.json")
                 ]);
+
+                // const headerConfig = await headerResponse.json();
+                // console.log("hhhhhhhhh : ", headerConfig);
+
+                // window.ks.components.header(headerConfig).then(fromPromise => {
+                //     console.log("fromPromise : ", fromPromise);
+
+                //     // addListeners();
+                // });
+
 
                 if (!dataResponse.ok) {
                     throw new Error(`Failed to fetch all.json: ${dataResponse.status} ${dataResponse.statusText}`);
@@ -94,10 +107,14 @@
                     </div>
                 `;
             }
-        }
+        };
 
         init();
     </script>
+
+
+    <script type="module" src="./test/start.js"></script>
+
 </body>
 
 </html>
