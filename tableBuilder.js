@@ -4,7 +4,7 @@ import { processSort } from "./buildTable/utils/data/sortUtils.js";
 import { processSearch } from "./buildTable/utils/data/searchUtils.js";
 import { buildTopHeader } from "./buildTable/buildTopHeader.js";
 import { extractTableOptions } from "./buildTable/utils/config/extractTableOptions.js";
-import { mapTableOptions } from "./buildTable/utils/config/mapTableOptions.js";
+import mapTableOptions from "./buildTable/utils/config/mapTableOptions.js";
 import { extractTopHeader } from "./buildTable/utils/config/extractTopHeader.js";
 import { mergeClasses } from "./buildTable/utils/config/mergeClasses.js";
 import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
@@ -99,12 +99,21 @@ class TableBuilder {
     }
 }
 
+const DEFAULT_INTERNAL_OBJECT = {
+    inTableOptions: mapTableOptions(DEFAULT_CONFIG.tableOptions),
+    inTopHeader: {
+        inShow: DEFAULT_CONFIG.topHeader.show,
+        inLabel: DEFAULT_CONFIG.topHeader.label,
+        inPlaceholder: DEFAULT_CONFIG.topHeader.placeholder
+    }
+};
+
 // window.ks = {};
 window.ks = window.ks || {};
 window.ks.TableBuilder = TableBuilder;
 window.ks.TableBuilder.DEFAULT_CLASSES = DEFAULT_CLASSES;
 window.ks.TableBuilder.DEFAULT_CONFIG = DEFAULT_CONFIG;
-window.ks.TableBuilder.version = "v7.0";
+window.ks.TableBuilder.DEFAULT_INTERNAL_OBJECT = DEFAULT_INTERNAL_OBJECT;
+window.ks.TableBuilder.version = "v8.0";
 
-export { TableBuilder, DEFAULT_CLASSES, DEFAULT_CONFIG };
-
+export { TableBuilder, DEFAULT_CLASSES, DEFAULT_CONFIG, DEFAULT_INTERNAL_OBJECT };
