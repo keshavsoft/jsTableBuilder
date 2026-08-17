@@ -2,16 +2,13 @@ import { buildTable } from "./buildTable/index.js";
 import { DEFAULT_CLASSES, DEFAULT_CONFIG } from "./buildTable/config/defaults.js";
 import { processSort } from "./buildTable/utils/data/sortUtils.js";
 import { processSearch } from "./buildTable/utils/data/searchUtils.js";
-import { setupServices } from "./buildTable/utils/services.js";
-// import { initializeDataStore, initializeColumns } from "./buildTable/utils/data/initializeDataStore.js";
 import { buildTopHeader } from "./buildTable/buildTopHeader.js";
 import { extractTableOptions } from "./buildTable/utils/config/extractTableOptions.js";
 import { mapTableOptions } from "./buildTable/utils/config/mapTableOptions.js";
 import { extractTopHeader } from "./buildTable/utils/config/extractTopHeader.js";
 import { mergeClasses } from "./buildTable/utils/config/mergeClasses.js";
 import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
-import initializeColumns from "./buildTable/utils/data/prepareColumns.js";
-import prepareData from "./buildTable/utils/data/prepareData.js";
+import setupDataStore from "./buildTable/utils/data/setupDataStore.js";
 
 class TableBuilder {
     constructor({
@@ -38,17 +35,12 @@ class TableBuilder {
         this.htmlId = localHtmlId;
         this.dataStore = {};
 
-        this.dataStore.columns = initializeColumns({
-            inColumns: localColumns, inShowSerialNo: this.tableOptions?.inCommonOptions?.inShowSerialNo
+        setupDataStore({ 
+            instance: this, 
+            localColumns, 
+            localData, 
+            localEndPoints 
         });
-
-        this.dataStore.originalData = localData;
-
-        if (localEndPoints) {
-            setupServices(this, localEndPoints);
-        } else {
-            this.dataStore.data = prepareData({ inData: localData, inShowSerialNo: this.tableOptions?.inCommonOptions?.inShowSerialNo });
-        };
 
         this.classes = mergeClasses({ inClasses: localClasses, inTheme: theme });
 

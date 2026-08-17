@@ -57,7 +57,7 @@
                 const data = await dataResponse.json();
                 const columnsData = await columnsResponse.json();
                 columnsData.data = data;
-                debugger
+                // debugger
                 const tableBuilder = new window.ks.TableBuilder(columnsData);
                 tableBuilder.appendToDom();
 
