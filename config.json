@@ -98,7 +98,7 @@
             "showFooter": true
         }
     },
-    "topHeader1": {
+    "topHeader": {
         "label": "My Beautiful Table",
         "placeholder": "Search anything..."
     },
