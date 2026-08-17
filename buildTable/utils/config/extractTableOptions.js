@@ -9,19 +9,19 @@ export function extractTableOptions({ inTableOptions = {} }) {
 
     return {
         inCommonOptions: {
-            inTableWidth: normalizeSize(localCommon.inTableWidth),
-            inTableBorder: normalizeSize(localCommon.inTableBorder),
-            inShowSerialNo: localCommon.inShowSerialNo
+            inTableWidth: normalizeSize(localCommon?.inTableWidth),
+            inTableBorder: normalizeSize(localCommon?.inTableBorder),
+            inShowSerialNo: localCommon?.inShowSerialNo
         },
         inHeadOptions: {
-            inHeaderHeight: normalizeSize(localHead.inHeaderHeight)
+            inHeaderHeight: normalizeSize(localHead?.inHeaderHeight)
         },
         inBodyOptions: {
-            inRowHeight: normalizeSize(localBody.inRowHeight)
+            inRowHeight: normalizeSize(localBody?.inRowHeight)
         },
         inFootOptions: {
-            inShowFooter: localFoot.inShowFooter,
-            inRowHeight: normalizeSize(localFoot.inRowHeight)
+            inShowFooter: localFoot?.inShowFooter,
+            inRowHeight: normalizeSize(localFoot?.inRowHeight)
         }
     };
 }

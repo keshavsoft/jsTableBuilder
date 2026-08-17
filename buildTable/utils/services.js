@@ -52,3 +52,15 @@ export const apiActions = {
         });
     }
 };
+
+export function setupServices(instance, endPoints = {}) {
+    instance.endPoints = endPoints;
+    instance.services = {};
+
+    // Bind each API action to its corresponding endpoint if provided
+    Object.keys(apiActions).forEach(action => {
+        if (endPoints[action]) {
+            instance.services[action] = (...args) => apiActions[action](endPoints[action], ...args);
+        }
+    });
+}

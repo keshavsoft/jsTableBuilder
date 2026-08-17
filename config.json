@@ -102,7 +102,7 @@
         "label": "My Beautiful Table",
         "placeholder": "Search anything..."
     },
-    "endPoints": {
+    "endPoints1": {
         "create": "/Api/v5/BillsTable/insertWithMeta",
         "update": "",
         "delete": "/Api/v5/BillsTable/del",
