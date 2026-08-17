@@ -52,11 +52,14 @@
                 }
                 if (!columnsResponse.ok) {
                     throw new Error(`Failed to fetch columns.json: ${columnsResponse.status} ${columnsResponse.statusText}`);
-                }
+                };
 
-                const data = await dataResponse.json();
                 const columnsData = await columnsResponse.json();
-                columnsData.data = data;
+
+                // const data = await dataResponse.json();
+
+                // columnsData.data = data;
+
                 // debugger
                 const tableBuilder = new window.ks.TableBuilder(columnsData);
                 tableBuilder.appendToDom();

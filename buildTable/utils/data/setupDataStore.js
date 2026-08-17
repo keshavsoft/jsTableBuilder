@@ -1,10 +1,11 @@
 import initializeColumns from "./prepareColumns.js";
 import prepareData from "./prepareData.js";
 import { setupServices } from "../services.js";
+// import startFunc from "./prepareColumns.js";
 
-export default function setupDataStore({ instance, localColumns, localData, localEndPoints }) {
+const setupColumnsAndData = ({ instance, localColumns, localData, localEndPoints }) => {
     instance.dataStore.columns = initializeColumns({
-        inColumns: localColumns, 
+        inColumns: localColumns,
         inShowSerialNo: instance.tableOptions?.inCommonOptions?.inShowSerialNo
     });
 
@@ -12,10 +13,14 @@ export default function setupDataStore({ instance, localColumns, localData, loca
 
     if (localEndPoints) {
         setupServices(instance, localEndPoints);
+        // await loadDataFromServices({ instance, localColumns, localData, localEndPoints });
+
     } else {
-        instance.dataStore.data = prepareData({ 
-            inData: localData, 
-            inShowSerialNo: instance.tableOptions?.inCommonOptions?.inShowSerialNo 
+        instance.dataStore.data = prepareData({
+            inData: localData,
+            inShowSerialNo: instance.tableOptions?.inCommonOptions?.inShowSerialNo
         });
     };
-}
+};
+
+export { setupColumnsAndData };

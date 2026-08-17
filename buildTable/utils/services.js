@@ -26,7 +26,7 @@ export async function fetchJson(url, options = {}) {
 export const apiActions = {
     read: async (endpoint) => {
         if (!endpoint) return null;
-        
+
         const data = await fetchJson(endpoint);
         // Handle nested data structures if necessary
         return Array.isArray(data) ? data : (data.tallymessage || data);
@@ -57,10 +57,14 @@ export function setupServices(instance, endPoints = {}) {
     instance.endPoints = endPoints;
     instance.services = {};
 
-    // Bind each API action to its corresponding endpoint if provided
-    Object.keys(apiActions).forEach(action => {
-        if (endPoints[action]) {
-            instance.services[action] = (...args) => apiActions[action](endPoints[action], ...args);
-        }
-    });
+    try {
+        // Bind each API action to its corresponding endpoint if provided
+        Object.keys(apiActions).forEach(action => {
+            if (endPoints[action]) {
+                instance.services[action] = (...args) => apiActions[action](endPoints[action], ...args);
+            }
+        });
+    } catch (error) {
+        console.log("eeeeeeeee : ", error);
+    };
 }

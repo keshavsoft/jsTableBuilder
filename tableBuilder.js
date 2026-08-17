@@ -8,7 +8,8 @@ import { mapTableOptions } from "./buildTable/utils/config/mapTableOptions.js";
 import { extractTopHeader } from "./buildTable/utils/config/extractTopHeader.js";
 import { mergeClasses } from "./buildTable/utils/config/mergeClasses.js";
 import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
-import setupDataStore from "./buildTable/utils/data/setupDataStore.js";
+import { setupColumnsAndData } from "./buildTable/utils/data/setupDataStore.js";
+import prepareData from "./buildTable/utils/data/prepareData.js";
 
 class TableBuilder {
     constructor({
@@ -34,12 +35,12 @@ class TableBuilder {
         this.topHeader = extractTopHeader({ inTopHeader: topHeader });
         this.htmlId = localHtmlId;
         this.dataStore = {};
-
-        setupDataStore({ 
-            instance: this, 
-            localColumns, 
-            localData, 
-            localEndPoints 
+        // debugger;
+        setupColumnsAndData({
+            instance: this,
+            localColumns,
+            localData,
+            localEndPoints
         });
 
         this.classes = mergeClasses({ inClasses: localClasses, inTheme: theme });
@@ -56,7 +57,18 @@ class TableBuilder {
         processSearch(this, query);
     }
 
-    appendToDom() {
+    async appendToDom() {
+        // debugger
+        this.dataStore.originalData = await this.services.read();
+
+        this.dataStore.data = prepareData({
+            inData: this.dataStore.originalData,
+            inShowSerialNo: this.tableOptions?.inCommonOptions?.inShowSerialNo
+        });
+        // this.dataStore.data = prepareData({
+        //     inData: this.dataStore.originalData,
+        //     inShowSerialNo: this.tableOptions?.inCommonOptions?.inShowSerialNo
+        // });
         appendToDom(this);
     }
 

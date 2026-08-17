@@ -463,7 +463,7 @@ function M(e, t, n) {
 	}], N(e);
 }
 function N(e) {
-	if (e.sortState && e.sortState.length > 0 && e.data.sort((t, n) => {
+	if (e.sortState && e.sortState.length > 0 && e.dataStore.data.sort((t, n) => {
 		for (let r of e.sortState) {
 			let e = t[r.dataKey], i = n[r.dataKey];
 			if (e === i) continue;
@@ -482,55 +482,15 @@ function N(e) {
 //#region buildTable/utils/data/searchUtils.js
 function P(e, t) {
 	let n = (t || "").toLowerCase().trim();
-	e.data = n ? e.originalData.filter((t) => e.columns.some((e) => {
+	n ? e.dataStore.data = e.dataStore.originalData.filter((t) => e.dataStore.columns.some((e) => {
 		if (e.dataKey === "$serial") return !1;
 		let r = t[e.dataKey];
 		return r != null && String(r).toLowerCase().includes(n);
-	})) : [...e.originalData], N(e);
-}
-//#endregion
-//#region buildTable/utils/data/applySerial.js
-function F(e, t, n) {
-	let r = Array.isArray(e) ? e : [e], i = Array.isArray(t) ? t : [];
-	return n && (r = r.map((e, t) => ({
-		...e,
-		$serial: t + 1
-	})), i = [{
-		header: "#",
-		dataKey: "$serial",
-		options: {
-			width: "60px",
-			align: "center",
-			sortable: !0
-		}
-	}, ...i]), {
-		data: r,
-		columns: i
-	};
-}
-//#endregion
-//#region buildTable/utils/style/normalizeSize.js
-function I(e) {
-	return e != null && e !== "" && (typeof e == "number" || /^\d+$/.test(String(e).trim())) ? `${e}px` : e;
-}
-//#endregion
-//#region buildTable/utils/data/prepareDataAndColumns.js
-function L({ inData: e, inColumns: t, inShowSerialNo: n }) {
-	let { data: r, columns: i } = F(e, t, n);
-	return {
-		processedData: r,
-		processedColumns: i.map((e) => {
-			let t = { ...e };
-			return t.options && t.options.width && (t.options = {
-				...t.options,
-				width: I(t.options.width)
-			}), t;
-		})
-	};
+	})) : e.dataStore.data = [...e.dataStore.originalData], N(e);
 }
 //#endregion
 //#region buildTable/buildTopHeader.js
-function R({ inLabel: e = "", inPlaceholder: t = "", inClasses: n = {}, inOnSearch: r = () => {} }) {
+function F({ inLabel: e = "", inPlaceholder: t = "", inClasses: n = {}, inOnSearch: r = () => {} }) {
 	let i = e, a = t, o = n, s = r, c = document.createElement("div");
 	o.wrapper && (c.className = o.wrapper);
 	let l = document.createElement("div");
@@ -541,8 +501,13 @@ function R({ inLabel: e = "", inPlaceholder: t = "", inClasses: n = {}, inOnSear
 	}), u.appendChild(d), c.appendChild(l), c.appendChild(u), c;
 }
 //#endregion
+//#region buildTable/utils/style/normalizeSize.js
+function I(e) {
+	return e != null && e !== "" && (typeof e == "number" || /^\d+$/.test(String(e).trim())) ? `${e}px` : e;
+}
+//#endregion
 //#region buildTable/utils/config/extractTableOptions.js
-function z({ inTableOptions: e = {} }) {
+function L({ inTableOptions: e = {} }) {
 	let t = {
 		...j.inTableOptions.inCommonOptions,
 		...e.inCommonOptions || {}
@@ -558,21 +523,21 @@ function z({ inTableOptions: e = {} }) {
 	};
 	return {
 		inCommonOptions: {
-			inTableWidth: I(t.inTableWidth),
-			inTableBorder: I(t.inTableBorder),
-			inShowSerialNo: t.inShowSerialNo
+			inTableWidth: I(t?.inTableWidth),
+			inTableBorder: I(t?.inTableBorder),
+			inShowSerialNo: t?.inShowSerialNo
 		},
-		inHeadOptions: { inHeaderHeight: I(n.inHeaderHeight) },
-		inBodyOptions: { inRowHeight: I(r.inRowHeight) },
+		inHeadOptions: { inHeaderHeight: I(n?.inHeaderHeight) },
+		inBodyOptions: { inRowHeight: I(r?.inRowHeight) },
 		inFootOptions: {
-			inShowFooter: i.inShowFooter,
-			inRowHeight: I(i.inRowHeight)
+			inShowFooter: i?.inShowFooter,
+			inRowHeight: I(i?.inRowHeight)
 		}
 	};
 }
 //#endregion
 //#region buildTable/utils/config/mapTableOptions.js
-function B(e = {}) {
+function R(e = {}) {
 	let t = {
 		inCommonOptions: {},
 		inHeadOptions: {},
@@ -583,7 +548,7 @@ function B(e = {}) {
 }
 //#endregion
 //#region buildTable/utils/config/extractTopHeader.js
-function V({ inTopHeader: e }) {
+function z({ inTopHeader: e }) {
 	return e === j.inTopHeader ? j.inTopHeader : {
 		inShow: e.show === void 0 || e.show,
 		inLabel: e.label === void 0 ? j.inTopHeader.inLabel : e.label,
@@ -592,7 +557,7 @@ function V({ inTopHeader: e }) {
 }
 //#endregion
 //#region buildTable/utils/config/mergeClasses.js
-function H({ inClasses: e, inTheme: t = "style1" }) {
+function B({ inClasses: e, inTheme: t = "style1" }) {
 	let n = e || {}, r = A[t] || A.style1;
 	return {
 		...r,
@@ -613,7 +578,7 @@ function H({ inClasses: e, inTheme: t = "style1" }) {
 }
 //#endregion
 //#region buildTable/utils/dom/appendToDom.js
-function U(e) {
+function V(e) {
 	if (!e.htmlId) {
 		console.error("inHtmlId was not provided to TableBuilder.");
 		return;
@@ -630,18 +595,94 @@ function U(e) {
 	r && n.appendChild(r), e.tableElement = e.buildTableElements(), n.appendChild(e.tableElement), t.appendChild(n);
 }
 //#endregion
-//#region tableBuilder.js
-var W = class {
-	constructor({ htmlId: e, data: t, columns: n = [], classes: r = {}, theme: i = "style1", tableOptions: a = {}, topHeader: o = j.inTopHeader }) {
-		let s = e, c = t, l = n, u = r, d = B(a);
-		this.tableOptions = z({ inTableOptions: d }), this.topHeader = V({ inTopHeader: o }), this.htmlId = s;
-		let { processedData: f, processedColumns: p } = L({
-			inData: c,
-			inColumns: l,
-			inShowSerialNo: this.tableOptions.inCommonOptions.inShowSerialNo
+//#region buildTable/utils/data/prepareColumns.js
+var H = (e, t) => {
+	let n = Array.isArray(e) ? e : [];
+	return t && (n = [{
+		header: "#",
+		dataKey: "$serial",
+		options: {
+			width: "60px",
+			align: "center",
+			sortable: !0
+		}
+	}, ...n]), n;
+}, U = ({ inColumns: e, inShowSerialNo: t }) => H(e, t).map((e) => {
+	let t = { ...e };
+	return t.options && t.options.width && (t.options = {
+		...t.options,
+		width: I(t.options.width)
+	}), t;
+}), W = ({ inData: e, inShowSerialNo: t }) => {
+	let n = Array.isArray(e) ? e : [e];
+	return t && (n = n.map((e, t) => ({
+		...e,
+		$serial: t + 1
+	}))), n;
+};
+//#endregion
+//#region buildTable/utils/services.js
+async function G(e, t = {}) {
+	try {
+		let n = await fetch(e, {
+			...t,
+			headers: {
+				"Content-Type": "application/json",
+				...t.headers
+			}
 		});
-		this.originalData = f, this.data = [...f], this.columns = p, this.classes = H({
-			inClasses: u,
+		if (!n.ok) throw Error(`HTTP error! status: ${n.status}`);
+		return await n.json();
+	} catch (t) {
+		throw console.error(`Error fetching from ${e}:`, t), t;
+	}
+}
+var K = {
+	read: async (e) => {
+		if (!e) return null;
+		let t = await G(e);
+		return Array.isArray(t) ? t : t.tallymessage || t;
+	},
+	create: async (e, t) => G(e, {
+		method: "POST",
+		body: JSON.stringify(t)
+	}),
+	update: async (e, t) => G(e, {
+		method: "PUT",
+		body: JSON.stringify(t)
+	}),
+	delete: async (e, t) => G(`${e}/${t}`, { method: "DELETE" })
+};
+function q(e, t = {}) {
+	e.endPoints = t, e.services = {};
+	try {
+		Object.keys(K).forEach((n) => {
+			t[n] && (e.services[n] = (...e) => K[n](t[n], ...e));
+		});
+	} catch (e) {
+		console.log("eeeeeeeee : ", e);
+	}
+}
+//#endregion
+//#region buildTable/utils/data/setupDataStore.js
+var J = ({ instance: e, localColumns: t, localData: n, localEndPoints: r }) => {
+	e.dataStore.columns = U({
+		inColumns: t,
+		inShowSerialNo: e.tableOptions?.inCommonOptions?.inShowSerialNo
+	}), e.dataStore.originalData = n, r ? q(e, r) : e.dataStore.data = W({
+		inData: n,
+		inShowSerialNo: e.tableOptions?.inCommonOptions?.inShowSerialNo
+	});
+}, Y = class {
+	constructor({ htmlId: e, data: t, columns: n = [], classes: r = {}, theme: i = "style1", tableOptions: a = {}, topHeader: o = j.inTopHeader, endPoints: s }) {
+		let c = e, l = t, u = n, d = r, f = s, p = R(a);
+		this.tableOptions = L({ inTableOptions: p }), this.topHeader = z({ inTopHeader: o }), this.htmlId = c, this.dataStore = {}, J({
+			instance: this,
+			localColumns: u,
+			localData: l,
+			localEndPoints: f
+		}), this.classes = B({
+			inClasses: d,
 			inTheme: i
 		}), this.sortState = [], this.tableElement = null;
 	}
@@ -651,13 +692,16 @@ var W = class {
 	handleSearch(e) {
 		P(this, e);
 	}
-	appendToDom() {
-		U(this);
+	async appendToDom() {
+		this.dataStore.originalData = await this.services.read(), this.dataStore.data = W({
+			inData: this.dataStore.originalData,
+			inShowSerialNo: this.tableOptions?.inCommonOptions?.inShowSerialNo
+		}), V(this);
 	}
 	buildTableElements() {
 		return k({
-			inData: this.data,
-			inColumns: this.columns,
+			inData: this.dataStore.data,
+			inColumns: this.dataStore.columns,
 			inClasses: this.classes,
 			inTableOptions: this.tableOptions,
 			inSortState: this.sortState,
@@ -665,7 +709,7 @@ var W = class {
 		});
 	}
 	buildTopHeaderElement() {
-		return !this.topHeader || this.topHeader.inShow === !1 ? null : R({
+		return !this.topHeader || this.topHeader.inShow === !1 ? null : F({
 			inLabel: this.topHeader.inLabel,
 			inPlaceholder: this.topHeader.inPlaceholder,
 			inClasses: this.classes.topHeader,
@@ -676,6 +720,6 @@ var W = class {
 		return this.appendToDom();
 	}
 };
-window.ks = window.ks || {}, window.ks.TableBuilder = W, window.ks.TableBuilder.DEFAULT_CLASSES = A, window.ks.TableBuilder.DEFAULT_CONFIG = j, window.ks.TableBuilder.version = "v3.0";
+window.ks = window.ks || {}, window.ks.TableBuilder = Y, window.ks.TableBuilder.DEFAULT_CLASSES = A, window.ks.TableBuilder.DEFAULT_CONFIG = j, window.ks.TableBuilder.version = "v3.0";
 //#endregion
-export { A as DEFAULT_CLASSES, j as DEFAULT_CONFIG, W as TableBuilder };
+export { A as DEFAULT_CLASSES, j as DEFAULT_CONFIG, Y as TableBuilder };

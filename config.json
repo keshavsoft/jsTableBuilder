@@ -90,7 +90,7 @@
         "commonOptions": {
             "tableWidth": "1000px",
             "tableBorder": "0px",
-            "showSerialNo": true
+            "showSerialNo": false
         },
         "headOptions": {},
         "bodyOptions": {},
@@ -102,13 +102,14 @@
         "label": "My Beautiful Table",
         "placeholder": "Search anything..."
     },
-    "endPoints1": {
+    "endPoints": {
         "create": "/Api/v5/BillsTable/insertWithMeta",
         "update": "",
         "delete": "/Api/v5/BillsTable/del",
-        "read": "/Api/v3/purchases/getBatchArray",
+        "read": "./all.json",
+        "read1": "/Api/v3/purchases/getBatchArray",
         "groupBy": "/Api/v3/ItemsTable/forStock",
-        "read1": "/Api/V1/ItemsTable/ShowAll",
+        "read2": "/Api/V1/ItemsTable/ShowAll",
         "find": "",
         "filter": "",
         "dataLists": {},
