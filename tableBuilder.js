@@ -1,15 +1,15 @@
 import { buildTable } from "./buildTable/index.js";
 import DEFAULT_CONFIG, { DEFAULT_CLASSES } from "./buildTable/config/defaults.js";
-import { processSort } from "./buildTable/utils/data/sortUtils.js";
-import { processSearch } from "./buildTable/utils/data/searchUtils.js";
+import { processSort } from "./buildTable/utils/dataFuncs/sortUtils.js";
+import { processSearch } from "./buildTable/utils/dataFuncs/searchUtils.js";
 import { buildTopHeader } from "./buildTable/buildTopHeader.js";
 import { extractTableOptions } from "./buildTable/utils/config/extractTableOptions.js";
 import mapTableOptions from "./buildTable/utils/config/mapTableOptions.js";
 import { extractTopHeader } from "./buildTable/utils/config/extractTopHeader.js";
 import { mergeClasses } from "./buildTable/utils/config/mergeClasses.js";
 import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
-import { setupColumnsAndData } from "./buildTable/utils/data/setupDataStore.js";
-import prepareData from "./buildTable/utils/data/prepareData.js";
+import { setupColumnsAndData } from "./buildTable/utils/dataFuncs/setupDataStore.js";
+import prepareData from "./buildTable/utils/dataFuncs/prepareData.js";
 
 class TableBuilder {
     constructor({
