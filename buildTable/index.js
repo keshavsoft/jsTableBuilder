@@ -52,7 +52,7 @@ function buildTable({
     });
 
     tableElement.appendChild(tbodyElement);
-    debugger;
+    // debugger;
     if (localFootOptions.inShowFooter) {
         const tfootElement = buildFooter({
             inData: localData, // Will sum over the currently filtered data

@@ -21,7 +21,7 @@ const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) =>
     // For now, let's use head styles so it stands out, or body styles.
     // We'll apply basic inline styles to differentiate it for now if there are no specific classes.
 
-    const summaryRow = buildSummaryRow({
+    const { builtTrElement: summaryRow, summaryValues } = buildSummaryRow({
         inData: localData,
         inColumns: localColumns,
         inClasses: localClasses,
@@ -35,7 +35,8 @@ const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) =>
             inData: localData,
             inColumns: localColumns,
             inClasses: localClasses,
-            inFootOptions: localFootOptions
+            inFootOptions: localFootOptions,
+            inSummaryValues: summaryValues
         });
         tfootElement.appendChild(balanceRow);
     };

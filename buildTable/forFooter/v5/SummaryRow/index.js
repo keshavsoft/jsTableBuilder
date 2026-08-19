@@ -11,6 +11,8 @@ const buildSummaryRow = ({ inData, inColumns, inClasses = {}, inFootOptions = {}
 
     const trElement = createTrElement({ inClasses: localClasses });
 
+    const summaryValues = {};
+
     localColumns.forEach(col => {
         const tdElement = buildTdElement({
             inClasses: localClasses,
@@ -22,6 +24,8 @@ const buildSummaryRow = ({ inData, inColumns, inClasses = {}, inFootOptions = {}
             inCol: col
         });
 
+        summaryValues[col.dataKey] = summaryValue;
+
         const cellContent = buildCellContent({
             inFootOptions: localFootOptions,
             inSummaryValue: summaryValue
@@ -31,7 +35,7 @@ const buildSummaryRow = ({ inData, inColumns, inClasses = {}, inFootOptions = {}
         trElement.appendChild(tdElement);
     });
 
-    return trElement;
+    return { builtTrElement: trElement, summaryValues };
 };
 
 export { buildSummaryRow };

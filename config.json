@@ -456,7 +456,14 @@
                 "width": "150px",
                 "sortable": true,
                 "summaryLabel1": "Total:",
-                "summary": "min"
+                "summary": "min",
+                "table": {
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${vouchernumber}"
+                        }
+                    }
+                }
             }
         },
         {
