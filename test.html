@@ -12,8 +12,19 @@
 <body class1="bg-gray-100 p-8 h-screen overflow-auto flex flex-col relative"
     class="ks bg-gray-100 flex flex-col min-h-screen">
     <div id="header"></div>
+
+    <!-- body -->
+    <section class="mx-auto px-3 py-6 
+                max-w-3xl 
+                lg:max-w-5xl 
+                xl:max-w-6xl">
+
+        <div id="table-root">
+        </div>
+    </section>
+    <!-- 
     <div id="table-root">
-    </div>
+    </div> -->
 
     <!-- Scroll Buttons -->
     <div class="fixed bottom-8 right-8 flex flex-col gap-3 z-50">
@@ -39,6 +50,8 @@
     <script src="./tableBuilder.js" type="module"></script>
 
     <script type="module">
+        let ksTable1;
+
         async function init() {
             try {
                 // Fetch the data and columns files
@@ -54,15 +67,15 @@
                     throw new Error(`Failed to fetch columns.json: ${columnsResponse.status} ${columnsResponse.statusText}`);
                 };
 
-                const columnsData = await columnsResponse.json();
+                const configJson = await columnsResponse.json();
 
-                // const data = await dataResponse.json();
+                const data = await dataResponse.json();
 
-                // columnsData.data = data;
+                configJson.data = data;
 
                 // debugger
-                // const tableBuilder = new window.ks.TableBuilder(columnsData);
-                // tableBuilder.appendToDom();
+                const tableBuilder = new window.ks.TableBuilder(configJson);
+                tableBuilder.appendToDom();
 
             } catch (error) {
                 console.error(error);

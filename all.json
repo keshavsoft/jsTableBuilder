@@ -1,530 +1,787 @@
 [
     {
-        "partyledgername": "Koda Ramana (Pudimadaka)",
-        "vouchertypename": "Slip Receipt",
-        "vouchernumber": "1",
-        "date": "20260401",
+        "allinventoryentries": [],
+        "vouchernumber": "1461",
+        "date": "20240101",
+        "vchtype": "Bank Receipt",
+        "type": "Voucher",
         "allledgerentries": [
             {
-                "ledgername": "Koda Ramana (Pudimadaka)",
-                "amount": "18125.00"
+                "ledgername": "Phonepe Business (Axis)",
+                "amount": "1100.00",
+                "billallocations": [
+                    {
+                        "name": "4340",
+                        "billtype": "Agst Ref",
+                        "tdsdeducteeisspecialrate": false,
+                        "amount": "1100.00"
+                    }
+                ]
             },
             {
-                "ledgername": "Cash",
-                "amount": "-18125.00"
+                "ledgername": "Phonepe Business (Axis)",
+                "amount": "300.00",
+                "billallocations": [
+                    {
+                        "name": "4341",
+                        "billtype": "Agst Ref",
+                        "tdsdeducteeisspecialrate": false,
+                        "amount": "300.00"
+                    }
+                ]
+            },
+            {
+                "ledgername": "Phonepe Business (Axis)",
+                "amount": "70.00",
+                "billallocations": [
+                    {
+                        "name": "4342",
+                        "billtype": "Agst Ref",
+                        "tdsdeducteeisspecialrate": false,
+                        "amount": "70.00"
+                    }
+                ]
+            },
+            {
+                "ledgername": "Phonepe Business (Axis)",
+                "amount": "1135.00",
+                "billallocations": [
+                    {
+                        "name": "4343",
+                        "billtype": "Agst Ref",
+                        "tdsdeducteeisspecialrate": false,
+                        "amount": "1135.00"
+                    }
+                ]
+            },
+            {
+                "ledgername": "Phonepe Business (Axis)",
+                "amount": "715.00",
+                "billallocations": [
+                    {
+                        "name": "4344",
+                        "billtype": "Agst Ref",
+                        "tdsdeducteeisspecialrate": false,
+                        "amount": "715.00"
+                    }
+                ]
+            },
+            {
+                "ledgername": "Bank",
+                "amount": "-3320.00"
             }
-        ],
-        "allinventoryentries": [],
-        "ledgerentries": [],
-        "inventoryentriesin": []
+        ]
     },
     {
-        "partyledgername": "Cash",
-        "vouchertypename": "Sales/CA",
-        "vouchernumber": "1",
-        "date": "20260401",
-        "allledgerentries": [],
         "allinventoryentries": [
             {
-                "stockitemname": "Shading Net Kgs",
-                "rate": "280.90/kgs",
-                "amount": "1000.00",
-                "actualqty": " 3.560 kgs",
-                "billedqty": " 3.560 kgs",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "Rishi-Rs.205/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 3.560 kgs",
-                        "billedqty": " 3.560 kgs",
-                        "amount": "1000.00"
-                    }
-                ]
-            },
-            {
                 "stockitemname": "ROPE",
-                "rate": "312.50/kgs",
-                "amount": "100.00",
-                "actualqty": " 0.320 kgs",
-                "billedqty": " 0.320 kgs",
+                "rate": "200.00/kgs",
+                "amount": "1400.00",
+                "actualqty": " 7.000 kgs",
+                "billedqty": " 7.000 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "Tuf 4mm"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "Tuf-Rs.170",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 0.320 kgs",
-                        "billedqty": " 0.320 kgs",
-                        "amount": "100.00"
+                        "batchname": "4mm>tuf-Rs.164/-",
+                        "amount": "1400.00",
+                        "actualqty": " 7.000 kgs",
+                        "billedqty": " 7.000 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "1400.00"
+                    }
+                ]
+            }
+        ],
+        "vouchernumber": "4345",
+        "date": "20240101",
+        "vchtype": "Sales/Cr Mani",
+        "type": "Voucher",
+        "allledgerentries": []
+    },
+    {
+        "allinventoryentries": [
+            {
+                "stockitemname": "Superline",
+                "rate": "589.47/kgs",
+                "amount": "1680.00",
+                "actualqty": " 2.850 kgs",
+                "billedqty": " 2.850 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "90 White"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "0.90-Wh-Prksh-Rs.516/-",
+                        "amount": "1680.00",
+                        "actualqty": " 2.850 kgs",
+                        "billedqty": " 2.850 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "1680.00"
                     }
                 ]
             },
             {
-                "stockitemname": "ROPE",
-                "rate": "259.26/kgs",
-                "amount": "420.00",
-                "actualqty": " 1.620 kgs",
-                "billedqty": " 1.620 kgs",
+                "stockitemname": "Viaadi Hooks",
+                "rate": "1.60/Nos",
+                "amount": "960.00",
+                "actualqty": " 600 Nos",
+                "billedqty": " 600 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "No 8"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "Tuf-Rs.170",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 1.620 kgs",
-                        "billedqty": " 1.620 kgs",
-                        "amount": "420.00"
+                        "batchname": "8-Rs.1060/- (1.06)",
+                        "amount": "960.00",
+                        "actualqty": " 600 Nos",
+                        "billedqty": " 600 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "960.00"
                     }
                 ]
             },
             {
-                "stockitemname": "ROPE",
-                "rate": "250.00/kgs",
-                "amount": "200.00",
-                "actualqty": " 0.800 kgs",
-                "billedqty": " 0.800 kgs",
+                "stockitemname": "Viaadi Hooks",
+                "rate": "1.10/Nos",
+                "amount": "440.00",
+                "actualqty": " 400 Nos",
+                "billedqty": " 400 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "No 9"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "Tuf-Rs.170",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 0.800 kgs",
-                        "billedqty": " 0.800 kgs",
-                        "amount": "200.00"
+                        "batchname": "9-Rs.742/- (0.75)",
+                        "amount": "440.00",
+                        "actualqty": " 400 Nos",
+                        "billedqty": " 400 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "440.00"
+                    }
+                ]
+            }
+        ],
+        "vouchernumber": "4346",
+        "date": "20240101",
+        "vchtype": "Sales/Cr Mani",
+        "type": "Voucher",
+        "allledgerentries": []
+    },
+    {
+        "allinventoryentries": [
+            {
+                "stockitemname": "0.20/32",
+                "rate": "1020.00/kgs",
+                "amount": "510.00",
+                "actualqty": " 0.500 kgs",
+                "billedqty": " 0.500 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "I"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "Indo-450md-Blue-Rs.745/-",
+                        "amount": "510.00",
+                        "actualqty": " 0.500 kgs",
+                        "billedqty": " 0.500 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "510.00"
                     }
                 ]
             },
             {
-                "stockitemname": "Nylon Cheeses",
-                "rate": "180.00/Nos",
-                "amount": "1440.00",
-                "actualqty": " 8 Nos",
-                "billedqty": " 8 Nos",
+                "stockitemname": "0.50/32",
+                "rate": "600.00/kgs",
+                "amount": "222.00",
+                "actualqty": " 0.370 kgs",
+                "billedqty": " 0.370 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "300md"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "Kumaran-250gms-Rs.126/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 8 Nos",
-                        "billedqty": " 8 Nos",
-                        "amount": "1440.00"
+                        "batchname": "300md-Tuf-Rs.415/-",
+                        "amount": "222.00",
+                        "actualqty": " 0.370 kgs",
+                        "billedqty": " 0.370 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "222.00"
                     }
                 ]
             },
             {
-                "stockitemname": "0.75/90/50",
-                "rate": "430.46/kgs",
-                "amount": "1300.00",
-                "actualqty": " 3.020 kgs",
-                "billedqty": " 3.020 kgs",
+                "stockitemname": "TWINE",
+                "rate": "500.00/kgs",
+                "amount": "50.00",
+                "actualqty": " 0.100 kgs",
+                "billedqty": " 0.100 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "J Baby"
+                ],
                 "batchallocations": [
                     {
-                        "godownname": "Nalam Godown",
-                        "batchname": "Tri-Rs.273/-",
-                        "destinationgodownname": "Nalam Godown",
-                        "actualqty": " 3.020 kgs",
-                        "billedqty": " 3.020 kgs",
-                        "amount": "1300.00"
+                        "godownname": "Main Location",
+                        "batchname": "Madhav-Baby-Rs.240/-",
+                        "amount": "50.00",
+                        "actualqty": " 0.100 kgs",
+                        "billedqty": " 0.100 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "50.00"
                     }
                 ]
             },
             {
-                "stockitemname": "Export Surplus New",
-                "rate": "576.92/kgs",
-                "amount": "300.00",
-                "actualqty": " 0.520 kgs",
-                "billedqty": " 0.520 kgs",
+                "stockitemname": "Mono Reels Small",
+                "rate": "20.00/Nos",
+                "amount": "20.00",
+                "actualqty": " 1 Nos",
+                "billedqty": " 1 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "0.20"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "1.20-275/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 0.520 kgs",
-                        "billedqty": " 0.520 kgs",
-                        "amount": "300.00"
+                        "batchname": "0.20-12pc-Rs.110/-Rs.160/-",
+                        "amount": "20.00",
+                        "actualqty": " 1 Nos",
+                        "billedqty": " 1 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "20.00"
+                    }
+                ]
+            }
+        ],
+        "vouchernumber": "1175",
+        "date": "20240101",
+        "vchtype": "Sales",
+        "type": "Voucher",
+        "allledgerentries": []
+    },
+    {
+        "allinventoryentries": [
+            {
+                "stockitemname": "Superline Connected",
+                "rate": "642.86/kgs",
+                "amount": "450.00",
+                "actualqty": " 0.700 kgs",
+                "billedqty": " 0.700 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "80 White"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "0.80-Wh-5*100-Rs.505",
+                        "amount": "450.00",
+                        "actualqty": " 0.700 kgs",
+                        "billedqty": " 0.700 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "450.00"
+                    }
+                ]
+            }
+        ],
+        "vouchernumber": "4347",
+        "date": "20240101",
+        "vchtype": "Sales/Cr Mani",
+        "type": "Voucher",
+        "allledgerentries": []
+    },
+    {
+        "allinventoryentries": [
+            {
+                "stockitemname": "Superline Connected",
+                "rate": "640.00/kgs",
+                "amount": "230.40",
+                "actualqty": " 0.360 kgs",
+                "billedqty": " 0.360 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "80 White"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "0.80-Wh-5*100-Rs.505",
+                        "amount": "230.40",
+                        "actualqty": " 0.360 kgs",
+                        "billedqty": " 0.360 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "230.40"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Superline Connected",
+                "rate": "640.00/kgs",
+                "amount": "691.20",
+                "actualqty": " 1.080 kgs",
+                "billedqty": " 1.080 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "90 White"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "0.90 White-Rs.560/-",
+                        "amount": "691.20",
+                        "actualqty": " 1.080 kgs",
+                        "billedqty": " 1.080 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "691.20"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Superline Connected",
+                "rate": "640.00/kgs",
+                "amount": "1382.40",
+                "actualqty": " 2.160 kgs",
+                "billedqty": " 2.160 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "100 White"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "1.00-Wh-5*200-Rs.490/-",
+                        "amount": "1382.40",
+                        "actualqty": " 2.160 kgs",
+                        "billedqty": " 2.160 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "1382.40"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Superline Connected",
+                "rate": "640.00/kgs",
+                "amount": "1305.60",
+                "actualqty": " 2.040 kgs",
+                "billedqty": " 2.040 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "110 Whtie"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "1.10-Wh-5*200-Rs.515/-",
+                        "amount": "1305.60",
+                        "actualqty": " 2.040 kgs",
+                        "billedqty": " 2.040 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "1305.60"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Superline Connected",
+                "rate": "640.00/kgs",
+                "amount": "1344.00",
+                "actualqty": " 2.100 kgs",
+                "billedqty": " 2.100 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "120 White"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "1.20-Wh-5*200-Rs.515/-",
+                        "amount": "1344.00",
+                        "actualqty": " 2.100 kgs",
+                        "billedqty": " 2.100 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "1344.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Viaadi Hooks",
+                "rate": "5.90/Nos",
+                "amount": "590.00",
+                "actualqty": " 100 Nos",
+                "billedqty": " 100 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "No 5"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "5-Rs.3518/-",
+                        "amount": "590.00",
+                        "actualqty": " 100 Nos",
+                        "billedqty": " 100 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "590.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Viaadi Hooks",
+                "rate": "3.10/Nos",
+                "amount": "310.00",
+                "actualqty": " 100 Nos",
+                "billedqty": " 100 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "No 6"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "6-Rs.2027/-",
+                        "amount": "310.00",
+                        "actualqty": " 100 Nos",
+                        "billedqty": " 100 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "310.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Viaadi Hooks",
+                "rate": "2.20/Nos",
+                "amount": "220.00",
+                "actualqty": " 100 Nos",
+                "billedqty": " 100 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "No 7"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "7-Rs.1400/- (1.40)",
+                        "amount": "220.00",
+                        "actualqty": " 100 Nos",
+                        "billedqty": " 100 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "220.00"
+                    }
+                ]
+            },
+            {
+                "stockitemname": "Anchor Gaff Hooks",
+                "rate": "200.00/Nos",
+                "amount": "400.00",
+                "actualqty": " 2 Nos",
+                "billedqty": " 2 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "8/0"
+                ],
+                "batchallocations": [
+                    {
+                        "godownname": "Main Location",
+                        "batchname": "8/0-8MM-JA-67/-",
+                        "amount": "400.00",
+                        "actualqty": " 2 Nos",
+                        "billedqty": " 2 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "400.00"
                     }
                 ]
             },
             {
                 "stockitemname": "Gloves",
                 "rate": "10.00/Nos",
-                "amount": "100.00",
-                "actualqty": " 10 Nos",
-                "billedqty": " 10 Nos",
+                "amount": "200.00",
+                "actualqty": " 20 Nos",
+                "billedqty": " 20 Nos",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "Blue"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
                         "batchname": "Blue-RRR-Rs.6/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 10 Nos",
-                        "billedqty": " 10 Nos",
-                        "amount": "100.00"
-                    }
-                ]
-            },
-            {
-                "stockitemname": "Gloves",
-                "rate": "12.00/Nos",
-                "amount": "240.00",
-                "actualqty": " 20 Nos",
-                "billedqty": " 20 Nos",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "Blue-60gms-RR-Rs.8.50",
-                        "destinationgodownname": "Main Location",
+                        "amount": "200.00",
                         "actualqty": " 20 Nos",
-                        "billedqty": " 20 Nos",
-                        "amount": "240.00"
+                        "billedqty": " 20 Nos"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "200.00"
                     }
                 ]
             },
             {
-                "stockitemname": "Anchor Gaff Hooks",
-                "rate": "140.00/Nos",
-                "amount": "840.00",
-                "actualqty": " 6 Nos",
-                "billedqty": " 6 Nos",
+                "stockitemname": "Tinsel Zari Patty",
+                "rate": "2600.00/kgs",
+                "amount": "390.00",
+                "actualqty": " 0.150 kgs",
+                "billedqty": " 0.150 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "Red"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "8/0-8mm-Rs.85/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 6 Nos",
-                        "billedqty": " 6 Nos",
-                        "amount": "840.00"
+                        "batchname": "Red-Rs.870/-",
+                        "amount": "390.00",
+                        "actualqty": " 0.150 kgs",
+                        "billedqty": " 0.150 kgs"
                     }
-                ]
-            }
-        ],
-        "ledgerentries": [
-            {
-                "ledgername": "Cash",
-                "amount": "-5940.00"
-            }
-        ],
-        "inventoryentriesin": []
-    },
-    {
-        "partyledgername": "Sri Pruthvi Aqua Needs , Nemam",
-        "vouchertypename": "Sales/Cr Mani",
-        "vouchernumber": "1",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [
-            {
-                "stockitemname": "3.50 White F.Line",
-                "rate": "470.00/kgs",
-                "amount": "9635.00",
-                "actualqty": " 20.500 kgs",
-                "billedqty": " 20.500 kgs",
-                "batchallocations": [
+                ],
+                "accountingallocations": [
                     {
-                        "godownname": "Main Location",
-                        "batchname": "Gd-Rs.250/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 20.500 kgs",
-                        "billedqty": " 20.500 kgs",
-                        "amount": "9635.00"
-                    }
-                ]
-            }
-        ],
-        "ledgerentries": [
-            {
-                "ledgername": "Sri Pruthvi Aqua Needs , Nemam",
-                "amount": "-9635.00"
-            }
-        ],
-        "inventoryentriesin": []
-    },
-    {
-        "partyledgername": "Phonepe Business (Axis)",
-        "vouchertypename": "Sales/Cr Mani",
-        "vouchernumber": "2",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [
-            {
-                "stockitemname": "Water Proof Tape Mtrs",
-                "rate": "65.00/mtr",
-                "amount": "325.00",
-                "actualqty": " 5.00 mtr",
-                "billedqty": " 5.00 mtr",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "4\"maruthi-5mtr Roll-Rs32/- Mtr",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 5.00 mtr",
-                        "billedqty": " 5.00 mtr",
-                        "amount": "325.00"
+                        "ledgername": "Sales",
+                        "amount": "390.00"
                     }
                 ]
             },
             {
-                "stockitemname": "PPMF TWINE",
-                "rate": "500.00/kgs",
-                "amount": "160.00",
-                "actualqty": " 0.320 kgs",
-                "billedqty": " 0.320 kgs",
+                "stockitemname": "Tinsel Zari Patty",
+                "rate": "2600.00/kgs",
+                "amount": "156.00",
+                "actualqty": " 0.060 kgs",
+                "billedqty": " 0.060 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "Gold"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "1/2-Glon-Rs.325/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 0.320 kgs",
-                        "billedqty": " 0.320 kgs",
-                        "amount": "160.00"
+                        "batchname": "Gold-Rs.870/-",
+                        "amount": "156.00",
+                        "actualqty": " 0.060 kgs",
+                        "billedqty": " 0.060 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "156.00"
                     }
                 ]
             },
             {
-                "stockitemname": "Shading Net Kgs",
-                "rate": "333.33/kgs",
-                "amount": "500.00",
-                "actualqty": " 1.500 kgs",
-                "billedqty": " 1.500 kgs",
+                "stockitemname": "Tinsel Zari Patty",
+                "rate": "3100.00/kgs",
+                "amount": "589.00",
+                "actualqty": " 0.190 kgs",
+                "billedqty": " 0.190 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "White"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "Rishi-Rs.205/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 1.500 kgs",
-                        "billedqty": " 1.500 kgs",
-                        "amount": "500.00"
+                        "batchname": "White-Rs.870/-",
+                        "amount": "589.00",
+                        "actualqty": " 0.190 kgs",
+                        "billedqty": " 0.190 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
+                        "amount": "589.00"
                     }
                 ]
             },
             {
-                "stockitemname": "GD Connected",
-                "rate": "586.21/kgs",
+                "stockitemname": "Tinsel-Y",
+                "rate": "3400.00/kgs",
                 "amount": "170.00",
-                "actualqty": " 0.290 kgs",
-                "billedqty": " 0.290 kgs",
+                "actualqty": " 0.050 kgs",
+                "billedqty": " 0.050 kgs",
+                "basicuserdescription": [
+                    {
+                        "metadata": true,
+                        "type": "String"
+                    },
+                    "Red"
+                ],
                 "batchallocations": [
                     {
                         "godownname": "Main Location",
-                        "batchname": "Conn-Rs.370/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 0.290 kgs",
-                        "billedqty": " 0.290 kgs",
+                        "batchname": "Red-Rs.1900/-",
+                        "amount": "170.00",
+                        "actualqty": " 0.050 kgs",
+                        "billedqty": " 0.050 kgs"
+                    }
+                ],
+                "accountingallocations": [
+                    {
+                        "ledgername": "Sales",
                         "amount": "170.00"
                     }
                 ]
-            },
-            {
-                "stockitemname": "NYLON",
-                "rate": "608.70/kgs",
-                "amount": "140.00",
-                "actualqty": " 0.230 kgs",
-                "billedqty": " 0.230 kgs",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "Dyed-Kk-Rs.455/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 0.230 kgs",
-                        "billedqty": " 0.230 kgs",
-                        "amount": "140.00"
-                    }
-                ]
-            },
-            {
-                "stockitemname": "ROPE",
-                "rate": "260.87/kgs",
-                "amount": "180.00",
-                "actualqty": " 0.690 kgs",
-                "billedqty": " 0.690 kgs",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "Tuf-Rs.170",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 0.690 kgs",
-                        "billedqty": " 0.690 kgs",
-                        "amount": "180.00"
-                    }
-                ]
             }
         ],
-        "ledgerentries": [
-            {
-                "ledgername": "Phonepe Business (Axis)",
-                "amount": "-1475.00"
-            }
-        ],
-        "inventoryentriesin": []
-    },
-    {
-        "partyledgername": "Nekkanti Sea Foods Ltd, Peddapudi",
-        "vouchertypename": "Sales/E",
-        "vouchernumber": "1",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [
-            {
-                "stockitemname": "Shading Net Kgs",
-                "rate": "300.00/kgs",
-                "amount": "2700.00",
-                "actualqty": " 9.000 kgs",
-                "billedqty": " 9.000 kgs",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "Rishi-Rs.205/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 9.000 kgs",
-                        "billedqty": " 9.000 kgs",
-                        "amount": "2700.00"
-                    }
-                ]
-            }
-        ],
-        "ledgerentries": [
-            {
-                "ledgername": "Nekkanti Sea Foods Ltd, Peddapudi",
-                "amount": "-2700.00"
-            }
-        ],
-        "inventoryentriesin": []
-    },
-    {
-        "partyledgername": "Koda Ramana (Pudimadaka)",
-        "vouchertypename": "Sales/slip",
-        "vouchernumber": "1",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [
-            {
-                "stockitemname": "Tube Octopus",
-                "rate": "145.00/Nos",
-                "amount": "18125.00",
-                "actualqty": " 125 Nos",
-                "billedqty": " 125 Nos",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "30cm-Young-Rs.70/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 125 Nos",
-                        "billedqty": " 125 Nos",
-                        "amount": "18125.00"
-                    }
-                ]
-            }
-        ],
-        "ledgerentries": [
-            {
-                "ledgername": "Koda Ramana (Pudimadaka)",
-                "amount": "-18125.00"
-            }
-        ],
-        "inventoryentriesin": []
-    },
-    {
-        "vouchertypename": "Stock Journal",
-        "vouchernumber": "2",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [],
-        "ledgerentries": [],
-        "inventoryentriesin": [
-            {
-                "stockitemname": "40 Mesh",
-                "rate": "1.00/mtr",
-                "amount": "-128.00",
-                "actualqty": " 128.00 mtr",
-                "billedqty": " 128.00 mtr",
-                "batchallocations": [
-                    {
-                        "godownname": "Nalam Godown",
-                        "batchname": "PF-42\"-36/-",
-                        "destinationgodownname": "Nalam Godown",
-                        "actualqty": " 128.00 mtr",
-                        "billedqty": " 128.00 mtr",
-                        "amount": "-128.00"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "vouchertypename": "Stock Journal",
-        "vouchernumber": "1",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [],
-        "ledgerentries": [],
-        "inventoryentriesin": [
-            {
-                "stockitemname": "Shading Net Kgs",
-                "rate": "1.00/kgs",
-                "amount": "-11.81",
-                "actualqty": " 11.810 kgs",
-                "billedqty": " 11.810 kgs",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "RP-Rs.168/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 11.810 kgs",
-                        "billedqty": " 11.810 kgs",
-                        "amount": "-11.81"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "vouchertypename": "Stock Journal",
-        "vouchernumber": "3",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [],
-        "ledgerentries": [],
-        "inventoryentriesin": [
-            {
-                "stockitemname": "SUTALI",
-                "rate": "1.00/kgs",
-                "amount": "-25.02",
-                "actualqty": " 25.020 kgs",
-                "billedqty": " 25.020 kgs",
-                "batchallocations": [
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "50gms-Swastik-Rs155/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 4.960 kgs",
-                        "billedqty": " 4.960 kgs",
-                        "amount": "-4.96"
-                    },
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "Kamal",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 15.420 kgs",
-                        "billedqty": " 15.420 kgs",
-                        "amount": "-15.42"
-                    },
-                    {
-                        "godownname": "Main Location",
-                        "batchname": "Zen Superpower-Rs.83/-",
-                        "destinationgodownname": "Main Location",
-                        "actualqty": " 4.640 kgs",
-                        "billedqty": " 4.640 kgs",
-                        "amount": "-4.64"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "vouchertypename": "Stock Journal",
-        "vouchernumber": "4",
-        "date": "20260401",
-        "allledgerentries": [],
-        "allinventoryentries": [],
-        "ledgerentries": [],
-        "inventoryentriesin": []
+        "vouchernumber": "4348",
+        "date": "20240101",
+        "vchtype": "Sales/Cr Mani",
+        "type": "Voucher",
+        "allledgerentries": []
     }
 ]

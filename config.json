@@ -1,10 +1,455 @@
 {
+    "clearOld": false,
     "htmlId": "table-root",
-    "data": [],
+    "tableName": "forStock",
+    "mode": "create",
+    "layout": {
+        "verticalPosition": "top",
+        "type": "table"
+    },
+    "options": {
+        "firstRow": {
+            "showSearch": false,
+            "allColumns": false,
+            "columnWiseSearch": false
+        },
+        "enabledSections": [
+            "vertical",
+            "table",
+            "footer"
+        ],
+        "table": {
+            "showFooterRows": true,
+            "showDataList": true,
+            "showSave": false,
+            "showActions": false,
+            "showSerial": true,
+            "showFooter": true,
+            "showBody": false,
+            "footer": {
+                "showAggregateRows": true,
+                "showTotals": true
+            },
+            "body": {
+                "showEdit": false,
+                "showDelete": false,
+                "showShow": false,
+                "deleteType": "icon",
+                "deleteIconSize": "xl"
+            }
+        },
+        "vertical": {
+            "isCreate": true,
+            "isEdit": false,
+            "layoutType": "inputsInline",
+            "layoutType2": "singleLine",
+            "layoutType3": "labelAbove",
+            "layoutType4": "labelAbove",
+            "showButtons": false,
+            "enterAsTab": false,
+            "showDataList": false
+        }
+    },
+    "callbacks": {
+        "table": {
+            "onDelete1": "function",
+            "onReadFail": "function",
+            "body": {
+                "update": "function",
+                "show": "function",
+                "edit": "function"
+            },
+            "footer": {
+                "onSave": "function"
+            }
+        },
+        "vertical": {
+            "columns": {
+                "stockitemname": {
+                    "onClick": "function"
+                },
+                "batchname": {
+                    "onClick": "function"
+                },
+                "vchtype": {
+                    "onClick": "function"
+                },
+                "vouchernumber": {
+                    "onClick": "function"
+                },
+                "date": {
+                    "onClick": "function"
+                },
+                "godownname": {
+                    "onClick": "function"
+                }
+            }
+        }
+    },
+    "endPoints1": {
+        "read": "/api/v3/purchases/showAll"
+    },
+    "columnsConfig": [
+        {
+            "columnName": "stockitemname",
+            "title": "stockitemname",
+            "field": "stockitemname",
+            "cellConfig": {
+                "width": "150px",
+                "tdClass": "px-4 py-2 border"
+            },
+            "dataListFillName": "",
+            "dataListSource": "stockitemname",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4"
+                }
+            },
+            "allowOnChange": true,
+            "onChangeType": "onDataListChange",
+            "isConsider": true,
+            "tableConfig": {
+                "footerConfig": {
+                    "enterAsTab": true,
+                    "isNotEmpty": true
+                }
+            },
+            "verticalConfig": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                }
+            }
+        },
+        {
+            "columnName": "batchname",
+            "field": "batchname",
+            "title": "batchname",
+            "primary": true,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px"
+            },
+            "dataListSource": "batchname",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "vchtype",
+            "field": "vchtype",
+            "title": "vchtype",
+            "primary": true,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px"
+            },
+            "dataListSource": "vchtype",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "vouchernumber",
+            "field": "vouchernumber",
+            "title": "vouchernumber",
+            "primary": true,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px"
+            },
+            "dataListSource": "vouchernumber",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "date",
+            "field": "date",
+            "title": "date",
+            "primary": true,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px"
+            },
+            "dataListSource": "date",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                },
+                "showCheckBox1": {
+                    "textToShow": "consider",
+                    "className": ""
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "godownname",
+            "field": "godownname",
+            "title": "godownname",
+            "primary": true,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px"
+            },
+            "dataListSource": "godownname",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                },
+                "showCheckBox1": {
+                    "textToShow": "consider",
+                    "className": ""
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "date",
+            "field": "date",
+            "title": "date",
+            "primary": true,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px"
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig1": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                },
+                "showCheckBox": {
+                    "textToShow": "consider",
+                    "className": ""
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "batchamount",
+            "field": "batchamount",
+            "title": "batchamount",
+            "primary": false,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px"
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig1": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                },
+                "showCheckBox": {
+                    "textToShow": "consider",
+                    "className": ""
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "inQty",
+            "field": "inQty",
+            "title": "inQty",
+            "primary": false,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px",
+                "rightAlign": true,
+                "showThousandsSeperator": false,
+                "tableFooter": {
+                    "showTotal": true
+                }
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig1": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                },
+                "showCheckBox": {
+                    "textToShow": "consider",
+                    "className": ""
+                }
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "outQty",
+            "field": "outQty",
+            "title": "outQty",
+            "primary": false,
+            "isVisible": true,
+            "cellConfig": {
+                "width": "150px",
+                "rightAlign": true,
+                "showThousandsSeperator": false,
+                "tableFooter": {
+                    "showTotal": true
+                }
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isSearchable": false,
+            "verticalConfig1": {
+                "enterAsTab": false,
+                "allowOnChange": false,
+                "onKeyDown": false,
+                "onKeyDownType": "onDataListChange",
+                "type": "",
+                "tabIndex": "-1",
+                "showButton": {
+                    "textToShow": "filter",
+                    "className": "flex-1 px-4 py-1 bg-green-500 text-white rounded"
+                },
+                "showCheckBox": {
+                    "textToShow": "consider",
+                    "className": ""
+                }
+            },
+            "isConsider": true
+        }
+    ],
+    "defaults": {
+        "data": []
+    },
     "columns": [
         {
-            "header": "party ledger name",
-            "dataKey": "partyledgername",
+            "header": "Voucher Number",
+            "dataKey": "vouchernumber",
             "options": {
                 "width": "150px",
                 "sortable": true,
@@ -12,107 +457,52 @@
             }
         },
         {
-            "header": "voucher typename",
-            "dataKey": "vouchertypename",
-            "options": {
-                "width": "25%",
-                "align": "center",
-                "vAlign": "top",
-                "sortable": true,
-                "table": {
-                    "tbody": {
-                        "td": {
-                            "controlType": "button",
-                            "controlOptions": {
-                                "label": "Action",
-                                "onClick": "function() { alert('Action'); }"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "header": "Voucher Number",
-            "dataKey": "vouchernumber",
-            "options": {
-                "width": "10%",
-                "sortable": true,
-                "summary": "sum"
-            }
-        },
-        {
             "header": "date",
             "dataKey": "date",
             "options": {
-                "width": "15%",
-                "align": "center",
-                "vAlign": "top",
+                "width": "150px",
                 "sortable": true,
-                "table": {
-                    "tbody": {
-                        "td": {
-                            "controlType": "anchor",
-                            "controlOptions": {
-                                "href": "function() { return '#'; }"
-                            }
-                        }
-                    }
-                }
+                "summaryLabel": "Total:"
             }
         },
         {
-            "header": "all ledger entries",
-            "dataKey": "allledgerentries",
-            "isVisible": true,
+            "header": "vchtype",
+            "dataKey": "vchtype",
             "options": {
-                "width": "10%"
+                "width": "150px",
+                "sortable": true,
+                "summaryLabel": "Total:"
             }
         },
         {
-            "header": "allinventoryentries",
-            "dataKey": "allinventoryentries",
-            "isVisible": false
+            "header": "type",
+            "dataKey": "type",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "summaryLabel": "Total:"
+            }
         },
         {
-            "header": "ledgerentries",
-            "dataKey": "ledgerentries",
-            "isVisible": false
-        },
-        {
-            "header": "inventoryentriesin",
-            "dataKey": "inventoryentriesin",
-            "isVisible": false
+            "header": "allledgerentries",
+            "dataKey": "allledgerentries",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "summaryLabel": "Total:"
+            }
         }
     ],
-    "theme": "style2",
     "tableOptions": {
         "commonOptions": {
             "tableWidth": "1000px",
             "tableBorder": "0px",
-            "showSerialNo": false
+            "showSerialNo": true
         },
         "headOptions": {},
         "bodyOptions": {},
         "footOptions": {
             "showFooter": true
         }
-    },
-    "topHeader": {
-        "label": "My Beautiful Table",
-        "placeholder": "Search anything..."
-    },
-    "endPoints": {
-        "create": "/Api/v5/BillsTable/insertWithMeta",
-        "update": "",
-        "delete": "/Api/v5/BillsTable/del",
-        "read": "./all.json",
-        "read1": "/Api/v3/purchases/getBatchArray",
-        "groupBy": "/Api/v3/ItemsTable/forStock",
-        "read2": "/Api/V1/ItemsTable/ShowAll",
-        "find": "",
-        "filter": "",
-        "dataLists": {},
-        "dataListEndpoints": {}
     }
 }

@@ -41,6 +41,7 @@ function buildTable({
         inSortState: localSortState,
         inOnSort: localOnSort
     });
+
     tableElement.appendChild(theadElement);
 
     const tbodyElement = buildTableBody({
@@ -49,6 +50,7 @@ function buildTable({
         inClasses: localClasses.body || {},
         inBodyOptions: localBodyOptions
     });
+
     tableElement.appendChild(tbodyElement);
 
     if (localFootOptions.inShowFooter) {

@@ -2,6 +2,7 @@
     {
         "name": "Tailwind",
         "showLog": false,
+        "showErrorLog": false,
         "isLoadedCheck": {
             "type": "elementId",
             "value": "KSTableTailwind"
@@ -27,6 +28,7 @@
     {
         "name": "KSComponents",
         "showLog": false,
+        "showErrorLog": false,
         "sources": [
             {
                 "type": "js",
@@ -43,6 +45,7 @@
     {
         "name": "KSHeader",
         "showLog": false,
+        "showErrorLog": false,
         "isLoadedCheck": {
             "type": "windowProperty",
             "value": "KSHeader"
@@ -63,6 +66,7 @@
     {
         "name": "KSTable",
         "showLog": false,
+        "showErrorLog": false,
         "isLoadedCheck": {
             "type": "windowProperty",
             "value": "KSTableComp"
@@ -83,6 +87,7 @@
     {
         "name": "KSVertical",
         "showLog": false,
+        "showErrorLog": false,
         "isLoadedCheck": {
             "type": "windowProperty",
             "value": "KSAiVertical"
@@ -103,6 +108,7 @@
     {
         "name": "KSTableOnly",
         "showLog": false,
+        "showErrorLog": false,
         "isLoadedCheck": {
             "type": "windowProperty",
             "value": "KSTableComp"
@@ -123,6 +129,7 @@
     {
         "name": "TableBuilder",
         "showLog": false,
+        "showErrorLog": false,
         "isLoadedCheck": {
             "type": "windowNestedProperty",
             "value": [
