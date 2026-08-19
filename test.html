@@ -72,6 +72,7 @@
                 const data = await dataResponse.json();
 
                 configJson.data = data;
+                console.log("configJson : ", configJson);
 
                 // debugger
                 const tableBuilder = new window.ks.TableBuilder(configJson);

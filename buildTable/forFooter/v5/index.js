@@ -1,11 +1,21 @@
 import { buildSummaryRow } from "./SummaryRow/index.js";
+import buildBalanceRow from "./BalanceRow/index.js";
+
+const showLogs = true;
 
 const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) => {
     const localData = inData;
     const localColumns = inColumns;
     const localClasses = inClasses;
     const localFootOptions = inFootOptions;
-
+    if (showLogs)
+        console.log("inData", inData);
+    if (showLogs)
+        console.log("inColumns", inColumns);
+    if (showLogs)
+        console.log("inClasses", inClasses);
+    if (showLogs)
+        console.log("inFootOptions", inFootOptions);
     const tfootElement = document.createElement("tfoot");
     // We can reuse the head class or body class, or create a new tfoot class in defaults.
     // For now, let's use head styles so it stands out, or body styles.
@@ -19,6 +29,16 @@ const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) =>
     });
 
     tfootElement.appendChild(summaryRow);
+
+    if (localFootOptions.inShowBalance) {
+        const balanceRow = buildBalanceRow({
+            inData: localData,
+            inColumns: localColumns,
+            inClasses: localClasses,
+            inFootOptions: localFootOptions
+        });
+        tfootElement.appendChild(balanceRow);
+    }
 
     return tfootElement;
 };
