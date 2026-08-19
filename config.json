@@ -454,7 +454,8 @@
             "options": {
                 "width": "150px",
                 "sortable": true,
-                "summaryLabel": "Total:"
+                "summaryLabel1": "Total:",
+                "summary": "min"
             }
         },
         {

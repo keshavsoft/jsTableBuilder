@@ -1,7 +1,8 @@
 import headerConfig from "./headers.json" with { type: "json" };
+const showLog = false;
 
 const buildHeader = async () => {
-    console.log("buildHeader : ", headerConfig);
+    if (showLog) console.log("buildHeader : ", headerConfig);
     await window.ks.components.header(headerConfig);
 };
 

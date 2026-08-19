@@ -3,7 +3,7 @@ import { buildHeader } from "./buildHeader.js";
 
 const runAfterDomLoad = () => {
     import("../../script.js").then(fromPromise => {
-        console.log("fromPromise : ", fromPromise);
+        // console.log("fromPromise : ", fromPromise);
         buildHeader().then(fromPromise => {
             // addListeners();
         });
