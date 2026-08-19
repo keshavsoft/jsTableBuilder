@@ -13,7 +13,7 @@ import prepareData from "./buildTable/utils/dataFuncs/prepareData.js";
 
 import "./webComponents/v1/KsTableCellContent.js";
 
-const showLogs = true;
+const showLogs = false;
 
 class TableBuilder {
     constructor({
@@ -32,15 +32,24 @@ class TableBuilder {
         const localClasses = classes;
         const localEndPoints = endPoints;
         // debugger;
+        if (showLogs) {
+            // console.log("localHtmlId", localHtmlId);
+            // console.log("localData", localData);
+            // console.log("localColumns", localColumns);
+            // console.log("localClasses", localClasses);
+            // console.log("localEndPoints", localEndPoints);
+            console.log("tableOptions", tableOptions);
+        };
+
         // Map the clean external API (with subtrees) back to our strict internal 'in' naming convention
         const localTableOptionsMapped = mapTableOptions(tableOptions);
 
         if (showLogs) {
-            console.log("localHtmlId", localHtmlId);
-            console.log("localData", localData);
-            console.log("localColumns", localColumns);
-            console.log("localClasses", localClasses);
-            console.log("localEndPoints", localEndPoints);
+            // console.log("localHtmlId", localHtmlId);
+            // console.log("localData", localData);
+            // console.log("localColumns", localColumns);
+            // console.log("localClasses", localClasses);
+            // console.log("localEndPoints", localEndPoints);
             console.log("localTableOptionsMapped", localTableOptionsMapped);
         };
 

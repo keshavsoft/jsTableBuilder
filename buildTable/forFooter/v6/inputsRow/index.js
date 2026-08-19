@@ -3,7 +3,7 @@ import { calculateSummaryValue } from "./2-calculateSummaryValue/index.js";
 import { buildTdElement } from "./3-buildTdElement.js";
 import { buildCellContent } from "./4-buildCellContent.js";
 
-const buildSummaryRow = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) => {
+const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) => {
     const localData = inData;
     const localColumns = inColumns;
     const localClasses = inClasses;
@@ -38,4 +38,4 @@ const buildSummaryRow = ({ inData, inColumns, inClasses = {}, inFootOptions = {}
     return { builtTrElement: trElement, summaryValues };
 };
 
-export { buildSummaryRow };
+export default startFunc;

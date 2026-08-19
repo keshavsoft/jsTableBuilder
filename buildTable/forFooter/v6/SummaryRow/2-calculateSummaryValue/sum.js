@@ -1,4 +1,4 @@
-const showLog = true;
+const showLog = false;
 
 export const sum = ({ inData, inCol }) => {
     if (showLog) {

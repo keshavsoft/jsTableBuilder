@@ -30,7 +30,8 @@
             "footer": {
                 "showAggregateRows": true,
                 "showTotals": true,
-                "showBalance": true
+                "showBalance": true,
+                "showInputsRow": true
             },
             "body": {
                 "showEdit": false,
@@ -523,7 +524,8 @@
         "bodyOptions": {},
         "footOptions": {
             "showFooter": true,
-            "showBalance": true
+            "showBalance": true,
+            "showInputsRow": true
         }
     }
 }

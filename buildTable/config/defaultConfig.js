@@ -18,7 +18,10 @@ const DEFAULT_CONFIG = {
         footOptions: {
             showFooter: false,
             rowHeight: "48px",
-            showBalance: false
+            showAggregateRows: false,
+            showTotals: false,
+            showBalance: false,
+            showInputsRow: false
         }
     },
     topHeader: {
