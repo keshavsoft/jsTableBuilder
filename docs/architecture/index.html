@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableBuilder — Architecture</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Documentation Home</a> |
+        <a href="../coding-standards/index.html">Coding Standards</a> |
+        <a href="../rendering-pipeline/index.html">Rendering Pipeline</a> |
+        <a href="../configuration/index.html">Configuration</a> |
+        <a href="../versioning/index.html">Versioning</a>
+    </nav>
+
+    <hr>
+
+    <h1>TableBuilder Architecture</h1>
+
+    <h2>1. Purpose</h2>
+
+    <p>
+        TableBuilder is being designed as a configuration-driven frontend
+        rendering library.
+    </p>
+
+    <p>
+        The long-term goal is not simply to build tables. The goal is to create
+        a predictable rendering system where configuration, data, builders,
+        components, and DOM responsibilities are clearly separated.
+    </p>
+
+    <h2>2. Architectural Layers</h2>
+
+    <pre>
+Public Configuration
+        |
+        v
+Configuration Mapping
+        |
+        v
+Internal Configuration
+        |
+        v
+Data Store / Data Source
+        |
+        v
+Renderer / Builder
+        |
+        +------------------+
+        |                  |
+        v                  v
+      Header             Body
+        |                  |
+        v                  v
+     Builders            Builders
+        |                  |
+        v                  v
+  Web Components      Web Components
+        |                  |
+        +---------+--------+
+                  |
+                  v
+                 DOM
+</pre>
+
+    <h2>3. Configuration Layer</h2>
+
+    <p>
+        The public configuration should be clean and understandable.
+        It must not expose internal naming conventions.
+    </p>
+
+    <p>
+        Internally, the configuration can use a stricter naming convention
+        and structure.
+    </p>
+
+    <p>
+        A mapping layer is responsible for converting public configuration
+        into the internal representation.
+    </p>
+
+    <h2>4. TableBuilder Responsibility</h2>
+
+    <p>
+        TableBuilder should act primarily as an orchestrator.
+    </p>
+
+    <p>
+        It should not contain detailed DOM-building logic.
+    </p>
+
+    <p>
+        Its responsibilities include:
+    </p>
+
+    <ul>
+        <li>Accept configuration.</li>
+        <li>Initialize internal state.</li>
+        <li>Prepare configuration.</li>
+        <li>Prepare or retrieve data.</li>
+        <li>Delegate rendering.</li>
+        <li>Expose the resulting DOM to the consumer.</li>
+    </ul>
+
+    <h2>5. Builder Responsibility</h2>
+
+    <p>
+        Builders are responsible for creating and composing DOM structures.
+    </p>
+
+    <p>
+        A builder should have one clear responsibility.
+    </p>
+
+    <p>
+        Examples:
+    </p>
+
+    <ul>
+        <li>Table builder — composes the table.</li>
+        <li>Header builder — composes the table header.</li>
+        <li>Row builder — creates a row.</li>
+        <li>Cell builder — creates a cell shell.</li>
+    </ul>
+
+    <h2>6. Web Component Responsibility</h2>
+
+    <p>
+        Web Components should own reusable UI behavior and content rendering.
+    </p>
+
+    <p>
+        The builder should not become responsible for every detail of the
+        content displayed inside a cell or header.
+    </p>
+
+    <p>
+        The intended relationship is:
+    </p>
+
+    <pre>
+Builder
+   |
+   v
+DOM Shell
+   |
+   v
+Web Component
+   |
+   v
+Actual UI Content / Behavior
+</pre>
+
+    <h2>7. DOM Ownership</h2>
+
+    <p>
+        Each builder creates its own DOM element and returns it.
+    </p>
+
+    <p>
+        Higher-level builders compose the returned elements.
+    </p>
+
+    <p>
+        Consumers should not need to understand the internal DOM structure.
+    </p>
+
+    <h2>8. Composition</h2>
+
+    <p>
+        Future renderers may include:
+    </p>
+
+    <ul>
+        <li>Table</li>
+        <li>Vertical</li>
+        <li>Card</li>
+        <li>Other future views</li>
+    </ul>
+
+    <p>
+        These renderers should consume the same conceptual configuration
+        wherever practical.
+    </p>
+
+    <h2>9. Composition of Views</h2>
+
+    <pre>
+Page
+ |
+ +-- Vertical View
+ |
+ +-- Table
+ |
+ +-- Footer
+</pre>
+
+    <p>
+        A future higher-level composition layer may combine multiple renderers.
+    </p>
+
+    <h2>10. Main Architectural Rule</h2>
+
+    <blockquote>
+        Do not put responsibility in a higher layer when a lower layer clearly
+        owns that responsibility.
+    </blockquote>
+
+    <p>
+        For example, alignment belongs to cell rendering rather than row
+        orchestration. Header content belongs to the header content component
+        rather than the table builder.
+    </p>
+
+    <h2>11. Migration Philosophy</h2>
+
+    <p>
+        The current working implementation should be treated as a reference
+        implementation.
+    </p>
+
+    <p>
+        New architecture should be introduced incrementally rather than through
+        one large rewrite.
+    </p>
+
+    <ol>
+        <li>Document the existing pattern.</li>
+        <li>Standardize folder entry points.</li>
+        <li>Standardize naming conventions.</li>
+        <li>Centralize Web Components.</li>
+        <li>Introduce configuration validation.</li>
+        <li>Improve configuration normalization.</li>
+        <li>Improve data-source handling.</li>
+        <li>Introduce additional renderers.</li>
+        <li>Evaluate migration from older implementations.</li>
+    </ol>
+
+</body>
+
+</html>

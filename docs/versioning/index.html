@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableBuilder — Versioning</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Documentation Home</a> |
+        <a href="../architecture/index.html">Architecture</a> |
+        <a href="../coding-standards/index.html">Coding Standards</a> |
+        <a href="../rendering-pipeline/index.html">Rendering Pipeline</a> |
+        <a href="../configuration/index.html">Configuration</a>
+    </nav>
+
+    <hr>
+
+    <h1>TableBuilder Versioning Strategy</h1>
+
+    <h2>1. Purpose</h2>
+
+    <p>
+        Versioning exists so that new implementations can be developed without
+        immediately destroying a working implementation.
+    </p>
+
+    <h2>2. Folder-Based Versions</h2>
+
+    <p>
+        A component or renderer may contain multiple versions.
+    </p>
+
+    <pre>
+forBody/
+    index.js
+    v1/
+        TableBody.js
+    v2/
+        TableBody.js
+</pre>
+
+    <p>
+        The same approach can be used for:
+    </p>
+
+    <ul>
+        <li>Header</li>
+        <li>Body</li>
+        <li>Footer</li>
+        <li>Table</li>
+        <li>Future renderers</li>
+    </ul>
+
+    <h2>3. Index as Folder Entry Point</h2>
+
+    <p>
+        Every functional folder should expose its entry through
+        <code>index.js</code>.
+    </p>
+
+    <p>
+        The index file is the stable access point.
+    </p>
+
+    <pre>
+consumer
+    |
+    v
+folder/index.js
+    |
+    v
+selected implementation
+</pre>
+
+    <h2>4. Explicit Version Selection</h2>
+
+    <p>
+        Version selection should be deliberate.
+    </p>
+
+    <p>
+        The index may expose explicit versions:
+    </p>
+
+    <pre>
+export const v1 = {
+    buildTableBody: buildTableBodyV1
+};
+
+export const v2 = {
+    buildTableBody: buildTableBodyV2
+};
+
+export const buildTableBody = buildTableBodyV2;
+</pre>
+
+    <h2>5. Default Version</h2>
+
+    <p>
+        A default version may be provided.
+    </p>
+
+    <p>
+        However, the default should mean:
+    </p>
+
+    <blockquote>
+        Recommended implementation for the current release.
+    </blockquote>
+
+    <p>
+        It should not simply mean:
+    </p>
+
+    <blockquote>
+        Highest numbered folder.
+    </blockquote>
+
+    <h2>6. Avoid Automatic Highest-Version Discovery</h2>
+
+    <p>
+        Do not scan the filesystem and automatically select:
+    </p>
+
+    <pre>
+v3
+</pre>
+
+    <p>
+        merely because it has a higher number than:
+    </p>
+
+    <pre>
+v2
+</pre>
+
+    <p>
+        Automatic selection creates invisible behavior changes.
+    </p>
+
+    <h2>7. Why Version Folders Are Useful</h2>
+
+    <p>
+        Version folders allow experimentation.
+    </p>
+
+    <pre>
+v1
+ |
+ +-- Stable implementation
+
+v2
+ |
+ +-- New implementation
+
+v3
+ |
+ +-- Experimental implementation
+</pre>
+
+    <p>
+        A new version can be evaluated without modifying the existing version.
+    </p>
+
+    <h2>8. Migration Strategy</h2>
+
+    <ol>
+        <li>Create the new version.</li>
+        <li>Keep the old version intact.</li>
+        <li>Compare behavior.</li>
+        <li>Test the new version.</li>
+        <li>Make the new version the recommended default only when ready.</li>
+        <li>Keep the old version available while migration is required.</li>
+    </ol>
+
+    <h2>9. Versioning and AI Development</h2>
+
+    <p>
+        Versioned folders are particularly useful when working with AI.
+    </p>
+
+    <p>
+        An AI can be instructed:
+    </p>
+
+    <pre>
+Modify v2 only.
+Do not change v1.
+Follow the architecture used by v2.
+</pre>
+
+    <p>
+        This dramatically reduces the risk of accidentally changing stable code.
+    </p>
+
+    <h2>10. Versioning Rule</h2>
+
+    <blockquote>
+        Preserve working implementations while developing new architectural
+        ideas. Promote a version only after its behavior and architecture are
+        understood.
+    </blockquote>
+
+</body>
+
+</html>

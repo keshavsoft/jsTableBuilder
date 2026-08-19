@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableBuilder — Configuration</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Documentation Home</a> |
+        <a href="../architecture/index.html">Architecture</a> |
+        <a href="../coding-standards/index.html">Coding Standards</a> |
+        <a href="../rendering-pipeline/index.html">Rendering Pipeline</a> |
+        <a href="../versioning/index.html">Versioning</a>
+    </nav>
+
+    <hr>
+
+    <h1>TableBuilder Configuration Architecture</h1>
+
+    <h2>1. Purpose</h2>
+
+    <p>
+        Configuration is the primary public contract of TableBuilder.
+    </p>
+
+    <p>
+        The public configuration should describe what the consumer wants without
+        exposing internal implementation conventions.
+    </p>
+
+    <h2>2. Public Configuration</h2>
+
+    <p>
+        The preferred public shape is clean and semantic.
+    </p>
+
+    <pre>
+{
+    htmlId: "table-root",
+
+    data: [],
+
+    columns: [],
+
+    theme: "style1",
+
+    tableOptions: {
+        commonOptions: {},
+        headOptions: {},
+        bodyOptions: {},
+        footOptions: {}
+    },
+
+    topHeader: {},
+
+    endPoints: {}
+}
+</pre>
+
+    <h2>3. Internal Configuration</h2>
+
+    <p>
+        Internally, the project uses the <code>in</code> prefix convention.
+    </p>
+
+    <p>
+        Example:
+    </p>
+
+    <pre>
+{
+    inCommonOptions: {
+        inTableWidth: "100%",
+        inTableBorder: "1px solid #e5e7eb"
+    }
+}
+</pre>
+
+    <p>
+        This internal representation should not be forced onto public consumers.
+    </p>
+
+    <h2>4. Public to Internal Mapping</h2>
+
+    <pre>
+Public Config
+     |
+     v
+mapTableOptions
+     |
+     v
+Internal Config
+</pre>
+
+    <p>
+        The mapping layer translates the clean public API into the internal
+        naming convention.
+    </p>
+
+    <h2>5. Why Two Configurations Exist</h2>
+
+    <p>
+        The two representations serve different audiences.
+    </p>
+
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Configuration</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Public configuration</td>
+                <td>Simple API for consumers</td>
+            </tr>
+            <tr>
+                <td>Internal configuration</td>
+                <td>Strict internal processing convention</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>6. Default Configuration</h2>
+
+    <p>
+        The default configuration should be the primary description of the
+        supported configuration structure.
+    </p>
+
+    <p>
+        It should provide safe defaults for:
+    </p>
+
+    <ul>
+        <li>Table identity</li>
+        <li>Data</li>
+        <li>Columns</li>
+        <li>Theme</li>
+        <li>Table options</li>
+        <li>Header options</li>
+        <li>Body options</li>
+        <li>Footer options</li>
+        <li>Top header</li>
+        <li>Endpoints</li>
+    </ul>
+
+    <h2>7. Endpoint Configuration</h2>
+
+    <p>
+        Data sources should eventually be described through configuration.
+    </p>
+
+    <p>
+        Example:
+    </p>
+
+    <pre>
+endPoints: {
+    read: "/api/customers",
+    create: "/api/customers",
+    update: "/api/customers",
+    delete: "/api/customers"
+}
+</pre>
+
+    <p>
+        Endpoint names should describe intent.
+    </p>
+
+    <p>
+        Avoid ambiguous names such as:
+    </p>
+
+    <pre>
+read1
+read2
+read3
+</pre>
+
+    <p>
+        Prefer meaningful names.
+    </p>
+
+    <h2>8. Static Data and Remote Data</h2>
+
+    <p>
+        The architecture should support both:
+    </p>
+
+    <pre>
+data: []
+</pre>
+
+    <p>
+        and:
+    </p>
+
+    <pre>
+endPoints: {
+    read: "/api/data"
+}
+</pre>
+
+    <p>
+        The renderer should not care where the data came from.
+    </p>
+
+    <h2>9. Configuration Pipeline</h2>
+
+    <pre>
+Raw Configuration
+        |
+        v
+Defaults
+        |
+        v
+Validation
+        |
+        v
+Normalization
+        |
+        v
+Internal Configuration
+        |
+        v
+Rendering
+</pre>
+
+    <h2>10. Defaults API</h2>
+
+    <p>
+        The library should expose a discoverable representation of its defaults.
+    </p>
+
+    <p>
+        A future API may look like:
+    </p>
+
+    <pre>
+TableBuilder.getDefaults()
+</pre>
+
+    <p>
+        The purpose is to allow developers and AI systems to understand the
+        expected configuration shape without reading implementation files.
+    </p>
+
+    <h2>11. Validation API</h2>
+
+    <p>
+        Validation should be a separate responsibility.
+    </p>
+
+    <p>
+        A future API may look like:
+    </p>
+
+    <pre>
+validateConfig(config)
+</pre>
+
+    <p>
+        It should identify invalid or incomplete configuration rather than
+        silently inventing missing values.
+    </p>
+
+    <h2>12. Column Configuration</h2>
+
+    <p>
+        A column should describe both its data identity and presentation.
+    </p>
+
+    <pre>
+{
+    dataKey: "customerName",
+    header: "Customer Name",
+    isVisible: true,
+    options: {
+        width: "200px",
+        align: "left",
+        vAlign: "middle"
+    }
+}
+</pre>
+
+    <h2>13. Data Key vs Caption</h2>
+
+    <p>
+        These are different concepts.
+    </p>
+
+    <pre>
+dataKey: "customerName"
+header: "Customer Name"
+</pre>
+
+    <p>
+        <code>dataKey</code> identifies the source property.
+    </p>
+
+    <p>
+        <code>header</code> identifies the human-readable UI caption.
+    </p>
+
+    <h2>14. Configuration as Source of Truth</h2>
+
+    <p>
+        The long-term architecture should move toward:
+    </p>
+
+    <pre>
+Configuration
+      |
+      +--> Data
+      +--> Columns
+      +--> Classes
+      +--> Behavior
+      +--> Endpoints
+      |
+      v
+Rendering Engine
+</pre>
+
+    <p>
+        This allows the same configuration to drive multiple visual renderers.
+    </p>
+
+    <h2>15. Multiple Renderers</h2>
+
+    <p>
+        Future renderers may include:
+    </p>
+
+    <ul>
+        <li>Table</li>
+        <li>Vertical</li>
+        <li>Card</li>
+    </ul>
+
+    <p>
+        The configuration should describe the information rather than encode
+        one specific visual representation.
+    </p>
+
+    <h2>16. Configuration Design Rule</h2>
+
+    <blockquote>
+        Configuration should describe intent, not implementation details.
+    </blockquote>
+
+</body>
+
+</html>

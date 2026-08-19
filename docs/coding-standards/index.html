@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableBuilder — Coding Standards</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Documentation Home</a> |
+        <a href="../architecture/index.html">Architecture</a> |
+        <a href="../rendering-pipeline/index.html">Rendering Pipeline</a> |
+        <a href="../configuration/index.html">Configuration</a> |
+        <a href="../versioning/index.html">Versioning</a>
+    </nav>
+
+    <hr>
+
+    <h1>TableBuilder Coding Standards</h1>
+
+    <h2>1. Purpose</h2>
+
+    <p>
+        These rules exist to make the source code predictable for both humans
+        and AI-assisted development.
+    </p>
+
+    <p>
+        The objective is that a developer can look at a function and immediately
+        understand where every variable came from and what responsibility the
+        function owns.
+    </p>
+
+    <h2>2. Folder Entry Point Rule</h2>
+
+    <p>
+        Every functional folder should expose its public entry through:
+    </p>
+
+    <pre>
+index.js
+</pre>
+
+    <p>
+        Example:
+    </p>
+
+    <pre>
+forHead/
+    index.js
+    v1/
+    v2/
+
+forBody/
+    index.js
+    v1/
+    v2/
+</pre>
+
+    <p>
+        Consumers should preferably enter a folder through its index file rather
+        than knowing the implementation file names.
+    </p>
+
+    <h2>3. Versioned Implementations</h2>
+
+    <p>
+        When a component requires multiple implementations, versions should be
+        separated explicitly.
+    </p>
+
+    <pre>
+forBody/
+    index.js
+    v1/
+        TableBody.js
+    v2/
+        TableBody.js
+</pre>
+
+    <p>
+        Version selection should be explicit.
+    </p>
+
+    <p>
+        Do not automatically determine the latest version by scanning folder
+        names.
+    </p>
+
+    <h2>4. Function Input Naming Convention</h2>
+
+    <p>
+        Every value received by a function as an input must use the
+        <code>in</code> prefix.
+    </p>
+
+    <p>
+        Example:
+    </p>
+
+    <pre>
+function buildTable({
+    inData,
+    inColumns,
+    inClasses
+}) {
+</pre>
+
+    <p>
+        The <code>in</code> prefix communicates:
+    </p>
+
+    <blockquote>
+        This value came from outside this function.
+    </blockquote>
+
+    <h2>5. Immediately Create Local Variables</h2>
+
+    <p>
+        Inputs should be immediately mapped to local variables at the beginning
+        of the function.
+    </p>
+
+    <pre>
+function buildTable({
+    inData,
+    inColumns,
+    inClasses
+}) {
+    const localData = inData;
+    const localColumns = inColumns;
+    const localClasses = inClasses;
+
+    // ...
+}
+</pre>
+
+    <p>
+        This establishes a clear visual distinction between external inputs and
+        variables belonging to the current scope.
+    </p>
+
+    <h2>6. Meaning of `in` and `local`</h2>
+
+    <p>
+        The naming convention creates a simple variable life-cycle model.
+    </p>
+
+    <pre>
+External Input
+     |
+     | inData
+     v
+Local Representation
+     |
+     | localData
+     v
+Function Processing
+</pre>
+
+    <p>
+        Therefore:
+    </p>
+
+    <ul>
+        <li><code>inSomething</code> means an incoming function argument.</li>
+        <li><code>localSomething</code> means the local representation of that input.</li>
+        <li>A variable without either prefix should normally be a value created inside the current scope.</li>
+    </ul>
+
+    <h2>7. Why This Convention Exists</h2>
+
+    <p>
+        The purpose is not JavaScript syntax. It is code readability.
+    </p>
+
+    <p>
+        When reading a large function, a developer should be able to distinguish:
+    </p>
+
+    <pre>
+const localColumns = inColumns;
+</pre>
+
+    <p>
+        from:
+    </p>
+
+    <pre>
+const visibleColumns = localColumns.filter(...);
+</pre>
+
+    <p>
+        The first is an input mapping.
+        The second is a value created by the current function.
+    </p>
+
+    <h2>8. Avoid Hidden External Variables</h2>
+
+    <p>
+        Functions should not depend on undeclared or mysterious external values
+        when those values can reasonably be supplied as inputs.
+    </p>
+
+    <p>
+        Prefer:
+    </p>
+
+    <pre>
+function buildCell({
+    inCellValue,
+    inOptions
+}) {
+    const localCellValue = inCellValue;
+    const localOptions = inOptions;
+}
+</pre>
+
+    <h2>9. Arrow Functions</h2>
+
+    <p>
+        Arrow functions are the preferred function syntax throughout the
+        implementation.
+    </p>
+
+    <p>
+        Example:
+    </p>
+
+    <pre>
+const prepareData = (inData = []) => {
+    const localData = inData;
+
+    return localData;
+};
+</pre>
+
+    <p>
+        This should be used consistently unless there is a specific technical
+        reason to use another function form.
+    </p>
+
+    <h2>10. Export Style</h2>
+
+    <p>
+        Prefer defining the implementation first and exporting it at the bottom
+        of the file.
+    </p>
+
+    <pre>
+const buildTable = ({
+    inData
+}) => {
+    // implementation
+};
+
+export {
+    buildTable
+};
+</pre>
+
+    <p>
+        This keeps the implementation visually separate from the module's
+        public API.
+    </p>
+
+    <h2>11. Default Values</h2>
+
+    <p>
+        Default values should be explicit and close to the responsibility that
+        owns them.
+    </p>
+
+    <pre>
+const DEFAULT_OPTIONS = {
+    width: "",
+    align: "",
+    vAlign: ""
+};
+</pre>
+
+    <p>
+        Shared defaults should be centralized when they are genuinely shared.
+    </p>
+
+    <h2>12. Single Responsibility</h2>
+
+    <p>
+        Each file should have one understandable responsibility.
+    </p>
+
+    <p>
+        Avoid creating a large function that:
+    </p>
+
+    <ul>
+        <li>fetches data,</li>
+        <li>normalizes configuration,</li>
+        <li>creates DOM,</li>
+        <li>attaches events,</li>
+        <li>formats values,</li>
+        <li>and manages application state.</li>
+    </ul>
+
+    <p>
+        Separate those responsibilities.
+    </p>
+
+    <h2>13. Builder Pattern</h2>
+
+    <p>
+        Builders should primarily:
+    </p>
+
+    <ul>
+        <li>create DOM shells,</li>
+        <li>delegate children,</li>
+        <li>compose returned DOM elements,</li>
+        <li>return their completed element.</li>
+    </ul>
+
+    <h2>14. Collection Appender Pattern</h2>
+
+    <p>
+        When a builder needs to process a collection, a dedicated append helper
+        may own the iteration.
+    </p>
+
+    <pre>
+buildHeaderRow
+    |
+    +--> appendHeaderCells
+            |
+            +--> buildHeaderCell
+</pre>
+
+    <p>
+        This keeps iteration separate from element creation.
+    </p>
+
+    <h2>15. Web Component Pattern</h2>
+
+    <p>
+        Builders should create Web Components when the component owns reusable
+        UI behavior or content rendering.
+    </p>
+
+    <pre>
+const contentElement =
+    document.createElement("ks-table-cell-content-common");
+
+contentElement.inputs = {
+    cellValue: localCellValue,
+    rowData: localRowData,
+    options: localOptions
+};
+</pre>
+
+    <p>
+        Components should receive structured inputs rather than relying on
+        hidden global state.
+    </p>
+
+    <h2>16. No Premature Generalization</h2>
+
+    <p>
+        Do not create one generic component merely because two components look
+        similar today.
+    </p>
+
+    <p>
+        First establish the independent implementations.
+        Generalize only when the shared behavior is proven.
+    </p>
+
+    <h2>17. AI Development Rule</h2>
+
+    <p>
+        AI-generated changes must first identify the existing responsibility
+        and follow the established pattern.
+    </p>
+
+    <p>
+        AI should not invent a new naming convention, folder convention,
+        export style, or component pattern without a documented reason.
+    </p>
+
+    <h2>18. Golden Rule</h2>
+
+    <blockquote>
+        Make the source code predictable enough that another developer or AI
+        does not need to guess your architectural intention.
+    </blockquote>
+
+</body>
+
+</html>
