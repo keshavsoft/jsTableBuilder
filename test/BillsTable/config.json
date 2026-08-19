@@ -500,7 +500,16 @@
                 "width": "150px",
                 "sortable": true,
                 "summaryLabel1": "Total:",
-                "summary": "sum"
+                "summary1": "sum",
+                "table": {
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        }
+                    }
+                }
             }
         }
     ],
