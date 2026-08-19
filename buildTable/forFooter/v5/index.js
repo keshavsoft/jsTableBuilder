@@ -38,7 +38,7 @@ const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) =>
             inFootOptions: localFootOptions
         });
         tfootElement.appendChild(balanceRow);
-    }
+    };
 
     return tfootElement;
 };

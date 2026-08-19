@@ -44,7 +44,9 @@ class TableBuilder {
             console.log("localTableOptionsMapped", localTableOptionsMapped);
         };
 
-        this.tableOptions = extractTableOptions({ inTableOptions: localTableOptionsMapped });
+        // this.tableOptions = extractTableOptions({ inTableOptions: localTableOptionsMapped });
+        this.tableOptions = localTableOptionsMapped;
+
         this.topHeader = extractTopHeader({ inTopHeader: topHeader });
         this.htmlId = localHtmlId;
         this.dataStore = {};

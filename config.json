@@ -472,7 +472,7 @@
             "header": "vchtype",
             "dataKey": "vchtype",
             "options": {
-                "width": "150px",
+                "width": "300px",
                 "sortable": true,
                 "summaryLabel": "Total:"
             }
