@@ -28,7 +28,7 @@ class TableBuilder {
         const localColumns = columns;
         const localClasses = classes;
         const localEndPoints = endPoints;
-        debugger;
+        // debugger;
         // Map the clean external API (with subtrees) back to our strict internal 'in' naming convention
         const localTableOptionsMapped = mapTableOptions(tableOptions);
 
@@ -59,7 +59,7 @@ class TableBuilder {
     }
 
     async appendToDom() {
-        debugger;
+        // debugger;
         if (this.dataStore.data.length === 0) {
 
             this.dataStore.originalData = await this.services.read();

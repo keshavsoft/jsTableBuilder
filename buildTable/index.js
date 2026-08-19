@@ -2,7 +2,7 @@ import { buildTableHeader } from "./forHead/TableHeader.js";
 import { buildTableBody } from "./forBody/index.js";
 import { buildEmptyState } from "./buildEmptyState.js";
 import { buildTableElement } from "./buildTableElement.js";
-import { buildTableSummary } from "./forFooter/index.js";
+import { buildFooter } from "./forFooter/index.js";
 
 function buildTable({
     inData,
@@ -54,7 +54,7 @@ function buildTable({
     tableElement.appendChild(tbodyElement);
 
     if (localFootOptions.inShowFooter) {
-        const tfootElement = buildTableSummary({
+        const tfootElement = buildFooter({
             inData: localData, // Will sum over the currently filtered data
             inColumns: visibleColumns,
             inClasses: localClasses.summary || {},

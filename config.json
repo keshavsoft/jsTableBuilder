@@ -3,6 +3,7 @@
     "htmlId": "table-root",
     "tableName": "forStock",
     "mode": "create",
+    "theme": "style2",
     "layout": {
         "verticalPosition": "top",
         "type": "table"
