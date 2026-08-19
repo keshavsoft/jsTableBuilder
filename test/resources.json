@@ -1,0 +1,146 @@
+[
+    {
+        "name": "Tailwind",
+        "showLog": false,
+        "isLoadedCheck": {
+            "type": "elementId",
+            "value": "KSTableTailwind"
+        },
+        "sources": [
+            {
+                "type": "css",
+                "url": "./tailwind-3-min.css",
+                "label": "Local"
+            },
+            {
+                "type": "css",
+                "url": "https://keshavsoft.github.io/KsWebExtension/tailwind-3.css",
+                "label": "KsWebExtension"
+            },
+            {
+                "type": "css",
+                "url": "https://keshavsoft.github.io/tailwind-gen-css/tailwind-3.css",
+                "label": "tailwind-gen-css"
+            }
+        ]
+    },
+    {
+        "name": "KSComponents",
+        "showLog": false,
+        "sources": [
+            {
+                "type": "js",
+                "url": "/ks/components/v24/index.js",
+                "label": "Local"
+            },
+            {
+                "type": "js",
+                "url": "https://keshavsoft.github.io/ks-web-comp-table/dist/v3.23/KSComponents.js",
+                "label": "git"
+            }
+        ]
+    },
+    {
+        "name": "KSHeader",
+        "showLog": false,
+        "isLoadedCheck": {
+            "type": "windowProperty",
+            "value": "KSHeader"
+        },
+        "sources": [
+            {
+                "type": "js",
+                "url": "/ks/header/v15/initHeader.js",
+                "label": "Local"
+            },
+            {
+                "type": "js",
+                "url": "https://keshavsoft.github.io/tailwind-header-dom/public/v14/ksheader.min.js",
+                "label": "git"
+            }
+        ]
+    },
+    {
+        "name": "KSTable",
+        "showLog": false,
+        "isLoadedCheck": {
+            "type": "windowProperty",
+            "value": "KSTableComp"
+        },
+        "sources": [
+            {
+                "type": "js",
+                "url": "/ks/table/v19/ai.js",
+                "label": "Local"
+            },
+            {
+                "type": "js",
+                "url": "https://keshavsoft.github.io/tailwind-table-dom-comp/dist/v18/kstablecomp.js",
+                "label": "git"
+            }
+        ]
+    },
+    {
+        "name": "KSVertical",
+        "showLog": false,
+        "isLoadedCheck": {
+            "type": "windowProperty",
+            "value": "KSAiVertical"
+        },
+        "sources": [
+            {
+                "type": "js",
+                "url": "/ks/vertical/v14/ai.js",
+                "label": "Local"
+            },
+            {
+                "type": "js",
+                "url": "https://keshavsoft.github.io/tailwind-vertical-dom/dist/v2.13/ksvertical.js",
+                "label": "git"
+            }
+        ]
+    },
+    {
+        "name": "KSTableOnly",
+        "showLog": false,
+        "isLoadedCheck": {
+            "type": "windowProperty",
+            "value": "KSTableComp"
+        },
+        "sources": [
+            {
+                "type": "js",
+                "url": "/ks/tableOnly/v7/ai.js",
+                "label": "Local"
+            },
+            {
+                "type": "js",
+                "url": "https://keshavsoft.github.io/tailwind-table-dom-comp-show/dist/v6/kstableonly.js",
+                "label": "git"
+            }
+        ]
+    },
+    {
+        "name": "TableBuilder",
+        "showLog": false,
+        "isLoadedCheck": {
+            "type": "windowNestedProperty",
+            "value": [
+                "ks",
+                "TableBuilder"
+            ]
+        },
+        "sources": [
+            {
+                "type": "js",
+                "url": "/ks/jsTableBuilder/v10/tableBuilder.js",
+                "label": "Local"
+            },
+            {
+                "type": "js",
+                "url": "https://keshavsoft.github.io/jsTableBuilder/dist/v8/tableBuilder.js",
+                "label": "git"
+            }
+        ]
+    }
+]

@@ -1,39 +1,10 @@
-function loadScriptAsModuleCommon(src) {
-    return new Promise((resolve, reject) => {
-        // Pre-verify the resource exists and is valid JavaScript
-        fetch(src, { method: 'GET' })
-            .then(response => {
-                const contentType = response.headers.get('content-type') || '';
-                if (!response.ok || contentType.includes('text/html')) {
-                    throw new Error(`Invalid response or MIME type for: ${src}`);
-                }
-
-                // If valid, append the script tag normally
-                const script = document.createElement("script");
-                script.src = src;
-                script.onload = () => resolve(true);
-                script.onerror = () => reject(new Error(`Failed to load: ${src}`));
-                script.type = "module";
-                document.head.appendChild(script);
-            })
-            .catch(err => {
-                // Reject immediately so the fallback url is triggered
-                reject(err);
-            });
-    });
-};
-
-function loadScriptAsModuleCommon1(src) {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-
-        script.src = src;
-        script.onload = () => resolve(true);
-        script.onerror = () => reject(new Error(`Failed to load: ${src}`));
-        script.type = "module";
-
-        document.head.appendChild(script);
-    });
+function loadScriptAsModuleCommon(src, showErrorLog = true) {
+    return import(src)
+        .then(() => true)
+        .catch(err => {
+            if (showErrorLog) console.error(`Error loading module ${src}:`, err);
+            throw err;
+        });
 };
 
 function loadCss(href) {
@@ -50,9 +21,9 @@ function loadCss(href) {
     });
 };
 
-async function loadResource({ name, isLoaded, sources }) {
+async function loadResource({ name, isLoaded, sources, showLog = true, showErrorLog = true }) {
     if (isLoaded && isLoaded()) {
-        if (window.ksShowLog) console.log(`${name} loaded from Firefox Extension`);
+        if (window.ksShowLog && showLog) console.log(`${name} loaded from Firefox Extension`);
         return;
     }
 
@@ -61,89 +32,63 @@ async function loadResource({ name, isLoaded, sources }) {
             if (source.type === "css") {
                 await loadCss(source.url);
             } else {
-                await loadScriptAsModuleCommon(source.url);
+                await loadScriptAsModuleCommon(source.url, showErrorLog);
             }
 
-            if (window.ksShowLog) console.log(`${name} loaded from ${source.label} : ${source.url}`);
+            if (window.ksShowLog && showLog) console.log(`${name} loaded from ${source.label} : ${source.url}`);
             return;
-        } catch {
-            if (window.ksShowLog) console.log(`${name} -failed- from ${source.label} : ${source.url}`);
+        } catch (err) {
+            if (showErrorLog) console.error(`${name} failed to load from ${source.label} : ${source.url}`, err);
+            if (window.ksShowLog && showLog) console.log(`${name} -failed- from ${source.label} : ${source.url}`);
         }
     }
 
     throw new Error(`${name} could not be loaded`);
 }
 
-const ensureTailwind = () => loadResource({
-    name: "Tailwind",
-    isLoaded: () => document.getElementById("KSTableTailwind"),
-    sources: [
-        { type: "css", url: "./tailwind-3-min.css", label: "Local" },
-        { type: "css", url: "https://keshavsoft.github.io/KsWebExtension/tailwind-3.css", label: "KsWebExtension" },
-        { type: "css", url: "https://keshavsoft.github.io/tailwind-gen-css/tailwind-3.css", label: "tailwind-gen-css" }
-    ]
-});
+function createIsLoadedCheck(checkConfig) {
+    if (!checkConfig) return undefined;
+    if (checkConfig.type === "elementId") {
+        return () => document.getElementById(checkConfig.value);
+    }
+    if (checkConfig.type === "windowProperty") {
+        return () => !!window[checkConfig.value];
+    }
+    if (checkConfig.type === "windowNestedProperty") {
+        return () => {
+            let current = window;
+            for (const prop of checkConfig.value) {
+                if (current === undefined || current === null) return false;
+                current = current[prop];
+            }
+            return !!current;
+        };
+    }
+    return undefined;
+}
 
-const ensureKSComponents = () => loadResource({
-    name: "KSComponents",
-    sources: [
-        { type: "js", url: "/ks/components/v24/index.js", label: "Local" },
-        { type: "js", url: "https://keshavsoft.github.io/ks-web-comp-table/dist/v3.23/KSComponents.js", label: "git" }
-    ]
-});
+// Fetch and load resources from JSON configuration
+try {
+    const jsonUrl = new URL('./resources.json', import.meta.url);
+    const response = await fetch(jsonUrl);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch resources.json: ${response.status}`);
+    }
+    const resources = await response.json();
 
-const ensureKSHeader = () => loadResource({
-    name: "KSHeader",
-    isLoaded: () => !!window.KSHeader,
-    sources: [
-        { type: "js", url: "/header/v12/initHeader.js", label: "Local" },
-        { type: "js", url: "https://keshavsoft.github.io/tailwind-header-dom/public/v14/ksheader.min.js", label: "git" }
-    ]
-});
+    const loadPromises = resources.map(resourceConfig => {
+        return loadResource({
+            name: resourceConfig.name,
+            isLoaded: createIsLoadedCheck(resourceConfig.isLoadedCheck),
+            sources: resourceConfig.sources,
+            showLog: resourceConfig.showLog !== false, // default to true if undefined
+            showErrorLog: resourceConfig.showErrorLog !== false // default to true if undefined
+        });
+    });
 
-const ensureKSTable = () => loadResource({
-    name: "KSTable",
-    isLoaded: () => !!window.KSTableComp,
-    sources: [
-        { type: "js", url: "/ks/table/v19/ai.js", label: "Local" },
-        { type: "js", url: "https://keshavsoft.github.io/tailwind-table-dom-comp/dist/v18/kstablecomp.js", label: "git" }
-    ]
-});
-
-const ensureKSVertical = () => loadResource({
-    name: "KSVertical",
-    isLoaded: () => !!window.KSAiVertical,
-    sources: [
-        { type: "js", url: "/ks/vertical/v14/ai.js", label: "Local" },
-        { type: "js", url: "https://keshavsoft.github.io/tailwind-vertical-dom/dist/v2.13/ksvertical.js", label: "git" }
-    ]
-});
-
-const ensureKSTableOnly = () => loadResource({
-    name: "KSTableOnly",
-    isLoaded: () => !!window.KSTableComp,
-    sources: [
-        { type: "js", url: "/ks/tableOnly/v7/ai.js", label: "Local" },
-        { type: "js", url: "https://keshavsoft.github.io/tailwind-table-dom-comp-show/dist/v6/kstableonly.js", label: "git" }
-    ]
-});
-
-const ensureTableBuilder = () => loadResource({
-    name: "TableBuilder",
-    isLoaded: () => !!window?.ks?.TableBuilder,
-    sources: [
-        { type: "js", url: "/ks/jsTableBuilder/v6/tableBuilder.js", label: "Local" },
-        { type: "js", url: "https://keshavsoft.github.io/jsTableBuilder/dist/v6/tableBuilder.js", label: "git" }
-    ]
-});
-
-// Load resources in parallel
-await Promise.all([
-    ensureTailwind(),
-    ensureKSComponents(),
-    ensureKSHeader(),
-    ensureKSTable(),
-    ensureKSVertical(),
-    ensureKSTableOnly(),
-    ensureTableBuilder()
-]);
+    await Promise.all(loadPromises);
+} catch (error) {
+    console.error("Failed to load resources configuration:", error);
+};
+//     ensureTableBuilder()
+// ]);
