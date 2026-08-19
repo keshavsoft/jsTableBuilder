@@ -1,0 +1,192 @@
+[
+    {
+        "ParentPk": 1,
+        "ItemName": "fish",
+        "Qty": "10",
+        "OrigRate": "100.00",
+        "OrigAmount": "1000.00",
+        "RateInc": "89.70",
+        "Amount": "897",
+        "pk": 1
+    },
+    {
+        "ParentPk": 2,
+        "ItemName": "hooks",
+        "Qty": "20",
+        "OrigRate": "9.00",
+        "OrigAmount": "180.00",
+        "RateInc": "11.00",
+        "Amount": "220.00",
+        "pk": 2
+    },
+    {
+        "ParentPk": 2,
+        "ItemName": "net",
+        "Qty": "3",
+        "OrigRate": "5",
+        "OrigAmount": "22",
+        "RateInc": "7.00",
+        "Amount": "21.00",
+        "pk": 3
+    },
+    {
+        "ParentPk": 3,
+        "ItemName": "F8",
+        "Qty": "12",
+        "OrigRate": "50.00",
+        "OrigAmount": "600.00",
+        "RateInc": "45.00",
+        "Amount": "540.00",
+        "pk": 4
+    },
+    {
+        "ParentPk": 3,
+        "ItemName": "3.50 Wh",
+        "Qty": "2.14",
+        "OrigRate": "470.00",
+        "OrigAmount": "1005.80",
+        "RateInc": "450.00",
+        "Amount": "963.00",
+        "pk": 5
+    },
+    {
+        "ParentPk": 4,
+        "ItemName": "3.50 W",
+        "Qty": "2.140",
+        "OrigRate": "470.00",
+        "OrigAmount": "1005.80",
+        "RateInc": "450",
+        "Amount": "963.00",
+        "pk": 6
+    },
+    {
+        "ParentPk": 5,
+        "ItemName": "Apolin",
+        "Qty": "4.6",
+        "OrigRate": "320.00",
+        "OrigAmount": "1472.00",
+        "RateInc": "320",
+        "Amount": "1470",
+        "pk": 7
+    },
+    {
+        "ParentPk": 6,
+        "ItemName": "PVC 40",
+        "Qty": "2.5",
+        "OrigRate": "280",
+        "OrigAmount": "700.00",
+        "RateInc": "280",
+        "Amount": "700.00",
+        "pk": 8
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "R Coat",
+        "Qty": "1",
+        "OrigRate": "120",
+        "OrigAmount": "120.00",
+        "RateInc": "120",
+        "Amount": "120.00",
+        "pk": 9
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "Y 10",
+        "Qty": "14",
+        "OrigRate": "110.00",
+        "OrigAmount": "1540.00",
+        "RateInc": "105",
+        "Amount": "1470.00",
+        "pk": 10
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "Y 12",
+        "Qty": "1",
+        "OrigRate": "125.00",
+        "OrigAmount": "125.00",
+        "RateInc": "120",
+        "Amount": "120.00",
+        "pk": 11
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "N 12",
+        "Qty": "4",
+        "OrigRate": "125.00",
+        "OrigAmount": "500.00",
+        "RateInc": "120.00",
+        "Amount": "480.00",
+        "pk": 12
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "0.32-50gms",
+        "Qty": "1",
+        "OrigRate": "50.00",
+        "OrigAmount": "50.00",
+        "RateInc": "50",
+        "Amount": "50.00",
+        "pk": 13
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "V 5",
+        "Qty": "100",
+        "OrigRate": "6.00",
+        "OrigAmount": "600.00",
+        "RateInc": "5.80",
+        "Amount": "580.00",
+        "pk": 14
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "110 BC",
+        "Qty": "1.05",
+        "OrigRate": "725.00",
+        "OrigAmount": "761.25",
+        "RateInc": "705.00",
+        "Amount": "740.25",
+        "pk": 15
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "Gloves Bl",
+        "Qty": "10",
+        "OrigRate": "10.00",
+        "OrigAmount": "100.00",
+        "RateInc": "10.00",
+        "Amount": "100",
+        "pk": 16
+    },
+    {
+        "ParentPk": 7,
+        "ItemName": "R Gold",
+        "Qty": "12",
+        "OrigRate": "110.00",
+        "OrigAmount": "1320.00",
+        "RateInc": "110.00",
+        "Amount": "1320.00",
+        "pk": 17
+    },
+    {
+        "ParentPk": 8,
+        "ItemName": "0.40 B C",
+        "Qty": "0.54",
+        "OrigRate": "685.19",
+        "OrigAmount": "370",
+        "RateInc": "0.00",
+        "Amount": "0.00",
+        "pk": 18
+    },
+    {
+        "ParentPk": 9,
+        "ItemName": "Y 12cm",
+        "Qty": "12",
+        "OrigRate": "125.00",
+        "OrigAmount": "1500.00",
+        "RateInc": "120.00",
+        "Amount": "1440.00",
+        "pk": 19
+    }
+]

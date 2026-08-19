@@ -450,8 +450,8 @@
     },
     "columns": [
         {
-            "header": "Voucher Number",
-            "dataKey": "vouchernumber",
+            "header": "ParentPk",
+            "dataKey": "ParentPk",
             "options": {
                 "width": "150px",
                 "sortable": true,
@@ -467,8 +467,8 @@
             }
         },
         {
-            "header": "date",
-            "dataKey": "date",
+            "header": "ItemName",
+            "dataKey": "ItemName",
             "options": {
                 "width": "150px",
                 "sortable": true,
@@ -494,12 +494,13 @@
             }
         },
         {
-            "header": "allledgerentries",
-            "dataKey": "allledgerentries",
+            "header": "Amount",
+            "dataKey": "Amount",
             "options": {
                 "width": "150px",
                 "sortable": true,
-                "summaryLabel": "Total:"
+                "summaryLabel1": "Total:",
+                "summary": "sum"
             }
         }
     ],

@@ -56,7 +56,7 @@
             try {
                 // Fetch the data and columns files
                 const [dataResponse, columnsResponse] = await Promise.all([
-                    fetch("./BillsTable.json"),
+                    fetch("./ItemsTable.json"),
                     fetch("./config.json")
                 ]);
 
