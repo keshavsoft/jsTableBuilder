@@ -1,0 +1,1965 @@
+[
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-06",
+        "PartyGSTIN": "test",
+        "DateTime": "2026-07-06T11:48:54.455Z",
+        "Uuid": "55842bf4-6dc5-477f-adf6-e9f8807a81cb",
+        "pk": 101
+    },
+    {
+        "LedgerName": "keshav1",
+        "InvoiceDate": "2026-07-06",
+        "PartyGSTIN": "11111",
+        "DateTime": "2026-07-06T11:49:31.226Z",
+        "Uuid": "534ebdb4-13f0-4181-963c-81f7e8badb58",
+        "pk": 102
+    },
+    {
+        "LedgerName": "keshav2",
+        "InvoiceDate": "2026-07-06",
+        "PartyGSTIN": "test2",
+        "DateTime": "2026-07-06T11:53:23.814Z",
+        "Uuid": "191020a6-9880-446c-aea2-5791a36229ba",
+        "pk": 103
+    },
+    {
+        "LedgerName": "Kkk",
+        "InvoiceDate": "2026-07-06",
+        "PartyGSTIN": "Kkk",
+        "DateTime": "2026-07-06T12:02:23.850Z",
+        "Uuid": "4e838350-dc99-4106-940f-a5dd91f64bd3",
+        "pk": 104
+    },
+    {
+        "LedgerName": "paalathanu",
+        "InvoiceDate": "2026-07-06",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-06T12:26:28.672Z",
+        "Uuid": "6140911a-42f0-4b6f-a1a0-72cb40bf1c60",
+        "pk": 105
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-07T05:39:57.493Z",
+        "Uuid": "63ffb6c4-9b6a-438f-a895-2a9586adf726",
+        "pk": 106
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "test",
+        "DateTime": "2026-07-07T06:31:18.683Z",
+        "Uuid": "d6882136-04a2-481b-b7b0-2e9d8d758df7",
+        "pk": 107
+    },
+    {
+        "LedgerName": "",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-07T09:17:45.095Z",
+        "Uuid": "e3c06373-30b7-4563-9606-2bf0112e0365",
+        "pk": 108
+    },
+    {
+        "LedgerName": "K Bhairava Swamy",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-07T10:24:54.560Z",
+        "Uuid": "bd270a8d-c5bd-4c11-ab16-3116d282d68a",
+        "pk": 109
+    },
+    {
+        "LedgerName": "Kameswara Rao",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-07T12:37:32.099Z",
+        "Uuid": "e3ac3ff9-c214-40fb-afea-d45bed9560e8",
+        "pk": 110
+    },
+    {
+        "LedgerName": "Matcha Satyanarayana",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-07T12:48:00.261Z",
+        "Uuid": "d2de7212-1c6c-4774-a8ea-4b87d5b80c7c",
+        "pk": 111
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "test1122",
+        "DateTime": "2026-07-07T13:06:08.051Z",
+        "Uuid": "dae0a502-401e-46a5-8f93-78b26f0494f6",
+        "pk": 112
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-07T13:31:52.560Z",
+        "Uuid": "39344920-de1d-4919-84ee-bab5d12bde26",
+        "pk": 113
+    },
+    {
+        "LedgerName": "",
+        "InvoiceDate": "2026-07-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-07T14:43:33.855Z",
+        "Uuid": "712ff5b4-6dca-459c-8112-7e99b8fca9a7",
+        "pk": 114
+    },
+    {
+        "LedgerName": "Peddodu",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T04:18:05.356Z",
+        "Uuid": "9d5b0160-ed52-4d3c-a483-c2463fdc177f",
+        "pk": 115
+    },
+    {
+        "LedgerName": "Chinna",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T06:01:22.781Z",
+        "Uuid": "92f12a1f-071b-46d0-9444-929f847bb0d8",
+        "pk": 116
+    },
+    {
+        "LedgerName": "Chinta Simhadri",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T08:49:24.039Z",
+        "Uuid": "2139dbb2-0cc6-441e-a520-0a08cabbcd5b",
+        "pk": 117
+    },
+    {
+        "LedgerName": "John",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T09:42:10.530Z",
+        "Uuid": "fe0c677e-c78d-48fa-af41-aed7dd34ba17",
+        "pk": 118
+    },
+    {
+        "LedgerName": "Oleti Ramu",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T10:48:39.641Z",
+        "Uuid": "1b28c22e-a278-442e-9f58-4a86a8bf3d1f",
+        "pk": 119
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T11:31:26.880Z",
+        "Uuid": "216d9794-775a-4227-8ec4-41225e39dd39",
+        "pk": 120
+    },
+    {
+        "LedgerName": "Sundar",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T11:53:55.956Z",
+        "Uuid": "d708a3a8-d0cc-4f3b-be8f-bd0330d81d46",
+        "pk": 121
+    },
+    {
+        "LedgerName": "sundar",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T11:59:25.059Z",
+        "Uuid": "7ab11506-fdd4-4c4a-802f-dfb28c404a18",
+        "pk": 122
+    },
+    {
+        "LedgerName": "Sundar",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "37DBKPS5086J1ZU",
+        "DateTime": "2026-07-08T11:59:59.865Z",
+        "Uuid": "12115948-d848-4354-aeb2-2536c6c1b1fb",
+        "pk": 123
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "test",
+        "DateTime": "2026-07-08T12:12:17.193Z",
+        "Uuid": "c808babc-85de-4820-b8ed-79e554673f6d",
+        "pk": 124
+    },
+    {
+        "LedgerName": "Mutyala raju",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "antharvedi",
+        "DateTime": "2026-07-08T12:35:41.715Z",
+        "Uuid": "a1c91dcc-31da-47bf-87c5-f1ea5316ee26",
+        "pk": 125
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "222",
+        "DateTime": "2026-07-08T12:36:02.517Z",
+        "Uuid": "955bbb54-0b06-402c-8c8f-cfdb1046c4ab",
+        "pk": 126
+    },
+    {
+        "LedgerName": "Sahithi",
+        "InvoiceDate": "2026-07-08",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-08T13:33:55.803Z",
+        "Uuid": "e08bffb6-3a2d-4af6-b012-31034162a8c4",
+        "pk": 127
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "test",
+        "DateTime": "2026-07-09T07:00:36.133Z",
+        "Uuid": "7cbc607f-5d6a-4100-a88b-7957065b5544",
+        "pk": 128
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "2222333",
+        "DateTime": "2026-07-09T08:24:54.840Z",
+        "Uuid": "60a6acbe-5eee-432c-8327-e29ae4d8fa05",
+        "pk": 129
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T08:56:13.404Z",
+        "Uuid": "6371030d-503d-4921-9148-bedfcaccc4b3",
+        "pk": 130
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "to test not going to date",
+        "DateTime": "2026-07-09T09:39:57.573Z",
+        "Uuid": "4bf86b9c-232e-4cc5-86f6-8794d704fdf4",
+        "pk": 131
+    },
+    {
+        "LedgerName": "test one",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T09:42:16.551Z",
+        "Uuid": "2f072478-2419-474e-a010-b0728f816573",
+        "pk": 132
+    },
+    {
+        "LedgerName": "Sagar",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T11:05:12.584Z",
+        "Uuid": "f354b9c2-c79d-40b6-85e4-6dfdf79cd557",
+        "pk": 133
+    },
+    {
+        "LedgerName": "Kapila",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T11:08:54.058Z",
+        "Uuid": "7894578b-cf1a-4993-a4a4-9c26dbda3cec",
+        "pk": 134
+    },
+    {
+        "LedgerName": "Appanna",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T12:25:01.315Z",
+        "Uuid": "477f2654-ce0f-48c4-a442-42dc077aff83",
+        "pk": 135
+    },
+    {
+        "LedgerName": "X",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T12:46:36.376Z",
+        "Uuid": "78bd7f59-dc8e-4249-81c2-82e3bab25909",
+        "pk": 136
+    },
+    {
+        "LedgerName": "X",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T12:56:38.747Z",
+        "Uuid": "ab91ac5a-1109-452d-985f-30c03d7dcd9e",
+        "pk": 137
+    },
+    {
+        "LedgerName": "",
+        "InvoiceDate": "2026-07-09",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-09T13:43:36.609Z",
+        "Uuid": "15221fe4-fbbb-4480-87de-622966150afb",
+        "pk": 138
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-07-10",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-10T09:13:38.515Z",
+        "Uuid": "26f96ccb-d665-4324-a45c-fbec75dd0a78",
+        "pk": 139
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-10",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-10T09:23:40.541Z",
+        "Uuid": "3491777e-9080-4a8e-a54b-ac6db4b28ffd",
+        "pk": 140
+    },
+    {
+        "LedgerName": "Sai sirish nadakuduru",
+        "InvoiceDate": "2026-07-10",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-10T09:24:33.499Z",
+        "Uuid": "239c774d-aeae-46ae-b156-62fa2e3645f4",
+        "pk": 141
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-10",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-10T14:49:55.959Z",
+        "Uuid": "f1455654-bc27-461b-be25-7412e1084556",
+        "pk": 142
+    },
+    {
+        "LedgerName": "Jnaneswar",
+        "InvoiceDate": "2026-07-11",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-11T06:23:08.813Z",
+        "Uuid": "c2dbbdbc-9287-40ad-928f-295da09ad2d2",
+        "pk": 143
+    },
+    {
+        "LedgerName": "Mr.Nafee, Mysore",
+        "InvoiceDate": "2026-07-11",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-11T12:16:35.253Z",
+        "Uuid": "9599c63b-648f-4bc9-9c86-9d925331f4e0",
+        "pk": 144
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-13",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-13T05:29:00.979Z",
+        "Uuid": "feef4d26-3648-4162-8375-73302f48c0ff",
+        "pk": 145
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-13",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-13T05:51:57.582Z",
+        "Uuid": "a1fab387-2ae4-4e54-90f5-81bfa07d2270",
+        "pk": 146
+    },
+    {
+        "LedgerName": "JDG",
+        "InvoiceDate": "2026-07-13",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-13T05:56:02.691Z",
+        "Uuid": "9fff589d-916e-476e-99fb-03dbb0753562",
+        "pk": 147
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-13",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-13T06:12:28.150Z",
+        "Uuid": "f1eb50d6-ec04-49fa-8d10-6667b29c4ef5",
+        "pk": 148
+    },
+    {
+        "LedgerName": "Keshav ",
+        "InvoiceDate": "2026-07-13",
+        "PartyGSTIN": "Test",
+        "DateTime": "2026-07-13T09:05:56.871Z",
+        "Uuid": "e8fe83c4-42c1-40a4-bfa8-7b3c63576131",
+        "pk": 149
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T05:03:07.789Z",
+        "Uuid": "c13c694b-eaf5-4388-af77-1a5c2877be6d",
+        "pk": 150
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T05:51:54.695Z",
+        "Uuid": "a7be00f5-bccd-45cd-8d77-71e274bf727a",
+        "pk": 151
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T06:00:32.686Z",
+        "Uuid": "8a8fc105-d84f-4aac-92b5-c10b2dc938d9",
+        "pk": 152
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T07:18:36.895Z",
+        "Uuid": "5b9ca378-ae83-47ec-875b-2b7b0fe29498",
+        "pk": 153
+    },
+    {
+        "LedgerName": "Devi Sea Foods Ltd , Pedapudi",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T09:46:17.292Z",
+        "Uuid": "a51dfc8c-3c45-48b0-a580-b375d7bf9a42",
+        "pk": 154
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T13:36:45.214Z",
+        "Uuid": "b767f748-042c-41a8-949c-019fca9cb24c",
+        "pk": 155
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T13:50:22.670Z",
+        "Uuid": "16b9a316-41e4-494b-a098-bf891d373654",
+        "pk": 156
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-14",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-14T14:10:10.003Z",
+        "Uuid": "734ba324-aa46-48cc-93fd-2e04d933e197",
+        "pk": 157
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-15",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-15T06:10:19.089Z",
+        "Uuid": "c65768b4-e191-40c9-a7f3-96e68ae6412c",
+        "pk": 158
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-15",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-15T06:41:44.347Z",
+        "Uuid": "ae9828f5-0a47-481b-aa8c-dc9cad944d3f",
+        "pk": 159
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-15",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-15T10:15:50.198Z",
+        "Uuid": "34115b17-8a41-44e0-8a69-f9742a054895",
+        "pk": 160
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-15",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-15T10:56:17.082Z",
+        "Uuid": "b9eb3f38-4c38-485b-9a30-e065f025cdfd",
+        "pk": 161
+    },
+    {
+        "LedgerName": "Chinthapalli Jaya Kumar, Parlovapeta",
+        "InvoiceDate": "2026-07-17",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-17T13:59:42.728Z",
+        "Uuid": "c7da7a3e-8099-4902-9e77-413c1ea0f315",
+        "pk": 162
+    },
+    {
+        "LedgerName": "Badam Veera Nageswara Rao (Gunnies)",
+        "InvoiceDate": "2026-07-17",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-17T14:16:43.185Z",
+        "Uuid": "59d11e12-1bc9-46ec-afaa-dab26a7d85fa",
+        "pk": 163
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-18",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-18T08:00:35.440Z",
+        "Uuid": "b8ba4d5c-39fd-4134-a8fa-f836322c6d4c",
+        "pk": 164
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-18",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-18T08:12:50.924Z",
+        "Uuid": "f50c6cb8-2903-42f5-bb28-f45583450d17",
+        "pk": 165
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-18",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-18T11:58:14.615Z",
+        "Uuid": "4713e43b-ce2e-47b1-90db-e325ddb1ad8a",
+        "pk": 166
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-20",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-20T05:35:15.419Z",
+        "Uuid": "3dc3b73e-7fbe-4982-86c6-a1350b3e4f53",
+        "pk": 167
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-20",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-20T06:11:29.118Z",
+        "Uuid": "114ee6f0-8ddf-47f4-a633-6e9c7e115814",
+        "pk": 168
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-20",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-20T07:22:14.622Z",
+        "Uuid": "e86ff543-e8f1-44fd-b273-49532ab50729",
+        "pk": 169
+    },
+    {
+        "LedgerName": "Potti Durga",
+        "InvoiceDate": "2026-07-20",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-20T07:34:48.834Z",
+        "Uuid": "3f445fe7-1387-4c53-a0d8-752a4b3ec1b7",
+        "pk": 170
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-21",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-21T05:05:10.376Z",
+        "Uuid": "a24d9a0c-7444-478a-a0ad-37ce38ea1a72",
+        "pk": 171
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-21",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-21T07:09:04.061Z",
+        "Uuid": "3b1dd5b3-3967-4f39-8de5-a539d920c6b7",
+        "pk": 172
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-21",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-21T09:47:22.645Z",
+        "Uuid": "10abd538-9006-4d09-b920-fc9152ba0c5d",
+        "pk": 173
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-21",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-21T10:30:24.017Z",
+        "Uuid": "c52ad902-4182-448b-adb9-46f71ba99902",
+        "pk": 174
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-21",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-21T11:21:38.495Z",
+        "Uuid": "9adc810b-eddd-4413-af45-3be8c2dd2aa1",
+        "pk": 175
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-21",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-21T12:21:47.841Z",
+        "Uuid": "d6d17e1c-8a30-4afd-9fe9-132837978e29",
+        "pk": 176
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T05:15:30.253Z",
+        "Uuid": "7780ecd0-e661-49ad-ac6d-58f5874fb4ee",
+        "pk": 177
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T05:57:24.544Z",
+        "Uuid": "aa0266f1-3830-433f-b3bf-54fcbea2fbac",
+        "pk": 178
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T06:10:43.690Z",
+        "Uuid": "508c437a-22f5-4088-99b9-ff9ee4d6501a",
+        "pk": 179
+    },
+    {
+        "LedgerName": "Phone Pe",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T06:28:34.406Z",
+        "Uuid": "de20525b-aa2a-4ccf-ab0a-9bd49b90ae7c",
+        "pk": 180
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T07:39:55.563Z",
+        "Uuid": "49667df2-03a0-48b2-8010-065ad991648e",
+        "pk": 181
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T10:38:48.816Z",
+        "Uuid": "3cc292f4-bc0c-4644-8c77-a92f24776982",
+        "pk": 182
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T10:40:58.833Z",
+        "Uuid": "9d123237-2fc3-4a54-b761-8d3d7e0ef653",
+        "pk": 183
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T11:34:14.512Z",
+        "Uuid": "29af695d-341a-421a-98e5-7f617cbe1655",
+        "pk": 184
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T11:40:00.160Z",
+        "Uuid": "6f26d22b-206c-41eb-9f0d-def8ea87752c",
+        "pk": 185
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T11:56:11.668Z",
+        "Uuid": "af936e39-cc15-4f8e-acda-67f61937d8bf",
+        "pk": 186
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T12:34:32.101Z",
+        "Uuid": "604d2adf-9a7c-47c4-a874-55f6095e9639",
+        "pk": 187
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-22",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-22T12:41:13.244Z",
+        "Uuid": "12f3d40a-df6c-47b6-8485-89bdde8597a2",
+        "pk": 188
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-23",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-23T06:10:24.175Z",
+        "Uuid": "ad08ad47-1d7b-4f0c-84d5-3dfc7831337a",
+        "pk": 189
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-23",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-23T06:44:16.898Z",
+        "Uuid": "254323ad-af11-4889-b28b-1f66c6a7bdb1",
+        "pk": 190
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-23",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-23T11:35:27.262Z",
+        "Uuid": "e5d2caae-8b34-415c-adb7-2acb9bc8416a",
+        "pk": 191
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-07-23",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-23T11:56:43.550Z",
+        "Uuid": "01380886-c199-453f-8bfe-dcbf9ff9abfa",
+        "pk": 192
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-24",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-24T05:48:02.920Z",
+        "Uuid": "e65858fc-3d82-4e64-92e0-7644e537ab35",
+        "pk": 193
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-24",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-24T07:42:27.576Z",
+        "Uuid": "21f34a26-1986-488d-b561-e360168b74f8",
+        "pk": 194
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-24",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-24T08:20:29.191Z",
+        "Uuid": "432c06a9-7cd4-4739-b346-b78133f27681",
+        "pk": 195
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-24",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-24T11:21:31.959Z",
+        "Uuid": "037c3b5c-f03b-4b87-aca0-ecc0683a3622",
+        "pk": 196
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T05:08:52.694Z",
+        "Uuid": "6617942c-44e8-49d3-943f-34ca176391b8",
+        "pk": 197
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T05:35:01.292Z",
+        "Uuid": "a8f86a79-66ca-4a98-8985-41e8ff5ae11a",
+        "pk": 198
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T05:41:13.190Z",
+        "Uuid": "df294941-d40b-4259-94e5-76540bc87bae",
+        "pk": 199
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T05:45:45.848Z",
+        "Uuid": "15a4073d-017a-45ba-9807-ba5144d5a032",
+        "pk": 200
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T07:21:35.599Z",
+        "Uuid": "09b1752e-0584-44f3-bd15-2874972d1622",
+        "pk": 201
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T07:38:59.664Z",
+        "Uuid": "6d0ee3a2-1e28-46af-8e82-46262b1c8e0c",
+        "pk": 202
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T07:48:49.017Z",
+        "Uuid": "fb92589b-3bf0-483a-ab5c-a1331a0ac378",
+        "pk": 203
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-25T08:55:42.699Z",
+        "Uuid": "8d6efbc8-9a2c-493e-b350-bf65f6b43a75",
+        "pk": 204
+    },
+    {
+        "LedgerName": "Ch Lokesh Raju Amalapuram",
+        "InvoiceDate": "2026-07-25",
+        "PartyGSTIN": "keshav",
+        "DateTime": "2026-07-25T09:14:54.952Z",
+        "Uuid": "ad433074-4e46-400d-a79b-342dbd3155d0",
+        "pk": 205
+    },
+    {
+        "LedgerName": "Phone pe",
+        "InvoiceDate": "2026-07-27",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-27T05:17:00.815Z",
+        "Uuid": "51d3d996-b12c-46a5-920a-3c6853e0b787",
+        "pk": 206
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-27",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-27T05:24:47.958Z",
+        "Uuid": "6306cf2e-7696-43bb-94b2-07ea213b9bf5",
+        "pk": 207
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-28",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-28T05:22:27.736Z",
+        "Uuid": "62bd2b07-31ba-4003-82d9-39d97170eae7",
+        "pk": 208
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-28",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-28T10:43:08.161Z",
+        "Uuid": "f40154ec-35d5-4486-97d8-445704e71444",
+        "pk": 209
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-28",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-28T13:13:02.112Z",
+        "Uuid": "5df2eb4f-fa47-4469-8db2-ad64e521927c",
+        "pk": 210
+    },
+    {
+        "LedgerName": "T Rama Krishna Kakinada",
+        "InvoiceDate": "2026-07-29",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-29T10:20:50.186Z",
+        "Uuid": "4937185d-e9b4-411c-9b2c-c962fe94f677",
+        "pk": 211
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-30",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-30T06:30:09.671Z",
+        "Uuid": "7fa41804-fd0a-475e-aa9e-1f210131603b",
+        "pk": 212
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-31",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-31T05:10:51.713Z",
+        "Uuid": "08c93edc-1f86-4b66-bab1-4ddc5ff0f023",
+        "pk": 213
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-31",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-31T07:45:48.850Z",
+        "Uuid": "81f64c8a-504d-4d65-b337-9873a330a52d",
+        "pk": 214
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-31",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-31T07:46:55.029Z",
+        "Uuid": "fb823647-ffdf-4300-b050-37a11bcd48d6",
+        "pk": 215
+    },
+    {
+        "LedgerName": "Fdo Nooka Raju , Vetalpalem",
+        "InvoiceDate": "2026-07-31",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-31T08:44:32.437Z",
+        "Uuid": "599238a8-fa42-41bc-a8e0-1b42fe241444",
+        "pk": 216
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-07-31",
+        "PartyGSTIN": "",
+        "DateTime": "2026-07-31T12:58:04.993Z",
+        "Uuid": "66bc15fc-1ae7-4581-b66b-198e5f4cbc99",
+        "pk": 217
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-01",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-01T08:50:49.997Z",
+        "Uuid": "4b81da31-072d-4185-b293-8c4871baf8ae",
+        "pk": 218
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-01",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-01T12:25:10.194Z",
+        "Uuid": "09048181-1b76-4370-b166-66edca68f246",
+        "pk": 219
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-01",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-01T12:28:49.964Z",
+        "Uuid": "00b6fce8-f8b9-4fd9-8934-24c7922cb13b",
+        "pk": 220
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-01",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-01T12:43:34.720Z",
+        "Uuid": "43505acf-6b36-474b-82df-bcfeaa530f21",
+        "pk": 221
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-01",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-01T13:36:56.776Z",
+        "Uuid": "6bfbcfc5-27c4-4db4-a5f5-b8813323ed35",
+        "pk": 222
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-01",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-01T14:34:47.441Z",
+        "Uuid": "75cb0363-5bdd-4416-84a0-cf246e8d3b2a",
+        "pk": 223
+    },
+    {
+        "LedgerName": "Koya Raju Net A/c",
+        "InvoiceDate": "2026-08-01",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-01T14:52:48.027Z",
+        "Uuid": "82c70485-148a-4b59-b250-44ed07006c32",
+        "pk": 224
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-03",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-03T05:30:06.285Z",
+        "Uuid": "15174b94-542c-4021-9361-adb4eeba8fa5",
+        "pk": 225
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-03",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-03T05:32:42.847Z",
+        "Uuid": "d54ca84e-eeb7-4e0c-bc3b-f5278bf7bb4b",
+        "pk": 226
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-03",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-03T07:45:25.387Z",
+        "Uuid": "322b933e-3fe5-4781-b3d7-faede6f7deaf",
+        "pk": 227
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-03",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-03T07:47:34.957Z",
+        "Uuid": "1c60e0c5-1d74-4f50-9a3b-b2c31e23174e",
+        "pk": 228
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T06:27:56.675Z",
+        "Uuid": "bdbe99a6-e481-4d0b-ad7d-1dde8015f96d",
+        "pk": 229
+    },
+    {
+        "LedgerName": "JDG Seafood (Akula Durga Prasad)",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T08:14:09.544Z",
+        "Uuid": "5a459871-6c39-4d56-8da8-5b7c03b1d990",
+        "pk": 230
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T08:27:20.174Z",
+        "Uuid": "d9219fbc-e9bb-4f19-91fe-ee3e3a5ea869",
+        "pk": 231
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T09:35:57.052Z",
+        "Uuid": "79b16c99-5be6-4293-b249-5b5e89cef4ef",
+        "pk": 232
+    },
+    {
+        "LedgerName": "Siva ",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T10:30:19.050Z",
+        "Uuid": "c3b24d14-4822-43ef-b667-e980a3ae2e2e",
+        "pk": 233
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T10:33:33.754Z",
+        "Uuid": "91cc3277-7d92-4079-9169-8f24b4e6835a",
+        "pk": 234
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T13:12:37.485Z",
+        "Uuid": "18a880b8-34f9-4a71-ab43-d4d21e03d9be",
+        "pk": 235
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-04",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-04T13:38:23.646Z",
+        "Uuid": "a0791301-1fe8-4c48-8bdd-590af86b5216",
+        "pk": 236
+    },
+    {
+        "LedgerName": "Cash-Kondababu",
+        "InvoiceDate": "2026-08-05",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-05T04:31:14.454Z",
+        "Uuid": "847a870c-c080-4679-a17b-beb290cf40ef",
+        "pk": 237
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-06",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-06T06:02:52.059Z",
+        "Uuid": "a6223ba6-290c-4e27-bc20-8e7896bb2bb2",
+        "pk": 238
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-06",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-06T10:46:22.637Z",
+        "Uuid": "6207b20c-4957-4d92-a9a8-c531b710ed52",
+        "pk": 239
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-06",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-06T11:28:34.712Z",
+        "Uuid": "47ca884c-2d45-4eba-b174-b335840f1822",
+        "pk": 240
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-08-06",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-06T12:01:21.392Z",
+        "Uuid": "393de29b-2c5d-4538-a4d8-9c84740ff454",
+        "pk": 241
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-08-06",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-06T12:02:19.627Z",
+        "Uuid": "f7cf7fbc-bcd4-434c-aae2-e7796a4ec892",
+        "pk": 242
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-06",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-06T13:28:06.067Z",
+        "Uuid": "6eef3ba6-251c-482b-9e99-dc16b3e32e35",
+        "pk": 243
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-07",
+        "PartyGSTIN": "",
+        "DateTime": "2026-08-07T06:41:35.449Z",
+        "Uuid": "2597a0da-f1bb-495e-bf77-1150a6d6ec34",
+        "pk": 244
+    },
+    {
+        "LedgerName": "360 one Quant Fund on 20.08.24",
+        "InvoiceDate": "2026-08-07",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-07T10:17:51.370Z",
+        "Uuid": "c62c09df-41a1-426a-88cc-9feec2a11447",
+        "pk": 245
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-07",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-07T10:29:45.304Z",
+        "Uuid": "0bf46ff0-3113-4f88-8f89-53411c1e5bdb",
+        "pk": 246
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-08-07",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-07T10:35:02.805Z",
+        "Uuid": "6c9143de-b777-4c89-a122-069137e5d285",
+        "pk": 247
+    },
+    {
+        "LedgerName": "K Kasi Babu Dummulapeta",
+        "InvoiceDate": "2026-08-07",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-07T11:38:02.881Z",
+        "Uuid": "18952a47-c659-4b00-a076-2d6612c51fae",
+        "pk": 248
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-07",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-07T13:57:25.305Z",
+        "Uuid": "bb8b8330-bc64-4d00-8faf-98135a1bae43",
+        "pk": 249
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T05:01:42.529Z",
+        "Uuid": "2d8a2a6a-0d20-496c-9ba4-623df08d8bac",
+        "pk": 250
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T05:08:27.182Z",
+        "Uuid": "ee0e879e-f134-42ac-a5aa-ecd0e6b20045",
+        "pk": 251
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T06:47:40.016Z",
+        "Uuid": "e93ba083-5b37-44ca-a473-f08ce66d8f8d",
+        "pk": 252
+    },
+    {
+        "LedgerName": "Sundar",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T06:49:04.343Z",
+        "Uuid": "a0e2f1e0-b75c-43e7-8364-fe59c8ab2a35",
+        "pk": 253
+    },
+    {
+        "LedgerName": "Sahithi",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T06:51:23.397Z",
+        "Uuid": "1c51523a-a8b1-4a18-a7b2-a6905538315e",
+        "pk": 254
+    },
+    {
+        "LedgerName": "Kamesh",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T06:52:21.245Z",
+        "Uuid": "ef5d3bb2-bee0-4398-8170-da35a3f54e59",
+        "pk": 255
+    },
+    {
+        "LedgerName": "K Ramana",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T07:09:49.672Z",
+        "Uuid": "19930b55-0e1f-4746-aeeb-c22582d06933",
+        "pk": 256
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T07:20:26.215Z",
+        "Uuid": "82e12ab3-44a6-4763-b192-be97e81dc8ad",
+        "pk": 257
+    },
+    {
+        "LedgerName": "M Devudu",
+        "InvoiceDate": "2026-08-08",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-08T07:21:10.301Z",
+        "Uuid": "9318f538-d97c-46ed-b4d0-bc73bc389d97",
+        "pk": 258
+    },
+    {
+        "LedgerName": "360 one Quant Fund on 20.08.24",
+        "InvoiceDate": "2026-08-10",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-10T10:16:43.916Z",
+        "Uuid": "45112d74-19df-47fd-be79-076fba440141",
+        "pk": 259
+    },
+    {
+        "LedgerName": "Aarish Enterprises(Jayram Agencies)",
+        "InvoiceDate": "2026-08-10",
+        "PartyGSTIN": "111",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-10T10:20:51.785Z",
+        "Uuid": "04b08172-ab55-4ac7-bb76-1b19c5fe91c5",
+        "pk": 260
+    },
+    {
+        "ParentPk": 260,
+        "ItemName": "0.15/35mm",
+        "Batch": "Kumaran-250gms-Rs.126/-",
+        "Qty": "10",
+        "RateInc": "230.00",
+        "Amount": "2300.00",
+        "DateTime": "2026-08-10T10:32:09.050Z",
+        "Uuid": "e7a79b4d-bd7c-430d-b232-3385b8e8fdd0",
+        "pk": 261
+    },
+    {
+        "ParentPk": 260,
+        "ItemName": "0.11/32mm",
+        "Batch": "1.20-275/-",
+        "Qty": "",
+        "RateInc": "",
+        "Amount": "0.00",
+        "DateTime": "2026-08-10T10:41:24.286Z",
+        "Uuid": "a4bb5e6f-abdd-4a44-b99a-1bd5077d68f5",
+        "pk": 262
+    },
+    {
+        "LedgerName": "M.Sattibabu (Apex Varma)",
+        "InvoiceDate": "2026-08-10",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-10T11:20:59.693Z",
+        "Uuid": "c1f8a457-6c69-448e-a068-44d6229f37a0",
+        "pk": 263
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-10",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-10T11:49:41.628Z",
+        "Uuid": "7c325928-7848-4728-b0f3-1665caaf2508",
+        "pk": 264
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-10",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-10T12:55:44.092Z",
+        "Uuid": "3bafe395-84bd-4bc5-8f3d-6691b0407719",
+        "pk": 265
+    },
+    {
+        "LedgerName": "360 one Quant Fund on 20.08.24",
+        "InvoiceDate": "2026-08-10",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-10T12:57:04.568Z",
+        "Uuid": "0f7dfcb2-1d6e-4ad6-81f7-2df1ac03e277",
+        "pk": 266
+    },
+    {
+        "LedgerName": "Aadarna Supplies",
+        "InvoiceDate": "2026-08-10",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-10T13:02:48.195Z",
+        "Uuid": "e65993f7-f9a3-41ad-bf38-fa23dbbfbd24",
+        "pk": 267
+    },
+    {
+        "ParentPk": 260,
+        "ItemName": "0.11/35mm",
+        "Batch": "Blue-RRR-Rs.6/-",
+        "Qty": "10",
+        "RateInc": "203.00",
+        "Amount": "2030.00",
+        "DateTime": "2026-08-10T13:03:18.366Z",
+        "Uuid": "7444b4c8-079a-4f2f-aae5-59c68d5b3b69",
+        "pk": 268
+    },
+    {
+        "ParentPk": 267,
+        "ItemName": "0.11/32mm",
+        "Batch": "15mtr-6.5*4.5-Rs.120/-",
+        "Qty": "10",
+        "RateInc": "20.00",
+        "Amount": "200.00",
+        "DateTime": "2026-08-10T13:04:22.398Z",
+        "Uuid": "3fd9f010-7ced-4e5a-8e7d-f859c8af6efd",
+        "pk": 269
+    },
+    {
+        "ParentPk": 266,
+        "ItemName": "Blesso Fish",
+        "Batch": "Tuf-Rs.170",
+        "Qty": "120",
+        "RateInc": "203.00",
+        "Amount": "24360.00",
+        "DateTime": "2026-08-10T13:04:50.649Z",
+        "Uuid": "efed655a-b8c7-4770-903a-79cb8492308c",
+        "pk": 270
+    },
+    {
+        "ParentPk": 268,
+        "ItemName": "Tinsel Zari Patty",
+        "Batch": "Red-Rs.2420/-",
+        "Qty": "0.11",
+        "RateInc": "4000.00",
+        "Amount": "440.00",
+        "DateTime": "2026-08-10T13:30:10.853Z",
+        "Uuid": "3159785b-17df-4a3d-9845-d5e91dade2e6",
+        "pk": 271
+    },
+    {
+        "LedgerName": "G.Siva Keshava Varma, Krishnapuram",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "keshav",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T05:09:56.939Z",
+        "Uuid": "01b0b44f-8915-470e-88f5-f13c5fefe266",
+        "pk": 272
+    },
+    {
+        "ParentPk": 272,
+        "ItemName": "Viaadi Hooks",
+        "Batch": "14-Rs.336/-",
+        "Qty": "10",
+        "RateInc": "100.00",
+        "Amount": "1000.00",
+        "DateTime": "2026-08-11T05:11:27.294Z",
+        "Uuid": "6b90121e-395f-4d67-8f08-550389d4cbed",
+        "pk": 273
+    },
+    {
+        "LedgerName": "Abhishek Enterprises",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "keshav",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T05:11:42.026Z",
+        "Uuid": "ce24fb3e-fd53-437e-9b4b-274d57d06973",
+        "pk": 274
+    },
+    {
+        "ParentPk": 274,
+        "ItemName": "Viaadi Hooks",
+        "Batch": "3-Rs.6843/-",
+        "Qty": "10",
+        "RateInc": "20.00",
+        "Amount": "200.00",
+        "DateTime": "2026-08-11T05:11:48.946Z",
+        "Uuid": "a11ee032-cbc9-46ce-8f4b-953c6a74ce32",
+        "pk": 275
+    },
+    {
+        "LedgerName": "AARON MARKETING, CHENNAI",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "keshav",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T07:52:51.850Z",
+        "Uuid": "c7485de8-8085-4c78-8cd8-e10afaf421c0",
+        "pk": 276
+    },
+    {
+        "LedgerName": "3F Industries Ltd",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T08:51:12.548Z",
+        "Uuid": "e5017321-1b4f-47ac-ba98-3c6d8d0f87a7",
+        "pk": 277
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T09:16:18.765Z",
+        "Uuid": "a66683b7-ed3f-4710-a01d-4cfc3a207356",
+        "pk": 278
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T09:23:26.317Z",
+        "Uuid": "79151cc4-b716-4f57-900e-ff7957d8172b",
+        "pk": 279
+    },
+    {
+        "LedgerName": "cash",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T10:33:03.101Z",
+        "Uuid": "77661c4f-bf9b-4044-8dd7-2dffe377ef0c",
+        "pk": 280
+    },
+    {
+        "LedgerName": "Aadarna Supplies",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T10:33:51.996Z",
+        "Uuid": "65d27553-6778-47d6-93a2-cc95c1ee69a8",
+        "pk": 281
+    },
+    {
+        "LedgerName": "Bhadrachalam Cast Net",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T10:34:53.201Z",
+        "Uuid": "50f7ef32-4670-48d7-89d0-7f343c6c5569",
+        "pk": 282
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T10:35:20.293Z",
+        "Uuid": "995c13a1-5f08-4f2b-ac7e-5d90d006c5c7",
+        "pk": 283
+    },
+    {
+        "LedgerName": "shaik allabaksh",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T10:40:09.612Z",
+        "Uuid": "e21780dd-a812-45a4-ba3d-85c34526aa69",
+        "pk": 284
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T11:45:17.944Z",
+        "Uuid": "9ea5f9a8-3468-4c47-9437-088a93cb75a0",
+        "pk": 285
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T13:45:50.271Z",
+        "Uuid": "03377939-b704-459f-9bf2-ad9364f3542a",
+        "pk": 286
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T15:04:41.053Z",
+        "Uuid": "6af71e0d-1b67-40ea-bd05-07001b8a9bff",
+        "pk": 287
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-11",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-11T15:08:27.869Z",
+        "Uuid": "3831e54e-ee50-498c-8460-ec6189dcbc07",
+        "pk": 288
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T06:46:39.166Z",
+        "Uuid": "03ed24fe-2483-45c6-a601-b14a874b9885",
+        "pk": 289
+    },
+    {
+        "LedgerName": "keshav1",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "keshav1",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T06:51:19.289Z",
+        "Uuid": "f75769e1-3c97-44ea-936b-829ed72ab760",
+        "pk": 290
+    },
+    {
+        "LedgerName": "keshav2",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T06:57:18.723Z",
+        "Uuid": "eb377a2f-831d-4f15-8e76-18c7f8331d3c",
+        "pk": 291
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T07:07:07.720Z",
+        "Uuid": "75f3aba2-72b3-4471-9fc9-cc95b4828204",
+        "pk": 292
+    },
+    {
+        "LedgerName": "keshav2",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T08:55:18.102Z",
+        "Uuid": "1c9aac51-438a-41ed-b422-846f25a47174",
+        "pk": 293
+    },
+    {
+        "LedgerName": "keshav2",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T09:02:41.494Z",
+        "Uuid": "3081c3f0-f817-4cac-8712-89145d56b95b",
+        "pk": 294
+    },
+    {
+        "LedgerName": "keshav2",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T09:09:57.864Z",
+        "Uuid": "d155149b-0698-4a78-a70d-d263a937c983",
+        "pk": 295
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T09:44:42.005Z",
+        "Uuid": "8ed8f318-a574-406a-b841-e502a28f4543",
+        "pk": 296
+    },
+    {
+        "LedgerName": "Murali Hand Loan Cash",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T09:51:48.977Z",
+        "Uuid": "3c9c0949-3a19-49b3-bc14-b73483ba3a12",
+        "pk": 297
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T09:55:10.748Z",
+        "Uuid": "e2c97af4-df19-44fe-9326-039ec333ac84",
+        "pk": 298
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T13:19:52.766Z",
+        "Uuid": "042ddab2-e081-4e6f-ae9b-ecbad8f8c32e",
+        "pk": 299
+    },
+    {
+        "LedgerName": "ALI TAILOR",
+        "InvoiceDate": "2026-08-12",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-12T13:21:29.495Z",
+        "Uuid": "7b7279e3-7db6-4f28-8f41-2734067d7a9e",
+        "pk": 300
+    },
+    {
+        "LedgerName": "Chandini Cashew Industries",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T05:20:54.618Z",
+        "Uuid": "3bae75ef-8d82-48fc-ab56-090e3b324416",
+        "pk": 301
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T05:53:07.690Z",
+        "Uuid": "8360a51a-148c-4dc6-8b7b-05800fc4f361",
+        "pk": 302
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "keshav",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T06:11:51.816Z",
+        "Uuid": "157dcba6-a40d-48a0-8718-088bd262ffcb",
+        "pk": 303
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T06:13:28.397Z",
+        "Uuid": "267807ee-5ea1-431c-b5fe-97cf7821baae",
+        "pk": 304
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T10:47:23.607Z",
+        "Uuid": "7e77849a-0306-4950-83f8-7d5d5a0925a8",
+        "pk": 305
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T11:19:13.455Z",
+        "Uuid": "42a1a4f7-05da-41c9-abc0-a007d4e3476c",
+        "pk": 306
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T13:20:09.276Z",
+        "Uuid": "4a653d7e-d712-46fa-9e17-ea0f3cc8a1c0",
+        "pk": 307
+    },
+    {
+        "LedgerName": "m.rajaram sudheer",
+        "InvoiceDate": "2026-08-13",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-13T14:36:34.434Z",
+        "Uuid": "b9eda5cf-c159-4590-a134-33a568f87d59",
+        "pk": 308
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-14",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-14T08:58:38.611Z",
+        "Uuid": "2483d5cc-8de6-41e6-9319-3a94b52b14b8",
+        "pk": 309
+    },
+    {
+        "LedgerName": "Chekka Gangadri",
+        "InvoiceDate": "2026-08-14",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-14T09:02:55.258Z",
+        "Uuid": "f6b722e0-62f9-48be-9ff0-17f9d12bc625",
+        "pk": 310
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-14",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-14T12:36:54.854Z",
+        "Uuid": "bb35a89a-871f-4349-847c-93ff8cfbfc88",
+        "pk": 311
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-14",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-14T12:40:34.972Z",
+        "Uuid": "374e0b94-371a-4561-b474-a91c2220734f",
+        "pk": 312
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-08-15",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-15T05:44:58.394Z",
+        "Uuid": "576c2ea8-565d-4645-9fbc-a966a40298ee",
+        "pk": 313
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-15",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-15T12:11:38.797Z",
+        "Uuid": "aeab4b2b-adc7-43c6-a4dc-b8ffddacf84e",
+        "pk": 314
+    },
+    {
+        "LedgerName": "keshav",
+        "InvoiceDate": "2026-08-15",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-15T14:10:50.939Z",
+        "Uuid": "6bacc94f-8eee-43c1-a2c6-82b4898cf4c0",
+        "pk": 315
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T05:11:19.484Z",
+        "Uuid": "fef68788-b714-4eee-be9d-fe9cf345bb91",
+        "pk": 316
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T05:17:23.293Z",
+        "Uuid": "0716e60a-bc94-4ec0-9b51-2b0d08ed50ad",
+        "pk": 317
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T07:07:10.823Z",
+        "Uuid": "56952786-bdb9-4802-b093-e178521d1224",
+        "pk": 318
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T07:07:37.897Z",
+        "Uuid": "72867883-9593-4ec7-86ad-6e411371f5d1",
+        "pk": 319
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T08:14:32.776Z",
+        "Uuid": "f3b3d0ac-cecd-42a4-912b-5f2f6ed0edd4",
+        "pk": 320
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T08:16:37.543Z",
+        "Uuid": "6cfefeab-3c1b-4e3d-82e0-3056f5cc67b1",
+        "pk": 321
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T11:04:44.583Z",
+        "Uuid": "7c2aed7f-ffe9-43ce-9a56-566b04934d93",
+        "pk": 322
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-17",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-17T11:18:27.324Z",
+        "Uuid": "70ee8ad3-5547-4de6-8335-a6f1c7bbd07e",
+        "pk": 323
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-18",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-18T05:17:31.358Z",
+        "Uuid": "4f86c524-17ae-412f-b844-499fdef49ddc",
+        "pk": 324
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-18",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-18T05:29:34.957Z",
+        "Uuid": "94022c4e-2cea-463d-b4be-fb9dcad354b6",
+        "pk": 325
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-08-18",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-18T07:17:38.026Z",
+        "Uuid": "c116fcd7-5505-4997-9eb9-178655cd5fe4",
+        "pk": 326
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-08-18",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-18T10:27:50.285Z",
+        "Uuid": "8d6c1908-1398-4129-a206-de9b352758ce",
+        "pk": 327
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-18",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-18T11:36:48.393Z",
+        "Uuid": "826aea15-a85d-4902-9064-92a36b946814",
+        "pk": 328
+    },
+    {
+        "LedgerName": "Phonepe Business (Axis)",
+        "InvoiceDate": "2026-08-19",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-19T04:49:31.024Z",
+        "Uuid": "06065183-c171-48c4-b6a4-f4c2adcfa3ae",
+        "pk": 329
+    },
+    {
+        "LedgerName": "R.V.V.L.N.Varma(Sai Sirish Rambabu Garu)",
+        "InvoiceDate": "2026-08-19",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-19T05:14:58.674Z",
+        "Uuid": "df9f0a0f-d3c6-4a45-816c-594abedcc567",
+        "pk": 330
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-19",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-19T06:22:20.824Z",
+        "Uuid": "8d9c82c5-c26a-417c-a975-d791b450f178",
+        "pk": 331
+    },
+    {
+        "LedgerName": "Cash",
+        "InvoiceDate": "2026-08-19",
+        "PartyGSTIN": "",
+        "uiVersion": "v27",
+        "DateTime": "2026-08-19T07:03:28.598Z",
+        "Uuid": "74036a02-c545-4bed-8af3-0a9efe321f3f",
+        "pk": 332
+    }
+]

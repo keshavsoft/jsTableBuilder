@@ -2,7 +2,7 @@ import { createTrElement } from "./1-createTrElement.js";
 import { buildTdElement } from "./3-buildTdElement.js";
 import { buildCellContent } from "./4-buildCellContent.js";
 
-const showLogs = true;
+const showLogs = false;
 
 const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {}, inSummaryValues = {} }) => {
     const localData = inData;
@@ -37,7 +37,13 @@ const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {}, inSu
         };
 
         if (balanceString) {
-
+            try {
+                // Wrap the string in backticks so it evaluates as a template literal
+                const evaluator = new Function(...sumKeys, `return \`${balanceString}\`;`);
+                displayValue = evaluator(...sumValuesArray);
+            } catch (err) {
+                console.error("Error evaluating balanceString:", err);
+            }
         };
 
         const cellContent = buildCellContent({
