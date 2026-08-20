@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TableBuilder - Setup & Run Documentation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        /* Header */
+
+        .header {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            padding: 45px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* Cards */
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+        }
+
+        .card h2 {
+            color: #1d4ed8;
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .card h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #374151;
+        }
+
+        /* Step */
+
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .step-number {
+            min-width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #111827;
+        }
+
+        /* Code */
+
+        pre {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 14px 0;
+            font-size: 15px;
+        }
+
+        code {
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        .inline-code {
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+
+        /* Info box */
+
+        .info {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .success {
+            background: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 18px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .warning {
+            background: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 18px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* Flow */
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .flow-item {
+            background: #eef2ff;
+            color: #3730a3;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .arrow {
+            color: #6b7280;
+            font-size: 22px;
+        }
+
+        /* Folder structure */
+
+        .folder {
+            background: #111827;
+            color: #d1d5db;
+            padding: 22px;
+            border-radius: 10px;
+            font-family: Consolas, monospace;
+            line-height: 1.8;
+        }
+
+        .folder .folder-name {
+            color: #60a5fa;
+        }
+
+        .folder .file-name {
+            color: #a7f3d0;
+        }
+
+        /* URL */
+
+        .url-box {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: Consolas, monospace;
+            color: #2563eb;
+            word-break: break-all;
+        }
+
+        /* Table */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 13px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f9fafb;
+            color: #374151;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            color: #6b7280;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+        a {
+            text-decoration: none;
+            color: #eeeff2;
+        }
+
+        @media (max-width: 700px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .step {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <section class="header">
+
+            <a href="index.html">
+                <h1>TableBuilder</h1>
+            </a>
+
+            <p>
+                Setup, Run and View Generated Table Documentation
+            </p>
+
+            <span class="badge">
+                Developer Documentation
+            </span>
+
+        </section>
+
+
+        <!-- Introduction -->
+
+        <section class="card">
+
+            <h2>1. Introduction</h2>
+
+            <p>
+                TableBuilder is a configuration-driven table rendering project.
+                After cloning the project and installing its dependencies,
+                the test application can be started from the
+                <span class="inline-code">test</span> folder.
+            </p>
+
+            <p style="margin-top: 12px;">
+                The generated table can then be opened in a browser using the
+                corresponding local URL. In this example, the generated table
+                is called <strong>BillsTable</strong>.
+            </p>
+
+            <div class="info">
+
+                <strong>Purpose:</strong>
+
+                This document explains how to install the project,
+                start the test server, open the generated table, and
+                verify the final output in the browser.
+
+            </div>
+
+        </section>
+
+
+        <!-- Flow -->
+
+        <section class="card">
+
+            <h2>2. Application Flow</h2>
+
+            <p>
+                The complete process follows the flow below:
+            </p>
+
+            <div class="flow">
+
+                <div class="flow-item">
+                    Clone Project
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="flow-item">
+                    Install Dependencies
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="flow-item">
+                    Open test Folder
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="flow-item">
+                    Run Server
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="flow-item">
+                    Open BillsTable
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Step 1 -->
+
+        <section class="card">
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div class="step-content">
+
+                    <h3>Clone the Project</h3>
+
+                    <p>
+                        First, clone the TableBuilder project from the
+                        repository and open the project folder in VS Code.
+                    </p>
+
+                    <pre><code>git clone https://github.com/keshavsoft/jsTableBuilder
+cd JsTableBuilder</code></pre>
+
+                    <div class="info">
+
+                        After cloning the project, the project source code
+                        and required configuration files will be available
+                        in the local workspace.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Step 2 -->
+
+        <section class="card">
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div class="step-content">
+
+                    <h3>Install Project Dependencies</h3>
+
+                    <p>
+                        Open the terminal inside the project root directory
+                        and install all required Node.js dependencies.
+                    </p>
+
+                    <pre><code>npm i</code></pre>
+
+                    <p>
+                        This command installs the packages defined in
+                        <span class="inline-code">package.json</span>
+                        and creates the
+                        <span class="inline-code">node_modules</span>
+                        folder.
+                    </p>
+
+                    <div class="success">
+
+                        <strong>Expected result:</strong>
+
+                        The required project dependencies are installed
+                        and the project is ready to run.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Step 3 -->
+
+        <section class="card">
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div class="step-content">
+
+                    <h3>Go to the Test Folder</h3>
+
+                    <p>
+                        After installing the dependencies, move into the
+                        <span class="inline-code">test</span> directory.
+                    </p>
+
+                    <pre><code>cd test</code></pre>
+
+                    <p>
+                        The test folder contains the files and generated
+                        table configuration used to verify the TableBuilder
+                        functionality.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Step 4 -->
+
+        <section class="card">
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <div class="step-content">
+
+                    <h3>Start the Local Server</h3>
+
+                    <p>
+                        From inside the
+                        <span class="inline-code">test</span>
+                        folder, run the following command:
+                    </p>
+
+                    <pre><code>npx serve</code></pre>
+
+                    <p>
+                        The
+                        <span class="inline-code">npx serve</span>
+                        command starts a simple local static file server.
+                        It makes the files inside the current directory
+                        available through a local browser URL.
+                    </p>
+
+                    <div class="info">
+
+                        <strong>Important:</strong>
+
+                        Keep this terminal running while accessing the
+                        TableBuilder page in the browser.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Step 5 -->
+
+        <section class="card">
+
+            <div class="step">
+
+                <div class="step-number">
+                    5
+                </div>
+
+                <div class="step-content">
+
+                    <h3>Open the BillsTable Path</h3>
+
+                    <p>
+                        Once the server is running, open the generated
+                        <span class="inline-code">BillsTable</span>
+                        path in your browser.
+                    </p>
+
+                    <p style="margin-top: 15px;">
+                        Example:
+                    </p>
+
+                    <div class="url-box">
+                        http://localhost:&lt;PORT&gt;/test/BillsTable/
+                    </div>
+
+                    <p style="margin-top: 15px;">
+                        The exact port number is displayed by
+                        <span class="inline-code">npx serve</span>
+                        in the terminal.
+                    </p>
+
+                    <div class="warning">
+
+                        <strong>Note:</strong>
+
+                        Do not assume a fixed port number.
+                        Use the port shown in your terminal when
+                        <span class="inline-code">npx serve</span>
+                        starts.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Step 6 -->
+
+        <section class="card">
+
+            <div class="step">
+
+                <div class="step-number">
+                    6
+                </div>
+
+                <div class="step-content">
+
+                    <h3>View the Generated Table</h3>
+
+                    <p>
+                        After opening the
+                        <span class="inline-code">BillsTable</span>
+                        URL, the browser loads the generated HTML page.
+                    </p>
+
+                    <p style="margin-top: 12px;">
+                        The page displays the table data in a structured
+                        tabular format.
+                    </p>
+
+                    <div class="success">
+
+                        <strong>Successful Output:</strong>
+
+                        The BillsTable page should display columns such as
+                        ParentPk, ItemName, vchtype, type, Qty, Amount,
+                        and the corresponding table records.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Structure -->
+
+        <section class="card">
+
+            <h2>3. Important Test Structure</h2>
+
+            <p>
+                After entering the test directory, the generated
+                TableBuilder files can be found inside the corresponding
+                table folder.
+            </p>
+
+            <div class="folder">
+
+                <div>test/</div>
+
+                <div>
+                    ├──
+                    <span class="folder-name">BillsTable/</span>
+                </div>
+
+                <div>
+                    │&nbsp;&nbsp;&nbsp;├──
+                    <span class="folder-name">index/</span>
+                </div>
+
+                <div>
+                    │&nbsp;&nbsp;&nbsp;├──
+                    <span class="file-name">BillsTable.json</span>
+                </div>
+
+                <div>
+                    │&nbsp;&nbsp;&nbsp;├──
+                    <span class="file-name">config.json</span>
+                </div>
+
+                <div>
+                    │&nbsp;&nbsp;&nbsp;├──
+                    <span class="file-name">index.html</span>
+                </div>
+
+                <div>
+                    │&nbsp;&nbsp;&nbsp;├──
+                    <span class="file-name">ItemsTable.json</span>
+                </div>
+
+                <div>
+                    │&nbsp;&nbsp;&nbsp;└──
+                    <span class="folder-name">buildTable/</span>
+                </div>
+
+                <div>
+                    ├──
+                    <span class="folder-name">configs/</span>
+                </div>
+
+                <div>
+                    ├──
+                    <span class="folder-name">FormLoad/</span>
+                </div>
+
+                <div>
+                    └──
+                    <span class="folder-name">v1/</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Commands Summary -->
+
+        <section class="card">
+
+            <h2>4. Commands Summary</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Step</th>
+                        <th>Command</th>
+                        <th>Purpose</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <span class="inline-code">
+                                git clone &lt;repository-url&gt;
+                            </span>
+                        </td>
+                        <td>
+                            Clone the project
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <span class="inline-code">
+                                npm i
+                            </span>
+                        </td>
+                        <td>
+                            Install dependencies
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <span class="inline-code">
+                                cd test
+                            </span>
+                        </td>
+                        <td>
+                            Open the test directory
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <span class="inline-code">
+                                npx serve
+                            </span>
+                        </td>
+                        <td>
+                            Start the local server
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            Browser URL
+                        </td>
+                        <td>
+                            Open the BillsTable page
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- Troubleshooting -->
+
+        <section class="card">
+
+            <h2>5. Troubleshooting</h2>
+
+            <h3>ERR_CONNECTION_REFUSED</h3>
+
+            <p>
+                If the browser displays
+                <span class="inline-code">
+                    ERR_CONNECTION_REFUSED
+                </span>,
+                the local server may not be running or the browser may
+                be using an incorrect port.
+            </p>
+
+            <div class="warning">
+
+                <strong>Solution:</strong>
+
+                Go back to the terminal and make sure
+                <span class="inline-code">npx serve</span>
+                is still running. Then use the exact localhost URL
+                and port displayed by the terminal.
+
+            </div>
+
+            <h3>Incorrect URL</h3>
+
+            <p>
+                Make sure the URL points to the correct generated table
+                directory, for example:
+            </p>
+
+            <div class="url-box">
+                http://localhost:&lt;PORT&gt;/test/BillsTable/
+            </div>
+
+        </section>
+
+
+        <!-- Final -->
+
+        <section class="card">
+
+            <h2>6. Final Result</h2>
+
+            <p>
+                When all the above steps are completed successfully,
+                the browser displays the generated
+                <strong>BillsTable</strong> page.
+            </p>
+
+            <p style="margin-top: 12px;">
+                The table contains the configured columns and records,
+                confirming that the TableBuilder test output is working
+                correctly.
+            </p>
+
+            <div class="success">
+
+                <strong>Result:</strong>
+
+                The TableBuilder project has been successfully installed,
+                the test server is running, and the generated table is
+                accessible through the browser.
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            TableBuilder Documentation &nbsp;•&nbsp;
+            Setup &nbsp;•&nbsp;
+            Test &nbsp;•&nbsp;
+            Generated Table
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
