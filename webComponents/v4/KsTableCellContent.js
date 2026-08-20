@@ -2,9 +2,11 @@ import { renderButtonControl } from "./cellRenderers/renderButtonControl.js";
 import { renderAnchorControl } from "./cellRenderers/renderAnchorControl.js";
 import { renderArrayView } from "./cellRenderers/renderArrayView.js";
 import { renderDefault } from "./cellRenderers/renderDefault.js";
-import renderInputControl from "./cellRenderers/renderInputControl.js";
+// import renderInputControl from "./cellRenderers/renderInputControl.js";
 
-const showLogs = true;
+import { renderInputControl } from "./cellRenderers/renderInputControl/index.js";
+
+const showLogs = false;
 
 class KsTableCellContent extends HTMLElement {
     constructor() {

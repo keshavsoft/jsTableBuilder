@@ -1,4 +1,4 @@
-const showLogs = true;
+const showLogs = false;
 
 const buildCellContent = ({ inFootOptions = {}, inSummaryValue }) => {
     const localFootOptions = inFootOptions;
