@@ -46,4 +46,4 @@ try {
     }
 } catch (error) {
     console.error("Error processing files:", error.message);
-}
+};
