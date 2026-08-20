@@ -2,8 +2,7 @@ import { defineConfig } from 'vite';
 import fs from 'fs';
 import path from 'path';
 
-const archiveDir = path.join(__dirname, 'archive');
-const archiveDirs = fs.existsSync(archiveDir) ? fs.readdirSync(archiveDir) : [];
+const rootDirs = fs.readdirSync(__dirname);
 const distDir = path.join(__dirname, 'dist');
 const distDirs = fs.existsSync(distDir) ? fs.readdirSync(distDir) : [];
 
@@ -13,12 +12,12 @@ const getVNumber = (name) => {
   return match ? parseInt(match[1], 10) : 0;
 };
 
-for (const dir of archiveDirs) {
+for (const dir of rootDirs) {
   const v = getVNumber(dir);
   if (v > maxV) maxV = v;
 }
 
-// Calculate the next version by adding 1 to the highest version found in archive
+// Calculate the next version by adding 1 to the highest version found in root
 const nextV = maxV + 1;
 
 const targetDist = path.join(distDir, `v${nextV}`);
