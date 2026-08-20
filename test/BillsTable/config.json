@@ -496,6 +496,28 @@
             }
         },
         {
+            "header": "Qty",
+            "dataKey": "Qty",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
             "header": "Amount",
             "dataKey": "Amount",
             "options": {

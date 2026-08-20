@@ -101,26 +101,6 @@
     },
     {
         "ParentPk": 7,
-        "ItemName": "Y 12",
-        "Qty": "1",
-        "OrigRate": "125.00",
-        "OrigAmount": "125.00",
-        "RateInc": "120",
-        "Amount": "120.00",
-        "pk": 11
-    },
-    {
-        "ParentPk": 7,
-        "ItemName": "N 12",
-        "Qty": "4",
-        "OrigRate": "125.00",
-        "OrigAmount": "500.00",
-        "RateInc": "120.00",
-        "Amount": "480.00",
-        "pk": 12
-    },
-    {
-        "ParentPk": 7,
         "ItemName": "0.32-50gms",
         "Qty": "1",
         "OrigRate": "50.00",
