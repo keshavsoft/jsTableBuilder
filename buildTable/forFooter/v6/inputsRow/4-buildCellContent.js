@@ -1,21 +1,27 @@
+const showLogs = true;
+
 const buildCellContent = ({ inFootOptions = {}, inSummaryValue }) => {
     const localFootOptions = inFootOptions;
     const localSummaryValue = inSummaryValue;
 
-    const cellContent = document.createElement("ks-table-cell-content-common");
+    if (showLogs) {
+        console.log("----------", inFootOptions);
+        // console.log("inSummaryValue", inSummaryValue);
+    };
 
-    if (localFootOptions.inRowHeight) {
-        cellContent.style.minHeight = localFootOptions.inRowHeight;
-    }
+    const cellContent = document.createElement("ks-table-cell-content-common");
 
     // Apply summary specific bold styling
     cellContent.style.fontWeight = "bold";
-
+    // debugger;
     if (localSummaryValue !== "") {
-        cellContent.inputs = { cellValue: localSummaryValue };
+        cellContent.inputs = {
+            cellValue: localSummaryValue,
+            options: localFootOptions
+        };
     } else {
         cellContent.inputs = { cellValue: "" };
-    }
+    };
 
     return cellContent;
 };

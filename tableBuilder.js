@@ -11,7 +11,7 @@ import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
 import { setupColumnsAndData } from "./buildTable/utils/dataFuncs/setupDataStore.js";
 import prepareData from "./buildTable/utils/dataFuncs/prepareData.js";
 
-import "./webComponents/v1/KsTableCellContent.js";
+import "./webComponents/v3/KsTableCellContent.js";
 
 const showLogs = false;
 

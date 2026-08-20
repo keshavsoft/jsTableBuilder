@@ -45,7 +45,7 @@ const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) =>
     };
 
     if (localFootOptions.inShowInputsRow) {
-        const inputsTrElement = inputsRow({
+        const { builtTrElement: inputsTrElement } = inputsRow({
             inData: localData,
             inColumns: localColumns,
             inClasses: localClasses,

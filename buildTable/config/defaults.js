@@ -1,6 +1,6 @@
 export const DEFAULT_CLASSES = {
     style1: {
-        container: "w-full",
+        container: "w-full overflow-x-auto",
         emptyState: "p-4 text-gray-500 italic",
         table: "w-full border border-gray-200 divide-y divide-gray-200 table-fixed",
         head: {
@@ -21,7 +21,7 @@ export const DEFAULT_CLASSES = {
         }
     },
     style2: {
-        container: "w-full max-w-6xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden",
+        container: "w-full max-w-6xl mx-auto bg-white rounded-lg shadow-sm overflow-x-auto",
         emptyState: "p-4 text-gray-500 italic",
         table: "w-full bg-white",
         head: {
