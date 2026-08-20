@@ -1,7 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import DEFAULT_CONFIG from '../../../buildTable/config/defaultConfig.js';
 
-const purchasesPath = './purchases.json';
+// purchases.json is in the parent directory (test/purchases/)
+const purchasesPath = '../purchases.json';
 const configPath = './config.json';
 
 try {
@@ -14,8 +16,8 @@ try {
         const firstRow = purchasesData[0];
         const rootKeys = Object.keys(firstRow);
         
-        // Build the configuration for the table
-        const config = rootKeys.map(key => ({
+        // Build the columns array
+        const columns = rootKeys.map(key => ({
             header: key,
             dataKey: key,
             options: {
@@ -24,9 +26,17 @@ try {
             }
         }));
         
-        // Write the resulting configuration to config.json
-        fs.writeFileSync(configPath, JSON.stringify(config, null, 4));
-        console.log(`Successfully generated config.json with ${rootKeys.length} columns: ${rootKeys.join(', ')}`);
+        // Combine our columns with the system defaults
+        const fullConfig = {
+            ...DEFAULT_CONFIG,
+            htmlId: "table-root",
+            tableName: "purchases",
+            columns: columns
+        };
+        
+        // Write the resulting full configuration to config.json
+        fs.writeFileSync(configPath, JSON.stringify(fullConfig, null, 4));
+        console.log(`Successfully generated full config.json with ${columns.length} columns based on DEFAULT_CONFIG.`);
     } else {
         console.log("Error: purchases.json is empty or not an array.");
     }
