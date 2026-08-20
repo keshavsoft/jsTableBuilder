@@ -3,6 +3,8 @@ import prepareData from "./prepareData.js";
 import { setupServices } from "../services.js";
 // import startFunc from "./prepareColumns.js";
 
+const showStory = true;
+
 const setupColumnsAndData = ({ instance, localColumns, localData, localEndPoints }) => {
     instance.dataStore.columns = initializeColumns({
         inColumns: localColumns,

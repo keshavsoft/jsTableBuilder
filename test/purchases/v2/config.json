@@ -72,7 +72,7 @@
         "commonOptions": {
             "tableWidth": "100%",
             "tableBorder": "1px solid #e5e7eb",
-            "showSerialNo": false
+            "showSerialNo": true
         },
         "headOptions": {
             "headerHeight": "48px"
@@ -94,7 +94,7 @@
         "label": "Default Table",
         "placeholder": "Search..."
     },
-    "endPoints": {
+    "endPoints1": {
         "create": "",
         "update": "",
         "delete": "",
