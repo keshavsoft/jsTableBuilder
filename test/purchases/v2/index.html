@@ -47,7 +47,7 @@
     </div>
     <!-- <script src="./script.js" type="module"></script> -->
     <!-- <script src="./dist/v5/tableBuilder.umd.cjs"></script> -->
-    <script src="../../tableBuilder.js" type="module"></script>
+    <script src="../../../tableBuilder.js" type="module"></script>
 
     <script type="module">
         let ksTable1;
@@ -70,9 +70,9 @@
                 const configJson = await columnsResponse.json();
 
                 const data = await dataResponse.json();
+                console.log("configJson : ", configJson, data);
 
                 configJson.data = data;
-                // console.log("configJson : ", configJson);
 
                 // debugger
                 const tableBuilder = new window.ks.TableBuilder(configJson);

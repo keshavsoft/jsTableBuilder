@@ -1,10 +1,14 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import DEFAULT_CONFIG from '../../../buildTable/config/defaultConfig.js';
 
-// purchases.json is in the parent directory (test/purchases/)
-const purchasesPath = '../purchases.json';
-const configPath = './config.json';
+// Setup robust pathing so this works no matter where you execute it from in VS Code
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const purchasesPath = path.join(__dirname, '../purchases.json');
+const configPath = path.join(__dirname, 'config.json');
 
 try {
     // Read and parse the purchases data
