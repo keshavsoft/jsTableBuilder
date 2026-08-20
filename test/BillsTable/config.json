@@ -480,7 +480,7 @@
             "header": "vchtype",
             "dataKey": "vchtype",
             "options": {
-                "width": "300px",
+                "width": "100px",
                 "sortable": true,
                 "summaryLabel": "Total:"
             }
@@ -525,7 +525,7 @@
         "footOptions": {
             "showFooter": true,
             "showBalance": true,
-            "showInputsRow": true
+            "showInputsRow": false
         }
     }
 }

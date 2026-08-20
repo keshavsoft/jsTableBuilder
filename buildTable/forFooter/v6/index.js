@@ -49,8 +49,7 @@ const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) =>
             inData: localData,
             inColumns: localColumns,
             inClasses: localClasses,
-            inFootOptions: localFootOptions,
-            inSummaryValues: summaryValues
+            inFootOptions: localFootOptions
         });
 
         tfootElement.appendChild(inputsTrElement);
