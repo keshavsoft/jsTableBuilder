@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test renderInputControl</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Test renderInputControl</h1>
+
+        <div class="space-y-6" id="test-container">
+            <!-- Test cases will be injected here -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { renderInputControl } from "./index.js";
+
+        const container = document.getElementById('test-container');
+
+        // Define various test cases to test the robustness of the new v5 implementation
+        const testCases = [
+            {
+                controlType: "text",
+                placeholder: "Standard text input..kk.",
+                theme: "danger"
+            },
+            { controlType: "number", placeholder: "Number with constraints", min: 0, max: 100, step: 5 },
+            { controlType: "date" },
+            { controlType: "color" },
+            { controlType: "password", placeholder: "Secret password" },
+            { controlType: "checkbox", checked: true },
+            { controlType: "text", placeholder: "Disabled input", disabled: true }
+        ];
+
+        testCases.forEach((options, index) => {
+            // Create a wrapper for each test case
+            const wrapper = document.createElement('div');
+            wrapper.className = "flex flex-col space-y-2 p-4 border border-gray-100 rounded-md bg-gray-50";
+
+            const label = document.createElement('label');
+            label.className = "text-sm font-semibold text-gray-700 uppercase tracking-wider";
+            label.textContent = `Type: ${options.controlType}`;
+
+            // Create a host element for the shadow DOM
+            const shadowHost = document.createElement('div');
+            const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+            // Render the input into the shadow root using the module
+            renderInputControl(shadowRoot, options);
+
+            wrapper.appendChild(label);
+            wrapper.appendChild(shadowHost);
+            container.appendChild(wrapper);
+        });
+    </script>
+</body>
+
+</html>
