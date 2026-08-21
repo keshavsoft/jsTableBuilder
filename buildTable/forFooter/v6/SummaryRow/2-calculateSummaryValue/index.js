@@ -20,9 +20,9 @@ const calculateSummaryValue = ({ inData, inCol }) => {
 
     if (showLog) {
         // console.log(localData, "localData");
-        console.log(localCol, "localCol");
+        console.log(localCol, "localCol------");
     };
-
+    debugger;
     let summaryValue = "";
     //   "table": {
     //                     "tfoot": {
@@ -39,6 +39,12 @@ const calculateSummaryValue = ({ inData, inCol }) => {
             summaryValue = localCol.options.table.tfoot.summary.summaryLabel;
         } else if (localCol.options?.table?.tfoot?.summary?.summary) {
             const funcName = localCol.options.table.tfoot.summary.summary.toLowerCase();
+
+            if (showLog) {
+                // console.log(localData, "localData");
+                console.log(funcName, "funcName");
+            };
+
             if (aggregators[funcName]) {
                 summaryValue = aggregators[funcName]({ inData: localData, inCol: localCol });
             };

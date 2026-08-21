@@ -2,21 +2,22 @@ import { buildSummaryRow } from "./SummaryRow/index.js";
 import buildBalanceRow from "./BalanceRow/index.js";
 import inputsRow from "./inputsRow/index.js";
 
-const showLogs = false;
+const logger = {
+    showLogs: true,
+    log: function (...args) {
+        if (this.showLogs) {
+            console.log(...args);
+        }
+    }
+};
 
 const startFunc = ({ inData, inColumns, inClasses = {}, inFootOptions = {} }) => {
+    logger.log("inFootOptions", inFootOptions);
+
     const localData = inData;
     const localColumns = inColumns;
     const localClasses = inClasses;
     const localFootOptions = inFootOptions;
-    if (showLogs)
-        console.log("inData", inData);
-    if (showLogs)
-        console.log("inColumns", inColumns);
-    if (showLogs)
-        console.log("inClasses", inClasses);
-    if (showLogs)
-        console.log("inFootOptions", inFootOptions);
     const tfootElement = document.createElement("tfoot");
     // We can reuse the head class or body class, or create a new tfoot class in defaults.
     // For now, let's use head styles so it stands out, or body styles.

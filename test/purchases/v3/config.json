@@ -217,12 +217,12 @@
             "rowHeight": "48px"
         },
         "footOptions": {
-            "showFooter": false,
+            "showFooter": true,
             "rowHeight": "48px",
             "showAggregateRows": false,
             "showTotals": false,
-            "showBalance": false,
-            "showInputsRow": false
+            "showBalance": true,
+            "showInputsRow": true
         }
     },
     "topHeader": {

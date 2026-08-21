@@ -4,6 +4,15 @@ import { buildEmptyState } from "./buildEmptyState.js";
 import { buildTableElement } from "./buildTableElement.js";
 import { createFooter } from "./forFooter/index.js";
 
+const logger = {
+    showLogs: true,
+    log: function (...args) {
+        if (this.showLogs) {
+            console.log(...args);
+        }
+    }
+};
+
 function buildTable({
     inData,
     inColumns,
@@ -22,7 +31,7 @@ function buildTable({
     const localFootOptions = localTableOptions.inFootOptions || {};
     const localSortState = inSortState;
     const localOnSort = inOnSort;
-
+    // logger.log("inTableOptions", inTableOptions);
     if (!localData || localData.length === 0) {
         return buildEmptyState({ inClasses: localClasses });
     }
