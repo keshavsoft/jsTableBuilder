@@ -34,36 +34,65 @@ function buildTable({
 
     const visibleColumns = localColumns.filter(col => col?.options?.table?.isVisible !== false);
 
-    const theadElement = buildTableHeader({
+    createHeader({
+        tableElement,
         inColumns: visibleColumns,
-        inClasses: localClasses.head || {},
+        inClasses: localClasses,
         inHeadOptions: localHeadOptions,
         inSortState: localSortState,
         inOnSort: localOnSort
     });
 
-    tableElement.appendChild(theadElement);
-
-    const tbodyElement = buildTableBody({
+    createBody({
+        tableElement,
         inData: localData,
         inColumns: visibleColumns,
-        inClasses: localClasses.body || {},
+        inClasses: localClasses,
         inBodyOptions: localBodyOptions
     });
 
-    tableElement.appendChild(tbodyElement);
-    // debugger;
-    if (localFootOptions.inShowFooter) {
-        const tfootElement = buildFooter({
-            inData: localData, // Will sum over the currently filtered data
-            inColumns: visibleColumns,
-            inClasses: localClasses.summary || {},
-            inFootOptions: localFootOptions
-        });
-        tableElement.appendChild(tfootElement);
-    }
+    createFooter({
+        tableElement,
+        inData: localData,
+        inColumns: visibleColumns,
+        inClasses: localClasses,
+        inFootOptions: localFootOptions
+    });
 
     return tableElement;
 }
+
+const createHeader = ({ tableElement, inColumns, inClasses, inHeadOptions, inSortState, inOnSort }) => {
+    const theadElement = buildTableHeader({
+        inColumns,
+        inClasses: inClasses.head || {},
+        inHeadOptions,
+        inSortState,
+        inOnSort
+    });
+    tableElement.appendChild(theadElement);
+};
+
+const createBody = ({ tableElement, inData, inColumns, inClasses, inBodyOptions }) => {
+    const tbodyElement = buildTableBody({
+        inData,
+        inColumns,
+        inClasses: inClasses.body || {},
+        inBodyOptions
+    });
+    tableElement.appendChild(tbodyElement);
+};
+
+const createFooter = ({ tableElement, inData, inColumns, inClasses, inFootOptions }) => {
+    if (!inFootOptions.inShowFooter) return;
+    
+    const tfootElement = buildFooter({
+        inData, // Will sum over the currently filtered data
+        inColumns,
+        inClasses: inClasses.summary || {},
+        inFootOptions
+    });
+    tableElement.appendChild(tfootElement);
+};
 
 export { buildTable };
