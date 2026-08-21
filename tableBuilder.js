@@ -52,9 +52,8 @@ class TableBuilder {
 
         this.topHeader = extractTopHeader({ inTopHeader: topHeader });
         this.htmlId = localHtmlId;
-        this.dataStore = {};
         // debugger;
-        setupColumnsAndData({
+        this.dataStore = setupColumnsAndData({
             instance: this,
             localColumns,
             localData,
