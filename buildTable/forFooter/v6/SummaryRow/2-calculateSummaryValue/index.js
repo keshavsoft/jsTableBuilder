@@ -22,17 +22,8 @@ const calculateSummaryValue = ({ inData, inCol }) => {
         // console.log(localData, "localData");
         console.log(localCol, "localCol------");
     };
-    debugger;
+    // debugger;
     let summaryValue = "";
-    //   "table": {
-    //                     "tfoot": {
-    //                         "summary": {
-    //                             "balanceString": "Balance ${vouchernumber}",
-    //                             "summary": "sum",
-    //                             "summaryLabel1": "Total:"
-    //                         }
-    //                     }
-    //                 }
 
     if (localCol.options) {
         if (localCol?.options?.table?.tfoot?.summary?.summaryLabel) {

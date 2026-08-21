@@ -1,13 +1,15 @@
-const showLogs = false;
+const logger = {
+    showLogs: false,
+    log: function (...args) {
+        if (this.showLogs) {
+            console.log(...args);
+        }
+    }
+};
 
 const buildCellContent = ({ inFootOptions = {}, inSummaryValue }) => {
     const localFootOptions = inFootOptions;
     const localSummaryValue = inSummaryValue;
-
-    if (showLogs) {
-        console.log("----------", inFootOptions);
-        // console.log("inSummaryValue", inSummaryValue);
-    };
 
     const cellContent = document.createElement("ks-table-cell-content-common");
 
