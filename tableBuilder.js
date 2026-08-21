@@ -10,6 +10,7 @@ import { mergeClasses } from "./buildTable/utils/config/mergeClasses.js";
 import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
 import { setupColumnsAndData } from "./buildTable/utils/dataFuncs/setupDataStore.js";
 import prepareData from "./buildTable/utils/dataFuncs/prepareData.js";
+import { buildVerticalFormElements } from "./buildTable/buildVerticalForm.js";
 
 import "./webComponents/v4/KsTableCellContent.js";
 
@@ -112,10 +113,18 @@ class TableBuilder {
         });
     };
 
+    buildVerticalFormElement() {
+        return buildVerticalFormElements({
+            inData: this.dataStore.data,
+            inColumns: this.dataStore.columns,
+            inClasses: this.classes
+        });
+    };
+
     build() {
         return this.appendToDom();
     };
-}
+};
 
 const DEFAULT_INTERNAL_OBJECT = {
     inTableOptions: mapTableOptions(DEFAULT_CONFIG.tableOptions),

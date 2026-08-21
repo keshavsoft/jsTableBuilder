@@ -64,3 +64,4 @@ const startFunc = ({ inData, inColumns, inClasses = {} }) => {
 };
 
 export default startFunc;
+export { presentColumnData };

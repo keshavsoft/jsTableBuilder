@@ -17,10 +17,29 @@ export function appendToDom(instance) {
         container.className = instance.classes.container;
     }
 
+
+    // buildVerticalFormElement() {
+    //     return buildVerticalFormElements({
+    //         inData: this.dataStore.data,
+    //         inColumns: this.dataStore.columns,
+    //         inClasses: this.classes
+    //     });
+    // };
+
+    const verticalFormNode = instance.buildVerticalFormElement();
+    if (verticalFormNode) {
+        container.appendChild(verticalFormNode);
+    };
+
     const topHeaderNode = instance.buildTopHeaderElement();
     if (topHeaderNode) {
         container.appendChild(topHeaderNode);
-    }
+    };
+
+    // const topHeaderNode = instance.buildTopHeaderElement();
+    // if (topHeaderNode) {
+    //     container.appendChild(topHeaderNode);
+    // };
 
     instance.tableElement = instance.buildTableElements();
     container.appendChild(instance.tableElement);
