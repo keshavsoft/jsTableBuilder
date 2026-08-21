@@ -7,7 +7,22 @@
             "dataKey": "type",
             "options": {
                 "width": "150px",
-                "sortable": true
+                "sortable": true,
+                "table": {
+                    "isVisible": false,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
         },
         {
@@ -39,7 +54,22 @@
             "dataKey": "numberingstyle",
             "options": {
                 "width": "150px",
-                "sortable": true
+                "sortable": true,
+                "table": {
+                    "isVisible": false,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
         },
         {
@@ -47,7 +77,22 @@
             "dataKey": "isdeleted",
             "options": {
                 "width": "150px",
-                "sortable": true
+                "sortable": true,
+                "table": {
+                    "isVisible": false,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
         },
         {
@@ -55,7 +100,22 @@
             "dataKey": "vouchernumberseries",
             "options": {
                 "width": "150px",
-                "sortable": true
+                "sortable": true,
+                "table": {
+                    "isVisible": false,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
         },
         {

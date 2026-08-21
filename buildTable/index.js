@@ -32,7 +32,7 @@ function buildTable({
         inCommonOptions: localCommonOptions
     });
 
-    const visibleColumns = localColumns.filter(col => col.isVisible !== false);
+    const visibleColumns = localColumns.filter(col => col?.options?.table?.isVisible !== false);
 
     const theadElement = buildTableHeader({
         inColumns: visibleColumns,

@@ -1,5 +1,5 @@
 import buildHeaderCell from "./HeaderCell.js";
-const showLog = false;
+const showLog = true;
 
 export function appendHeaderCells({
     inHeaderRowElement,

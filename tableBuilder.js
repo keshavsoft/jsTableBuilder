@@ -13,7 +13,7 @@ import prepareData from "./buildTable/utils/dataFuncs/prepareData.js";
 
 import "./webComponents/v4/KsTableCellContent.js";
 
-const showLogs = true;
+const showLogs = false;
 
 class TableBuilder {
     constructor({
