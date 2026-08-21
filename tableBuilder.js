@@ -15,7 +15,7 @@ import "./webComponents/v4/KsTableCellContent.js";
 
 const logger = {
     showLogs: false,
-    log: function(...args) {
+    log: function (...args) {
         if (this.showLogs) {
             console.log(...args);
         }
@@ -99,7 +99,7 @@ class TableBuilder {
             inSortState: this.sortState,
             inOnSort: this.handleSort.bind(this)
         });
-    }
+    };
 
     buildTopHeaderElement() {
         if (!this.topHeader || this.topHeader.inShow === false) return null;
@@ -110,11 +110,11 @@ class TableBuilder {
             inClasses: this.classes.topHeader,
             inOnSearch: this.handleSearch.bind(this)
         });
-    }
+    };
 
     build() {
         return this.appendToDom();
-    }
+    };
 }
 
 const DEFAULT_INTERNAL_OBJECT = {
