@@ -1,0 +1,35 @@
+{
+    "uiClasses": {
+        "ulClass1": "[&_svg]:size-6",
+        "navClass1": "bg-red-800 text-white",
+        "brandClass1": "text-sm"
+    },
+    "title": {
+        "text": "BatchList",
+        "htmlId": "htmlId"
+    },
+    "items": [
+        {
+            "text": "All",
+            "id": "AllHtmlId",
+            "icon": [],
+            "uiClasses": {
+                "aClass": "",
+                "svgDivClass": "size-10"
+            },
+            "svgName": "squaresPlus",
+            "href": "./allLines/index.html"
+        },
+        {
+            "text": "Print",
+            "id": "PrintHtmlId",
+            "icon": [],
+            "uiClasses": {
+                "aClass": "",
+                "svgDivClass": "size-10"
+            },
+            "svgName": "printer",
+            "href": "javascript:window.print()"
+        }
+    ]
+}
