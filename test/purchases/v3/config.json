@@ -179,7 +179,7 @@
                         },
                         "inputsRow": {
                             "showInput": true,
-                            "controlType": "text",
+                            "controlType": "select",
                             "className": "w-48 border border-gray-300 rounded px-2 py-1"
                         }
                     }
@@ -202,7 +202,7 @@
                         },
                         "inputsRow": {
                             "showInput": true,
-                            "controlType": "text",
+                            "controlType": "select",
                             "className": "w-48 border border-gray-300 rounded px-2 py-1"
                         }
                     }

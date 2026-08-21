@@ -17,7 +17,9 @@ const presentColumnData = (inData, inColumn) => {
         return element[inColumn];
     });
 
-    return [...new Set(selectedArray)].filter(val => val !== undefined && val !== null && val !== "");
+    return [...new Set(selectedArray)]
+        .filter(val => val !== undefined && val !== null && val !== "")
+        .sort();
 };
 
 const startFunc = ({ inData, inColumns, inClasses = {} }) => {
