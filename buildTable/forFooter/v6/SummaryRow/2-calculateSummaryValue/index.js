@@ -12,14 +12,14 @@ const aggregators = {
     max
 };
 
-const showLog = false;
+const showLog = true;
 
 const calculateSummaryValue = ({ inData, inCol }) => {
     const localData = inData;
     const localCol = inCol;
 
     if (showLog) {
-        console.log(localData, "localData");
+        // console.log(localData, "localData");
         console.log(localCol, "localCol");
     };
 

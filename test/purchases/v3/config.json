@@ -46,7 +46,22 @@
             "dataKey": "vouchernumber",
             "options": {
                 "width": "100px",
-                "sortable": true
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
         },
         {
