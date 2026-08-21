@@ -13,7 +13,14 @@ import prepareData from "./buildTable/utils/dataFuncs/prepareData.js";
 
 import "./webComponents/v4/KsTableCellContent.js";
 
-const showLogs = false;
+const logger = {
+    showLogs: false,
+    log: function(...args) {
+        if (this.showLogs) {
+            console.log(...args);
+        }
+    }
+};
 
 class TableBuilder {
     constructor({
@@ -32,26 +39,13 @@ class TableBuilder {
         const localClasses = classes;
         const localEndPoints = endPoints;
         // debugger;
-        if (showLogs) {
-            // console.log("localHtmlId", localHtmlId);
-            console.log("localData", localData);
-            // console.log("localColumns", localColumns);
-            // console.log("localClasses", localClasses);
-            // console.log("localEndPoints", localEndPoints);
-            console.log("tableOptions-----------", tableOptions);
-        };
+        logger.log("localData", localData);
+        logger.log("tableOptions-----------", tableOptions);
         // debugger;
         // Map the clean external API (with subtrees) back to our strict internal 'in' naming convention
         const localTableOptionsMapped = mapTableOptions(tableOptions);
 
-        if (showLogs) {
-            // console.log("localHtmlId", localHtmlId);
-            // console.log("localData", localData);
-            // console.log("localColumns", localColumns);
-            // console.log("localClasses", localClasses);
-            // console.log("localEndPoints", localEndPoints);
-            console.log("localTableOptionsMapped", localTableOptionsMapped);
-        };
+        logger.log("localTableOptionsMapped", localTableOptionsMapped);
 
         // this.tableOptions = extractTableOptions({ inTableOptions: localTableOptionsMapped });
         this.tableOptions = localTableOptionsMapped;
