@@ -12,7 +12,13 @@ const createDatalist = (inOptions) => {
     if (localOptions.listData && Array.isArray(localOptions.listData)) {
         localOptions.listData.forEach(item => {
             const option = document.createElement("option");
-            option.value = item;
+            if (typeof item === "object" && item !== null) {
+                option.value = item.value;
+                option.label = item.text;
+                option.textContent = item.text;
+            } else {
+                option.value = item;
+            }
             dataList.appendChild(option);
         });
     }

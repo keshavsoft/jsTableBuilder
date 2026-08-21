@@ -13,13 +13,20 @@ const logger = {
 };
 
 const presentColumnData = (inData, inColumn) => {
-    const selectedArray = inData.map(element => {
-        return element[inColumn];
+    const counts = {};
+    inData.forEach(element => {
+        const val = element[inColumn];
+        if (val !== undefined && val !== null && val !== "") {
+            counts[val] = (counts[val] || 0) + 1;
+        }
     });
 
-    return [...new Set(selectedArray)]
-        .filter(val => val !== undefined && val !== null && val !== "")
-        .sort();
+    return Object.entries(counts)
+        .map(([val, count]) => ({
+            value: val,
+            text: `${val} : ${count}`
+        }))
+        .sort((a, b) => a.value.localeCompare(b.value));
 };
 
 const startFunc = ({ inData, inColumns, inClasses = {} }) => {
