@@ -9,7 +9,7 @@
                 "width": "150px",
                 "sortable": true,
                 "table": {
-                    "isVisible": false,
+                    "isVisible": true,
                     "tfoot": {
                         "summary": {
                             "balanceString": "Balance ${Amount}",
@@ -18,7 +18,7 @@
                         },
                         "inputsRow": {
                             "showInput": true,
-                            "controlType": "text",
+                            "controlType": "datalist",
                             "className": "w-48 border border-gray-300 rounded px-2 py-1"
                         }
                     }
@@ -30,7 +30,22 @@
             "dataKey": "vchtype",
             "options": {
                 "width": "150px",
-                "sortable": true
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "datalist",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
         },
         {
@@ -57,7 +72,7 @@
                         },
                         "inputsRow": {
                             "showInput": true,
-                            "controlType": "text",
+                            "controlType": "datalist",
                             "className": "w-48 border border-gray-300 rounded px-2 py-1"
                         }
                     }
