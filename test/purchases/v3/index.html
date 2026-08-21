@@ -77,17 +77,32 @@
 
                 const data = rawData.flatMap(rootObj => {
                     const { allinventoryentries, ...rootKeys } = rootObj;
+
                     if (!allinventoryentries || !Array.isArray(allinventoryentries)) return [];
+
                     return allinventoryentries.flatMap(entry => {
                         const { batchallocations, ...entryKeys } = entry;
+
                         if (!batchallocations || !Array.isArray(batchallocations)) return [];
-                        return batchallocations.map(allocation => ({
-                            ...rootKeys,
-                            ...entryKeys,
-                            ...allocation
-                        }));
+
+                        return batchallocations.map(allocation => {
+                            const prefixedEntryKeys = Object.fromEntries(
+                                Object.entries(entryKeys).map(([k, v]) => [`allinventoryentries.${k}`, v])
+                            );
+                            
+                            const prefixedAllocationKeys = Object.fromEntries(
+                                Object.entries(allocation).map(([k, v]) => [`allinventoryentries.batchallocations.${k}`, v])
+                            );
+
+                            return {
+                                ...rootKeys,
+                                ...prefixedEntryKeys,
+                                ...prefixedAllocationKeys
+                            };
+                        });
                     });
                 });
+                console.log("data : ", data[0], data.length);
 
                 configJson.data = data;
 

@@ -42,10 +42,10 @@
             }
         },
         {
-            "header": "vouchernumber",
+            "header": "voucher number",
             "dataKey": "vouchernumber",
             "options": {
-                "width": "150px",
+                "width": "100px",
                 "sortable": true
             }
         },
@@ -119,11 +119,72 @@
             }
         },
         {
-            "header": "allinventoryentries",
-            "dataKey": "allinventoryentries",
+            "header": "stockitemname",
+            "dataKey": "allinventoryentries.stockitemname",
+            "options": {
+                "width": "250px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "godown name",
+            "dataKey": "allinventoryentries.batchallocations.godownname",
             "options": {
                 "width": "150px",
-                "sortable": true
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "actualqty",
+            "dataKey": "allinventoryentries.batchallocations.actualqty",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
         }
     ],
