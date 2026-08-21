@@ -2,7 +2,7 @@ import { createInputElement } from "./1-createInputElement.js";
 import { applyDefaultStyles } from "./2-applyDefaultStyles.js";
 import { addInteractionBehaviors } from "./3-addInteractionBehaviors.js";
 
-const showLogs = true;
+const showLogs = false;
 
 const startFunc = (shadowRoot, inOptions = null) => {
     if (showLogs) console.log("startFunc", shadowRoot, inOptions);
@@ -22,6 +22,9 @@ const startFunc = (shadowRoot, inOptions = null) => {
     addInteractionBehaviors(input);
 
     shadowRoot.appendChild(input);
+    if (input.__dataListElement) {
+        shadowRoot.appendChild(input.__dataListElement);
+    }
 };
 
 export default startFunc;

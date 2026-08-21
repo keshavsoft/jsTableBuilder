@@ -7,7 +7,7 @@ const logger = {
     }
 };
 
-const buildCellContent = ({ inFootOptions = {}, inSummaryValue }) => {
+const buildCellContent = ({ inFootOptions = {}, inSummaryValue, inListData }) => {
     const localFootOptions = inFootOptions;
     const localSummaryValue = inSummaryValue;
 
@@ -19,10 +19,19 @@ const buildCellContent = ({ inFootOptions = {}, inSummaryValue }) => {
     if (localSummaryValue !== "") {
         cellContent.inputs = {
             cellValue: localSummaryValue,
-            options: localFootOptions
+            options: {
+                ...localFootOptions,
+                listData: inListData
+            }
         };
     } else {
-        cellContent.inputs = { cellValue: "" };
+        cellContent.inputs = {
+            cellValue: "",
+            options: {
+                ...localFootOptions,
+                listData: inListData
+            }
+        };
     };
 
     return cellContent;

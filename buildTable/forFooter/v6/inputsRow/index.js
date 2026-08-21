@@ -17,7 +17,7 @@ const presentColumnData = (inData, inColumn) => {
         return element[inColumn];
     });
 
-    return selectedArray;
+    return [...new Set(selectedArray)].filter(val => val !== undefined && val !== null && val !== "");
 };
 
 const startFunc = ({ inData, inColumns, inClasses = {} }) => {
@@ -43,7 +43,8 @@ const startFunc = ({ inData, inColumns, inClasses = {} }) => {
 
         const cellContent = buildCellContent({
             inFootOptions: col?.options?.table?.tfoot?.inputsRow,
-            inSummaryValue: summaryValue
+            inSummaryValue: summaryValue,
+            inListData: selectedArray
         });
 
         tdElement.appendChild(cellContent);
