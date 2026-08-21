@@ -7,3 +7,15 @@ export const v6 = { buildTableSummary: runMaxVersion };
 
 // Default export uses v2 since it has the new features
 export const buildFooter = runMaxVersion;
+
+export const createFooter = ({ tableElement, inData, inColumns, inClasses, inFootOptions }) => {
+    if (!inFootOptions.inShowFooter) return;
+    
+    const tfootElement = buildFooter({
+        inData, // Will sum over the currently filtered data
+        inColumns,
+        inClasses: inClasses.summary || {},
+        inFootOptions
+    });
+    tableElement.appendChild(tfootElement);
+};

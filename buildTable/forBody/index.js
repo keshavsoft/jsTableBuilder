@@ -7,3 +7,13 @@ export const v4 = { buildTableBody: buildTableBodyV4 };
 
 // Default export uses v2 since it has the new features
 export const buildTableBody = buildTableBodyV4;
+
+export const createBody = ({ tableElement, inData, inColumns, inClasses, inBodyOptions }) => {
+    const tbodyElement = buildTableBody({
+        inData,
+        inColumns,
+        inClasses: inClasses.body || {},
+        inBodyOptions
+    });
+    tableElement.appendChild(tbodyElement);
+};
