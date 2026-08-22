@@ -1,5 +1,5 @@
 const logger = {
-    showLogs: false,
+    showLogs: true,
     log: function (...args) {
         if (this.showLogs) {
             console.log(...args);
@@ -10,7 +10,7 @@ const logger = {
 const buildCellContent = ({ inFootOptions = {}, inSummaryValue, inListData }) => {
     const localFootOptions = inFootOptions;
     const localSummaryValue = inSummaryValue;
-
+    logger.log("buildCellContent called with", { localFootOptions, localSummaryValue, inListData });
     const cellContent = document.createElement("ks-table-cell-content-common");
 
     // Apply summary specific bold styling

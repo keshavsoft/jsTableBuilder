@@ -1,6 +1,15 @@
 import { presentColumnData } from "./forFooter/v6/inputsRow/index.js";
 import { buildCellContent } from "./forFooter/v6/inputsRow/4-buildCellContent.js";
 
+const logger = {
+    showLogs: true,
+    log: function (...args) {
+        if (this.showLogs) {
+            console.log(...args);
+        }
+    }
+};
+
 const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
     const container = document.createElement("div");
     container.classList.add("ks-vertical-form-container");
@@ -29,7 +38,9 @@ const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
             // If the control type needs a list, generate it
             if (footOptions?.controlType === "datalist" || footOptions?.controlType === "select") {
                 selectedArray = presentColumnData(inData, col.dataKey);
-            }
+            };
+
+            logger.log("selectedArray", selectedArray);
 
             // Fallback options in case footer config isn't explicitly set for a column
             const defaultFootOptions = {
