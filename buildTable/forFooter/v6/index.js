@@ -3,7 +3,7 @@ import buildBalanceRow from "./BalanceRow/index.js";
 import inputsRow from "./inputsRow/index.js";
 
 const logger = {
-    showLogs: true,
+    showLogs: false,
     log: function (...args) {
         if (this.showLogs) {
             console.log(...args);

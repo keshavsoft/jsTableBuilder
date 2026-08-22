@@ -25,7 +25,7 @@ export function appendToDom(instance) {
     //         inClasses: this.classes
     //     });
     // };
-
+ debugger;
     const verticalFormNode = instance.buildVerticalFormElement();
     if (verticalFormNode) {
         container.appendChild(verticalFormNode);

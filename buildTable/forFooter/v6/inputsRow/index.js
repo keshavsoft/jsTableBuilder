@@ -4,7 +4,7 @@ import { buildTdElement } from "./3-buildTdElement.js";
 import { buildCellContent } from "./4-buildCellContent.js";
 
 const logger = {
-    showLogs: true,
+    showLogs: false,
     log: function (...args) {
         if (this.showLogs) {
             console.log(...args);

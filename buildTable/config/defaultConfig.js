@@ -29,6 +29,11 @@ const DEFAULT_CONFIG = {
         label: "Default Table",
         placeholder: "Search..."
     },
+    verticalForm: {
+        show: false,
+        label: "Default Vertial Form",
+        style: "default"
+    },
     endPoints: {
         create: "",
         update: "",

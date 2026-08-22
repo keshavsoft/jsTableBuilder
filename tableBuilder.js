@@ -32,6 +32,7 @@ class TableBuilder {
         theme = "style1",
         tableOptions = {},
         topHeader = DEFAULT_CONFIG.topHeader,
+        verticalForm = DEFAULT_CONFIG.verticalForm,
         endPoints
     }) {
         const localHtmlId = htmlId;
@@ -39,19 +40,16 @@ class TableBuilder {
         const localColumns = columns;
         const localClasses = classes;
         const localEndPoints = endPoints;
-        // debugger;
-        logger.log("localData", localData);
-        logger.log("tableOptions-----------", tableOptions);
-        // debugger;
+
         // Map the clean external API (with subtrees) back to our strict internal 'in' naming convention
         const localTableOptionsMapped = mapTableOptions(tableOptions);
-
-        logger.log("localTableOptionsMapped", localTableOptionsMapped);
 
         // this.tableOptions = extractTableOptions({ inTableOptions: localTableOptionsMapped });
         this.tableOptions = localTableOptionsMapped;
 
         this.topHeader = extractTopHeader({ inTopHeader: topHeader });
+        this.verticalForm = verticalForm;
+
         this.htmlId = localHtmlId;
         // debugger;
         this.dataStore = setupColumnsAndData({
@@ -114,6 +112,10 @@ class TableBuilder {
     };
 
     buildVerticalFormElement() {
+        logger.log("buildVerticalFormElement called");
+        // debugger;
+        if (!this.verticalForm || this.verticalForm.show === false) return null;
+
         return buildVerticalFormElements({
             inData: this.dataStore.data,
             inColumns: this.dataStore.columns,

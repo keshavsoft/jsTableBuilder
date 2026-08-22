@@ -5,7 +5,7 @@ const PREDEFINED_STYLES = {
     danger: "width: 100%; max-width: 12rem; box-sizing: border-box; border: 1px solid #ef4444; border-radius: 0.375rem; padding: 0.375rem 0.75rem; font-size: 0.875rem; outline: none; transition: all 0.2s ease-in-out; color: #b91c1c; background-color: #fef2f2; box-shadow: 0 1px 2px 0 rgba(239, 68, 68, 0.1);"
 };
 
-const showLogs = true;
+const showLogs = false; // Set to true to enable logging
 
 const applyDefaultStyles = (inInput, inOptions) => {
     if (showLogs) console.log("applyDefaultStyles", inInput, inOptions);

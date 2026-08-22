@@ -256,6 +256,11 @@
         }
     },
     "topHeader": {
+        "show": true,
+        "label": "Default Table",
+        "placeholder": "Search..."
+    },
+    "verticalForm": {
         "show": false,
         "label": "Default Table",
         "placeholder": "Search..."

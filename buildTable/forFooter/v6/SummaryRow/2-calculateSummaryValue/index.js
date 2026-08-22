@@ -12,7 +12,7 @@ const aggregators = {
     max
 };
 
-const showLog = true;
+const showLog = false; // Set to true to enable logging
 
 const calculateSummaryValue = ({ inData, inCol }) => {
     const localData = inData;
