@@ -15,7 +15,7 @@ import { buildVerticalFormElements } from "./buildTable/buildVerticalForm.js";
 import "./webComponents/v4/KsTableCellContent.js";
 
 const logger = {
-    showLogs: false,
+    showLogs: true,
     log: function (...args) {
         if (this.showLogs) {
             console.log(...args);
@@ -112,7 +112,7 @@ class TableBuilder {
     };
 
     buildVerticalFormElement() {
-        logger.log("buildVerticalFormElement called");
+        logger.log("buildVerticalFormElement called", this);
         // debugger;
         if (!this.verticalForm || this.verticalForm.show === false) return null;
 

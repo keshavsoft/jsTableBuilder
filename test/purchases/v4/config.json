@@ -261,7 +261,7 @@
         "placeholder": "Search..."
     },
     "verticalForm": {
-        "show": false,
+        "show": true,
         "label": "Default Table",
         "placeholder": "Search..."
     },
