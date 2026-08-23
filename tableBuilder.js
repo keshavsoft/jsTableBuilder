@@ -3,7 +3,6 @@ import DEFAULT_CONFIG, { DEFAULT_CLASSES } from "./buildTable/config/defaults.js
 import { processSort } from "./buildTable/utils/dataFuncs/sortUtils.js";
 import { processSearch } from "./buildTable/utils/dataFuncs/searchUtils.js";
 import { buildTopHeader } from "./buildTable/buildTopHeader.js";
-import { extractTableOptions } from "./buildTable/utils/config/extractTableOptions.js";
 import mapTableOptions from "./buildTable/utils/config/mapTableOptions.js";
 import { extractTopHeader } from "./buildTable/utils/config/extractTopHeader.js";
 import { mergeClasses } from "./buildTable/utils/config/mergeClasses.js";
