@@ -253,5 +253,5 @@
         "dataListEndpoints": {}
     },
     "tableName": "purchases",
-    "rendererType": "vertical"
+    "rendererType": "table"
 }
