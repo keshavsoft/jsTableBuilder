@@ -233,33 +233,7 @@
             }
         }
     ],
-    "theme": "style1",
-    "tableOptions": {
-        "commonOptions": {
-            "tableWidth": "100%",
-            "tableBorder": "1px solid #e5e7eb",
-            "showSerialNo": true
-        },
-        "headOptions": {
-            "headerHeight": "48px"
-        },
-        "bodyOptions": {
-            "rowHeight": "48px"
-        },
-        "footOptions": {
-            "showFooter": true,
-            "rowHeight": "48px",
-            "showAggregateRows": false,
-            "showTotals": false,
-            "showBalance": true,
-            "showInputsRow": true
-        }
-    },
-    "topHeader": {
-        "show": true,
-        "label": "Default Table",
-        "placeholder": "Search..."
-    },
+    "theme": "style4",
     "verticalForm": {
         "show": true,
         "label": "Default Table",
