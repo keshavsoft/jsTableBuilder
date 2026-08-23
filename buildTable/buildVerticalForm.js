@@ -11,16 +11,13 @@ const logger = {
 };
 
 const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
-    const formClasses = inClasses?.verticalForm || {
-        container: "flex flex-col gap-4 p-4",
-        wrapper: "flex flex-col",
-        label: "font-bold mb-1",
-        input: "border border-gray-300 rounded px-2 py-1 w-full"
-    };
-
     const container = document.createElement("div");
-    if (formClasses.container) container.className = formClasses.container;
     container.classList.add("ks-vertical-form-container");
+    // Basic styling for the form container
+    container.style.display = "flex";
+    container.style.flexDirection = "column";
+    container.style.gap = "1rem";
+    container.style.padding = "1rem";
 
     inColumns.forEach(col => {
         const footOptions = col.options?.table?.tfoot?.inputsRow;
@@ -28,12 +25,14 @@ const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
         // Render inputs for every column with a dataKey
         if (col.dataKey) {
             const wrapper = document.createElement("div");
-            if (formClasses.wrapper) wrapper.className = formClasses.wrapper;
             wrapper.classList.add("ks-vertical-form-field");
+            wrapper.style.display = "flex";
+            wrapper.style.flexDirection = "column";
 
             const label = document.createElement("label");
             label.textContent = col.label || col.dataKey;
-            if (formClasses.label) label.className = formClasses.label;
+            label.style.fontWeight = "bold";
+            label.style.marginBottom = "0.25rem";
 
             let selectedArray = [];
             // If the control type needs a list, generate it
@@ -43,20 +42,15 @@ const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
 
             logger.log("selectedArray", selectedArray);
 
-            // Options: merging column's specific config with the fallback defaults from classes
-            const currentFootOptions = footOptions || {
+            // Fallback options in case footer config isn't explicitly set for a column
+            const defaultFootOptions = {
                 showInput: true,
                 controlType: "text",
-                className: formClasses.input
+                className: "border border-gray-300 rounded px-2 py-1 w-full"
             };
-            
-            // Apply the custom input class if provided in the options, else fallback to theme input class
-            if (!currentFootOptions.className) {
-                currentFootOptions.className = formClasses.input;
-            }
 
             const cellContent = buildCellContent({
-                inFootOptions: currentFootOptions,
+                inFootOptions: footOptions || defaultFootOptions,
                 inSummaryValue: "", // Empty for new entry
                 inListData: selectedArray
             });
