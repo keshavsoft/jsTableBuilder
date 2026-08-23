@@ -1,190 +1,165 @@
-[
-    {
-        "htmlId": "table-root",
-        "data": [],
-        "columns": [
-            {
-                "header": "vchtype",
-                "dataKey": "vchtype",
-                "options": {
-                    "width": "150px",
-                    "sortable": true,
-                    "table": {
-                        "isVisible": true,
-                        "tfoot": {
-                            "summary": {
-                                "balanceString1": "Balance ${Amount}",
-                                "summary": "sum",
-                                "summaryLabel1": "Total:"
-                            },
-                            "inputsRow": {
-                                "showInput": true,
-                                "controlType": "select",
-                                "className": "w-48 border border-gray-300 rounded px-2 py-1"
-                            }
-                        }
-                    }
-                }
-            },
-            {
-                "header": "date",
-                "dataKey": "date",
-                "options": {
-                    "width": "150px",
-                    "sortable": true,
-                    "table": {
-                        "isVisible": true,
-                        "tfoot": {
-                            "summary": {
-                                "balanceString1": "Balance ${Amount}",
-                                "summary": "sum",
-                                "summaryLabel1": "Total:"
-                            },
-                            "inputsRow": {
-                                "showInput": true,
-                                "controlType": "date",
-                                "className": "w-48 border border-gray-300 rounded px-2 py-1"
-                            }
+{
+    "htmlId": "table-root",
+    "data": [],
+    "columns": [
+        {
+            "header": "vchtype",
+            "dataKey": "vchtype",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "select",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
                         }
                     }
                 }
             }
-        ],
-        "theme": "style4",
-        "verticalForm": {
-            "show": true,
-            "label": "Default Table",
-            "placeholder": "Search..."
         },
-        "endPoints1": {
-            "create": "",
-            "update": "",
-            "delete": "",
-            "read": "",
-            "read1": "",
-            "groupBy": "",
-            "read2": "",
-            "find": "",
-            "filter": "",
-            "dataLists": {},
-            "dataListEndpoints": {}
-        },
-        "tableName": "purchases",
-        "rendererType": "vertical",
-        "tableOptions": {
-            "commonOptions": {
-                "tableWidth": "100%",
-                "tableBorder": "1px solid #e5e7eb",
-                "showSerialNo": true
-            },
-            "headOptions": {
-                "headerHeight": "48px"
-            },
-            "bodyOptions": {
-                "rowHeight": "48px"
-            },
-            "footOptions": {
-                "showFooter": true,
-                "rowHeight": "48px",
-                "showAggregateRows": false,
-                "showTotals": false,
-                "showBalance": true,
-                "showInputsRow": true
+        {
+            "header": "date",
+            "dataKey": "date",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "date",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
             }
+        }
+    ],
+    "theme": "style4",
+    "verticalForm": {
+        "show": true,
+        "label": "Default Table",
+        "placeholder": "Search..."
+    },
+    "endPoints1": {
+        "create": "",
+        "update": "",
+        "delete": "",
+        "read": "",
+        "read1": "",
+        "groupBy": "",
+        "read2": "",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {}
+    },
+    "tableName": "purchases",
+    "rendererType": "table",
+    "tableOptions": {
+        "commonOptions": {
+            "tableWidth": "100%",
+            "tableBorder": "1px solid #e5e7eb",
+            "showSerialNo": true
+        },
+        "headOptions": {
+            "headerHeight": "48px"
+        },
+        "bodyOptions": {
+            "rowHeight": "48px"
+        },
+        "footOptions": {
+            "showFooter": true,
+            "rowHeight": "48px",
+            "showAggregateRows": false,
+            "showTotals": false,
+            "showBalance": true,
+            "showInputsRow": true
         }
     },
-    {
-        "htmlId": "table-root",
-        "data": [],
-        "columns": [
-            {
-                "header": "vchtype",
-                "dataKey": "vchtype",
-                "options": {
-                    "width": "150px",
-                    "sortable": true,
-                    "table": {
-                        "isVisible": true,
-                        "tfoot": {
-                            "summary": {
-                                "balanceString1": "Balance ${Amount}",
-                                "summary": "sum",
-                                "summaryLabel1": "Total:"
-                            },
-                            "inputsRow": {
-                                "showInput": true,
-                                "controlType": "select",
-                                "className": "w-48 border border-gray-300 rounded px-2 py-1"
-                            }
-                        }
-                    }
-                }
+    "views": [
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
             },
-            {
-                "header": "date",
-                "dataKey": "date",
-                "options": {
-                    "width": "150px",
-                    "sortable": true,
-                    "table": {
-                        "isVisible": true,
-                        "tfoot": {
-                            "summary": {
-                                "balanceString1": "Balance ${Amount}",
-                                "summary": "sum",
-                                "summaryLabel1": "Total:"
-                            },
-                            "inputsRow": {
-                                "showInput": true,
-                                "controlType": "date",
-                                "className": "w-48 border border-gray-300 rounded px-2 py-1"
-                            }
-                        }
-                    }
-                }
-            }
-        ],
-        "theme": "style4",
-        "verticalForm": {
-            "show": true,
-            "label": "Default Table",
-            "placeholder": "Search..."
+            "tableName": "purchases",
+            "rendererType": "vertical"
+        }
+    ],
+    "views1": [
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
+            },
+            "tableName": "purchases",
+            "rendererType": "vertical"
         },
-        "endPoints1": {
-            "create": "",
-            "update": "",
-            "delete": "",
-            "read": "",
-            "read1": "",
-            "groupBy": "",
-            "read2": "",
-            "find": "",
-            "filter": "",
-            "dataLists": {},
-            "dataListEndpoints": {}
-        },
-        "tableName": "purchases",
-        "rendererType": "table",
-        "tableOptions": {
-            "commonOptions": {
-                "tableWidth": "100%",
-                "tableBorder": "1px solid #e5e7eb",
-                "showSerialNo": true
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
             },
-            "headOptions": {
-                "headerHeight": "48px"
+            "endPoints1": {
+                "create": "",
+                "update": "",
+                "delete": "",
+                "read": "",
+                "read1": "",
+                "groupBy": "",
+                "read2": "",
+                "find": "",
+                "filter": "",
+                "dataLists": {},
+                "dataListEndpoints": {}
             },
-            "bodyOptions": {
-                "rowHeight": "48px"
-            },
-            "footOptions": {
-                "showFooter": true,
-                "rowHeight": "48px",
-                "showAggregateRows": false,
-                "showTotals": false,
-                "showBalance": true,
-                "showInputsRow": true
+            "tableName": "purchases",
+            "rendererType": "table",
+            "tableOptions": {
+                "commonOptions": {
+                    "tableWidth": "100%",
+                    "tableBorder": "1px solid #e5e7eb",
+                    "showSerialNo": true
+                },
+                "headOptions": {
+                    "headerHeight": "48px"
+                },
+                "bodyOptions": {
+                    "rowHeight": "48px"
+                },
+                "footOptions": {
+                    "showFooter": true,
+                    "rowHeight": "48px",
+                    "showAggregateRows": false,
+                    "showTotals": false,
+                    "showBalance": true,
+                    "showInputsRow": true
+                }
             }
         }
-    }
-]
+    ]
+}

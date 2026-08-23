@@ -11,13 +11,23 @@ const RENDERER_MAP = {
 
 class ViewBuilder {
     constructor(config = {}) {
-        this.configs = Array.isArray(config) ? config : [config];
+        // if (Array.isArray(config)) {
+        //     this.configs = config;
+        // } else if (config && Array.isArray(config.views)) {
+        //     const { views, ...baseProps } = config;
+        //     // Merge base properties with each view so they share data, columns, etc.
+        //     this.configs = views.map(view => ({ ...baseProps, ...view }));
+        // } else {
+        //     this.configs = [config];
+        // }
+
+        this.config = config;
     }
 
     async appendToDom() {
         // Clear loading state for all unique target elements first
         const clearedIds = new Set();
-        for (const config of this.configs) {
+        for (const config of this.config.views) {
             const htmlId = config.htmlId || "table-root";
             if (!clearedIds.has(htmlId)) {
                 const rootElement = document.getElementById(htmlId);
@@ -29,7 +39,7 @@ class ViewBuilder {
         }
 
         // Build each renderer
-        for (const config of this.configs) {
+        for (const config of this.config.views) {
             const rendererType = config.rendererType || "vertical";
             const htmlId = config.htmlId || "table-root";
 
