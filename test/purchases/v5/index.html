@@ -109,8 +109,8 @@
                 configJson.data = data;
 
                 // debugger
-                const tableBuilder = new window.ks.TableBuilder(configJson);
-                tableBuilder.appendToDom();
+                const viewBuilder = new window.ks.ViewBuilder(configJson);
+                viewBuilder.appendToDom();
 
             } catch (error) {
                 console.error(error);

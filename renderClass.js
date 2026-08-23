@@ -9,7 +9,7 @@ const RENDERER_MAP = {
     table: TableRenderer
 };
 
-class TableBuilder {
+class ViewBuilder {
     constructor(config = {}) {
         this.config = config;
         this.rendererType = config.rendererType || "vertical";
@@ -42,12 +42,12 @@ class TableBuilder {
 }
 
 // Attach static defaults and renderer registry
-TableBuilder.RENDERERS = RENDERER_MAP;
-TableBuilder.DEFAULT_CLASSES = DEFAULT_CLASSES;
-TableBuilder.DEFAULT_CONFIG = DEFAULT_CONFIG;
-TableBuilder.version = "v10.1-orchestrator";
+ViewBuilder.RENDERERS = RENDERER_MAP;
+ViewBuilder.DEFAULT_CLASSES = DEFAULT_CLASSES;
+ViewBuilder.DEFAULT_CONFIG = DEFAULT_CONFIG;
+ViewBuilder.version = "v10.1-orchestrator";
 
 window.ks = window.ks || {};
-window.ks.TableBuilder = TableBuilder;
+window.ks.ViewBuilder = ViewBuilder;
 
-export { TableBuilder, TableRenderer, VerticalRenderer, DEFAULT_CLASSES, DEFAULT_CONFIG };
+export { ViewBuilder, TableRenderer, VerticalRenderer, DEFAULT_CLASSES, DEFAULT_CONFIG };
