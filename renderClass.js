@@ -11,29 +11,47 @@ const RENDERER_MAP = {
 
 class ViewBuilder {
     constructor(config = {}) {
-        this.config = config;
-        this.rendererType = config.rendererType || "vertical";
-        this.htmlId = config.htmlId || "table-root";
+        this.configs = Array.isArray(config) ? config : [config];
     }
 
     async appendToDom() {
-        const rootElement = document.getElementById(this.htmlId);
-        if (!rootElement) {
-            console.error(`Element with id '${this.htmlId}' not found.`);
-            return;
+        // Clear loading state for all unique target elements first
+        const clearedIds = new Set();
+        for (const config of this.configs) {
+            const htmlId = config.htmlId || "table-root";
+            if (!clearedIds.has(htmlId)) {
+                const rootElement = document.getElementById(htmlId);
+                if (rootElement) {
+                    rootElement.innerHTML = "";
+                    clearedIds.add(htmlId);
+                }
+            }
         }
 
-        rootElement.innerHTML = ""; // Clear loading state
+        // Build each renderer
+        for (const config of this.configs) {
+            const rendererType = config.rendererType || "vertical";
+            const htmlId = config.htmlId || "table-root";
 
-        const RendererClass = RENDERER_MAP[this.rendererType];
-        if (!RendererClass) {
-            console.error(`Renderer type '${this.rendererType}' is not supported.`);
-            return;
+            const rootElement = document.getElementById(htmlId);
+            if (!rootElement) {
+                console.error(`Element with id '${htmlId}' not found.`);
+                continue;
+            }
+
+            const RendererClass = RENDERER_MAP[rendererType];
+            if (!RendererClass) {
+                console.error(`Renderer type '${rendererType}' is not supported.`);
+                continue;
+            }
+
+            // Ensure config has the resolved htmlId for the renderer
+            config.htmlId = htmlId;
+
+            const renderer = new RendererClass(config);
+            // The specific renderer does ALL the heavy lifting
+            await renderer.build();
         }
-
-        const renderer = new RendererClass(this.config);
-        // The specific renderer does ALL the heavy lifting
-        await renderer.build();
     }
 
     build() {

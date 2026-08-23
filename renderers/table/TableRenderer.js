@@ -118,6 +118,7 @@ class TableRenderer {
     }
 
     build() {
+        debugger;
         return this.appendToDom();
     }
 }
