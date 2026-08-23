@@ -1,0 +1,257 @@
+{
+    "htmlId": "table-root",
+    "data": [],
+    "columns": [
+        {
+            "header": "type",
+            "dataKey": "type",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "datalist",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "vchtype",
+            "dataKey": "vchtype",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "select",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "date",
+            "dataKey": "date",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "date",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "voucher number",
+            "dataKey": "vouchernumber",
+            "options": {
+                "width": "100px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "datalist",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "numberingstyle",
+            "dataKey": "numberingstyle",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": false,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "isdeleted",
+            "dataKey": "isdeleted",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": false,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "vouchernumberseries",
+            "dataKey": "vouchernumberseries",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": false,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "stockitemname",
+            "dataKey": "allinventoryentries.stockitemname",
+            "options": {
+                "width": "250px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "select",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "godown name",
+            "dataKey": "allinventoryentries.batchallocations.godownname",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "select",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "actualqty",
+            "dataKey": "allinventoryentries.batchallocations.actualqty",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "text",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "theme": "style4",
+    "verticalForm": {
+        "show": true,
+        "label": "Default Table",
+        "placeholder": "Search..."
+    },
+    "endPoints1": {
+        "create": "",
+        "update": "",
+        "delete": "",
+        "read": "",
+        "read1": "",
+        "groupBy": "",
+        "read2": "",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {}
+    },
+    "tableName": "purchases",
+    "rendererType": "vertical"
+}
