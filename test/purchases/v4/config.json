@@ -3,6 +3,77 @@
     "data": [],
     "columns": [
         {
+            "header": "vchtype",
+            "dataKey": "vchtype",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "select",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "date",
+            "dataKey": "date",
+            "options": {
+                "width": "150px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "date",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "header": "voucher number",
+            "dataKey": "vouchernumber",
+            "options": {
+                "width": "100px",
+                "sortable": true,
+                "table": {
+                    "isVisible": true,
+                    "tfoot": {
+                        "summary": {
+                            "balanceString1": "Balance ${Amount}",
+                            "summary": "sum",
+                            "summaryLabel1": "Total:"
+                        },
+                        "inputsRow": {
+                            "showInput": true,
+                            "controlType": "datalist",
+                            "className": "w-48 border border-gray-300 rounded px-2 py-1"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "columns_all": [
+        {
             "header": "type",
             "dataKey": "type",
             "options": {
@@ -256,12 +327,36 @@
     "rendererType": "vertical",
     "views": [
         {
+            "rendererType": "vertical",
             "htmlId": "table-root",
-            "theme": "style3",
+            "theme": "style2",
             "verticalForm": {
                 "show": true,
                 "label": "Default Table",
                 "placeholder": "Search..."
+            },
+            "tableName": "purchases"
+        },
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
+            },
+            "endPoints1": {
+                "create": "",
+                "update": "",
+                "delete": "",
+                "read": "",
+                "read1": "",
+                "groupBy": "",
+                "read2": "",
+                "find": "",
+                "filter": "",
+                "dataLists": {},
+                "dataListEndpoints": {}
             },
             "tableName": "purchases",
             "rendererType": "table",
@@ -290,6 +385,7 @@
     ],
     "views1": [
         {
+            "rendererType": "vertical",
             "htmlId": "table-root",
             "theme": "style4",
             "verticalForm": {
@@ -297,8 +393,7 @@
                 "label": "Default Table",
                 "placeholder": "Search..."
             },
-            "tableName": "purchases",
-            "rendererType": "vertical"
+            "tableName": "purchases"
         },
         {
             "htmlId": "table-root",
