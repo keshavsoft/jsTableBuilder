@@ -17,13 +17,14 @@ export function appendToDom(instance) {
         container.className = instance.classes.container;
     }
 
-    const topHeaderNode = instance.buildTopHeaderElement();
-    if (topHeaderNode) {
-        container.appendChild(topHeaderNode);
-    };
-
-    instance.tableElement = instance.buildTableElements();
-    container.appendChild(instance.tableElement);
+    if (instance.rendererType === "vertical") {
+        const verticalFormNode = instance.buildVerticalFormElement();
+        if (verticalFormNode) {
+            container.appendChild(verticalFormNode);
+        }
+    } else {
+        console.warn(`Renderer type '${instance.rendererType}' is currently not implemented outside archive.`);
+    }
 
     root.appendChild(container);
 }

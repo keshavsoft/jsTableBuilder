@@ -253,5 +253,18 @@
         "dataListEndpoints": {}
     },
     "tableName": "purchases",
-    "rendererType": "vertical"
+    "rendererType": "vertical",
+    "views": [
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
+            },
+            "tableName": "purchases",
+            "rendererType": "vertical"
+        }
+    ]
 }

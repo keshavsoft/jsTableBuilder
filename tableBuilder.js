@@ -3,15 +3,24 @@ import DEFAULT_CONFIG, { DEFAULT_CLASSES } from "./buildTable/config/defaults.js
 import { processSort } from "./buildTable/utils/dataFuncs/sortUtils.js";
 import { processSearch } from "./buildTable/utils/dataFuncs/searchUtils.js";
 import { buildTopHeader } from "./buildTable/buildTopHeader.js";
+import { extractTableOptions } from "./buildTable/utils/config/extractTableOptions.js";
 import mapTableOptions from "./buildTable/utils/config/mapTableOptions.js";
 import { extractTopHeader } from "./buildTable/utils/config/extractTopHeader.js";
 import { mergeClasses } from "./buildTable/utils/config/mergeClasses.js";
 import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
 import { setupColumnsAndData } from "./buildTable/utils/dataFuncs/setupDataStore.js";
 import prepareData from "./buildTable/utils/dataFuncs/prepareData.js";
-import { buildVerticalFormElements } from "./buildTable/buildVerticalForm.js";
+// import { buildVerticalFormElements } from "./buildTable/buildVerticalForm.js";
+
+import { VerticalRenderer } from "./buildTable/renderers/vertical/VerticalRenderer.js";
+import { tableRenderer } from "./buildTable/renderers/tableRenderer/v1/index.js";
 
 import "./webComponents/v4/KsTableCellContent.js";
+
+const RENDERER_MAP = {
+    vertical: VerticalRenderer,
+    table: tableRenderer
+};
 
 const logger = {
     showLogs: true,
@@ -74,8 +83,49 @@ class TableBuilder {
 
     async appendToDom() {
         // debugger;
-        if (this.dataStore.data.length === 0) {
+        // if (this.dataStore.data.length === 0) {
+        //     this.dataStore.originalData = await this.services.read();
 
+        //     this.dataStore.data = prepareData({
+        //         inData: this.dataStore.originalData,
+        //         inShowSerialNo: this.tableOptions?.inCommonOptions?.inShowSerialNo
+        //     });
+
+        // };
+
+        // appendToDom(this);
+
+        for (const config of this.config.views) {
+            const rendererType = config.rendererType || "vertical";
+            const htmlId = config.htmlId || "table-root";
+
+            const rootElement = document.getElementById(htmlId);
+            if (!rootElement) {
+                console.error(`Element with id '${htmlId}' not found.`);
+                continue;
+            }
+
+            const RendererClass = RENDERER_MAP[rendererType];
+            if (!RendererClass) {
+                console.error(`Renderer type '${rendererType}' is not supported.`);
+                continue;
+            }
+
+            // Ensure config has the resolved htmlId for the renderer
+            config.htmlId = htmlId;
+
+            const renderer = new RendererClass(config);
+            // The specific renderer does ALL the heavy lifting
+            await renderer.build({
+                htmlId,
+                inDataStore: this.dataStore
+            });
+        };
+    };
+
+    async appendToDom1() {
+        // debugger;
+        if (this.dataStore.data.length === 0) {
             this.dataStore.originalData = await this.services.read();
 
             this.dataStore.data = prepareData({
