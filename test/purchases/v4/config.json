@@ -265,6 +265,109 @@
             },
             "tableName": "purchases",
             "rendererType": "vertical"
+        },
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
+            },
+            "endPoints1": {
+                "create": "",
+                "update": "",
+                "delete": "",
+                "read": "",
+                "read1": "",
+                "groupBy": "",
+                "read2": "",
+                "find": "",
+                "filter": "",
+                "dataLists": {},
+                "dataListEndpoints": {}
+            },
+            "tableName": "purchases",
+            "rendererType": "table",
+            "tableOptions": {
+                "commonOptions": {
+                    "tableWidth": "100%",
+                    "tableBorder": "1px solid #e5e7eb",
+                    "showSerialNo": true
+                },
+                "headOptions": {
+                    "headerHeight": "48px"
+                },
+                "bodyOptions": {
+                    "rowHeight": "48px"
+                },
+                "footOptions": {
+                    "showFooter": true,
+                    "rowHeight": "48px",
+                    "showAggregateRows": false,
+                    "showTotals": false,
+                    "showBalance": true,
+                    "showInputsRow": true
+                }
+            }
+        }
+    ],
+    "views1": [
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
+            },
+            "tableName": "purchases",
+            "rendererType": "vertical"
+        },
+        {
+            "htmlId": "table-root",
+            "theme": "style4",
+            "verticalForm": {
+                "show": true,
+                "label": "Default Table",
+                "placeholder": "Search..."
+            },
+            "endPoints1": {
+                "create": "",
+                "update": "",
+                "delete": "",
+                "read": "",
+                "read1": "",
+                "groupBy": "",
+                "read2": "",
+                "find": "",
+                "filter": "",
+                "dataLists": {},
+                "dataListEndpoints": {}
+            },
+            "tableName": "purchases",
+            "rendererType": "table",
+            "tableOptions": {
+                "commonOptions": {
+                    "tableWidth": "100%",
+                    "tableBorder": "1px solid #e5e7eb",
+                    "showSerialNo": true
+                },
+                "headOptions": {
+                    "headerHeight": "48px"
+                },
+                "bodyOptions": {
+                    "rowHeight": "48px"
+                },
+                "footOptions": {
+                    "showFooter": true,
+                    "rowHeight": "48px",
+                    "showAggregateRows": false,
+                    "showTotals": false,
+                    "showBalance": true,
+                    "showInputsRow": true
+                }
+            }
         }
     ]
 }

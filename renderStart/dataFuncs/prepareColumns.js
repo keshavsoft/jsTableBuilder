@@ -1,4 +1,11 @@
-import { normalizeSize } from "../style/normalizeSize.js";
+const normalizeSize = (inValue) => {
+    if (inValue !== undefined && inValue !== null && inValue !== "") {
+        if (typeof inValue === 'number' || /^\d+$/.test(String(inValue).trim())) {
+            return `${inValue}px`;
+        }
+    }
+    return inValue;
+};
 
 const addColumn = (columns, showSerialNo) => {
     let finalColumns = Array.isArray(columns) ? columns : [];
@@ -16,7 +23,6 @@ const addColumn = (columns, showSerialNo) => {
 
     return finalColumns;
 };
-
 
 const startFunc = ({ inColumns, inShowSerialNo }) => {
     const localColumns = inColumns;

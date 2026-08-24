@@ -71,6 +71,6 @@ class TableBuilder {
 
 window.ks = window.ks || {};
 window.ks.TableBuilder = TableBuilder;
-window.ks.TableBuilder.version = "v9.0";
+window.ks.TableBuilder.version = "v14.0";
 
 export { TableBuilder };
