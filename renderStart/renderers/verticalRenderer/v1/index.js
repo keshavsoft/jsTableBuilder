@@ -1,5 +1,5 @@
 import { buildVerticalFormElements } from "./buildVerticalForm.js";
-import { appendToDom } from "../shared/dom/appendToDom.js";
+import { appendToDom } from "../../shared/dom/appendToDom.js";
 import { mergeClasses } from "./mergeClasses.js";
 
 export const VERTICAL_DEFAULTS = {
@@ -10,7 +10,7 @@ export const VERTICAL_DEFAULTS = {
     }
 };
 
-class VerticalRenderer {
+class verticalRenderer {
     static DEFAULTS = VERTICAL_DEFAULTS;
 
     constructor({ htmlId, inDataStore, inClasses, inTheme = "style1" }) {
@@ -43,4 +43,4 @@ class VerticalRenderer {
     }
 }
 
-export { VerticalRenderer };
+export { verticalRenderer };

@@ -1,12 +1,14 @@
 import { setupColumnsAndData } from "./renderStart/dataFuncs/setupDataStore.js";
 
-import { VerticalRenderer } from "./renderStart/renderers/vertical/VerticalRenderer.js";
+// import { VerticalRenderer } from "./renderStart/renderers/vertical/VerticalRenderer.js";
 import { tableRenderer } from "./renderStart/renderers/tableRenderer/v1/index.js";
+
+import { verticalRenderer } from "./renderStart/renderers/verticalRenderer/v2/index.js";
 
 import "./webComponents/v4/KsTableCellContent.js";
 
 const RENDERER_MAP = {
-    vertical: VerticalRenderer,
+    vertical: verticalRenderer,
     table: tableRenderer
 };
 
