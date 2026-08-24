@@ -257,7 +257,7 @@
     "views": [
         {
             "htmlId": "table-root",
-            "theme": "style2",
+            "theme": "style3",
             "verticalForm": {
                 "show": true,
                 "label": "Default Table",

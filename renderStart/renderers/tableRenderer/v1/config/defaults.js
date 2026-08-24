@@ -40,6 +40,27 @@ export const DEFAULT_CLASSES = {
             label: "text-lg font-bold text-gray-900",
             input: "px-4 py-1.5 border border-blue-400 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm w-64 transition-all shadow-sm text-gray-700"
         }
+    },
+    style3: {
+        container: "w-full max-w-6xl mx-auto bg-white rounded-lg shadow-sm overflow-x-auto",
+        emptyState: "p-4 text-gray-500 italic",
+        table: "w-full bg-white",
+        head: {
+            wrapper: "bg-white sticky top-0 z-10",
+            row: "border-b border-gray-200",
+            cell: "px-4 py-3.5 text-left text-base font-bold text-gray-900 border-b"
+        },
+        body: {
+            wrapper: "bg-white",
+            row: "hover:bg-blue-50 transition-colors border-b border-gray-100",
+            cell: "px-4 py-3.5 whitespace-nowrap text-base text-gray-700",
+            cellTruncate: "truncate max-w-xs"
+        },
+        topHeader: {
+            wrapper: "flex justify-between items-center px-4 pb-4 pt-2 bg-white",
+            label: "text-xl font-bold text-gray-900",
+            input: "px-4 py-2 border border-blue-400 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-base w-64 transition-all shadow-sm text-gray-700"
+        }
     }
 };
 
