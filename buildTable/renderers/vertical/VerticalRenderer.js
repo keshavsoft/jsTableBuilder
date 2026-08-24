@@ -3,7 +3,7 @@ import { appendToDom } from "../shared/dom/appendToDom.js";
 import { mergeClasses } from "../shared/config/mergeClasses.js";
 
 const logger = {
-    showLogs: true,
+    showLogs: false,
     log: function (...args) {
         if (this.showLogs) {
             console.log(...args);
@@ -22,50 +22,38 @@ export const VERTICAL_DEFAULTS = {
 class VerticalRenderer {
     static DEFAULTS = VERTICAL_DEFAULTS;
 
-    constructor(config = {}) {
-        this.htmlId = config.htmlId || "table-root";
-        this.rendererType = "vertical";
-        this.verticalForm = {
-            ...VERTICAL_DEFAULTS.verticalForm,
-            ...(config.verticalForm || {})
-        };
-        this.classes = mergeClasses({ inClasses: config.classes || {}, inTheme: config.theme || "style1" });
+    constructor({ htmlId, inDataStore }) {
+        this.htmlId = htmlId;
+        this.dataStore = inDataStore;
 
-        // Simulating dataStore for vertical form
-        this.dataStore = {
-            data: config.data || [],
-            columns: config.columns || []
-        };
+        console.log("jjjjjjj : ", this);
 
-        this.services = {};
-        if (config.endPoints) {
-            // Setup services if needed
-        }
-    }
+    };
 
-    async appendToDom() {
-        if (this.dataStore.data.length === 0 && this.services.read) {
-            this.dataStore.originalData = await this.services.read();
-            this.dataStore.data = this.dataStore.originalData;
+    appendToDom(controlToInsert) {
+        const root = document.getElementById(this.htmlId);
+        if (!root) {
+            console.error(`Element with id '${instance.htmlId}' not found.`);
+            return;
         }
 
-        appendToDom(this);
-    }
+        root.appendChild(controlToInsert);
+    };
 
-    // Required by appendToDom.js currently
     buildVerticalFormElement() {
         logger.log("VerticalRenderer buildVerticalFormElement called", this);
-        if (!this.verticalForm || this.verticalForm.show === false) return null;
+        // if (!this.verticalForm || this.verticalForm.show === false) return null;
 
         return buildVerticalFormElements({
             inData: this.dataStore.data,
             inColumns: this.dataStore.columns,
-            inClasses: this.classes
+            inClasses: this?.classes
         });
     }
 
     build() {
-        return this.appendToDom();
+        const verticalFormNode = this.buildVerticalFormElement();
+        return this.appendToDom(verticalFormNode);
     }
 }
 

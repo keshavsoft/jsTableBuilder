@@ -10,7 +10,7 @@ const logger = {
     }
 };
 
-const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
+const buildVerticalFormElements = ({ inData = [], inColumns, inClasses = {} }) => {
     const formClasses = inClasses?.verticalForm || {
         container: "flex flex-col gap-4 p-4",
         wrapper: "flex flex-col",
@@ -24,7 +24,7 @@ const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
 
     inColumns.forEach(col => {
         const footOptions = col.options?.table?.tfoot?.inputsRow;
-        
+
         // Render inputs for every column with a dataKey
         if (col.dataKey) {
             const wrapper = document.createElement("div");
@@ -49,7 +49,7 @@ const buildVerticalFormElements = ({ inData, inColumns, inClasses = {} }) => {
                 controlType: "text",
                 className: formClasses.input
             };
-            
+
             // Apply the custom input class if provided in the options, else fallback to theme input class
             if (!currentFootOptions.className) {
                 currentFootOptions.className = formClasses.input;

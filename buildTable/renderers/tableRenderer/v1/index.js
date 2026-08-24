@@ -1,5 +1,5 @@
-import { buildTable } from "./buildTable/index.js";
-import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
+// import { buildTable } from "./buildTable/index.js";
+// import { appendToDom } from "./buildTable/utils/dom/appendToDom.js";
 import "./webComponents/v4/KsTableCellContent.js";
 
 class tableRenderer {
@@ -22,18 +22,22 @@ class tableRenderer {
     }
 
     async appendToDom() {
-        appendToDom(this);
+        console.log("sssssssss : ", this);
+
+        // appendToDom(this);
     };
 
-    buildTableElements() {
-        return buildTable({
-            inData: this.dataStore.data,
-            inColumns: this.dataStore.columns
-        });
-    };
+    // buildTableElements() {
+    //     return buildTable({
+    //         inData: this.dataStore.data,
+    //         inColumns: this.dataStore.columns
+    //     });
+    // };
 
     build() {
-        return this.appendToDom();
+        console.log("sssssssss0------- : ");
+
+        // return this.appendToDom();
     };
 };
 
