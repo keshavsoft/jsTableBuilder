@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Full-Stack Project Generator Documentation</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #fff;
+      --text: #172033;
+      --muted: #64748b;
+      --primary: #315efb;
+      --border: #dfe5ef;
+      --dark: #111827;
+      --soft: #eef3ff
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55
+    }
+
+    header {
+      background: linear-gradient(135deg, #172554, #315efb);
+      color: #fff;
+      padding: 38px 7%
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 32px
+    }
+
+    header p {
+      margin: 0;
+      color: #dbeafe
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 7%;
+      z-index: 5;
+      white-space: nowrap;
+      overflow: auto
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      margin-right: 18px;
+      font-size: 14px
+    }
+
+    main {
+      max-width: 1150px;
+      margin: 24px auto;
+      padding: 0 20px
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 18px
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: #1e3a8a;
+      font-size: 22px
+    }
+
+    h3 {
+      margin: 14px 0 5px
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      background: #fbfcff
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+      margin: 10px 0
+    }
+
+    .flow span {
+      background: var(--soft);
+      padding: 8px 11px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px
+    }
+
+    .arrow {
+      color: #64748b
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 9px;
+      text-align: left;
+      vertical-align: top
+    }
+
+    th {
+      background: #eef3ff
+    }
+
+    pre {
+      background: var(--dark);
+      color: #e5e7eb;
+      padding: 14px;
+      border-radius: 9px;
+      overflow: auto;
+      font-size: 13px
+    }
+
+    code {
+      font-family: Consolas, monospace
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e8efff;
+      color: #2345b8;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700
+    }
+
+    .note {
+      border-left: 4px solid var(--primary);
+      background: #f8faff;
+      padding: 10px 13px;
+      border-radius: 6px
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 25px
+    }
+
+    @media(max-width:700px) {
+      header h1 {
+        font-size: 26px
+      }
+
+      section {
+        padding: 16px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Full-Stack Project Generator Documentation</h1>
+    <p>Short guide for project creation, Express API generation, routing, endpoints and frontend table UI.</p>
+  </header>
+  <nav><a href="#project">Project</a><a href="#api">API</a><a href="#actions">Actions</a><a
+      href="#frontend">Frontend</a><a href="#flow">Flow</a></nav>
+  <main>
+
+    <section id="project">
+      <h2>1. Project Creation</h2>
+      <div class="flow"><span>VS Code</span><b class="arrow">→</b><span>Boilerplate</span><b
+          class="arrow">→</b><span>Template</span><b class="arrow">→</b><span>Project</span></div>
+      <div class="grid">
+        <div class="card"><b>Install Extension</b>
+          <p>Install <code>ks-express-boilerplate</code> from the VS Code Marketplace.</p>
+        </div>
+        <div class="card"><b>Right Click</b>
+          <p>Right-click the project folder and choose an Express BoilerPlate template.</p>
+        </div>
+        <div class="card"><b>Show Html</b>
+          <p>Open <b>Show Html</b> to view available templates.</p>
+        </div>
+        <div class="card"><b>Select Template</b>
+          <p>Select <b>labManagement</b>; the selected boilerplate is copied into the output project.</p>
+        </div>
+      </div>
+      <p class="note">The generated project contains the Express starter files such as <code>app.js</code>,
+        <code>routes.js</code>, <code>server.js</code>, configuration and environment files.</p>
+    </section>
+
+    <section>
+      <h2>2. Backend Structure</h2>
+      <pre>Project/
+├── Api/
+│   ├── routes.js
+│   └── V1/
+│       ├── routes.js
+│       └── &lt;table&gt;/
+│           ├── end-points.js
+│           └── &lt;action&gt;/
+│               └── controller.js
+├── Config/
+│   └── Schemas/
+├── Public/
+├── docs/
+├── Scripts/
+├── app.js
+├── routes.js
+├── server.js
+└── .env</pre>
+      <p class="small">The exact output depends on the selected generator action.</p>
+    </section>
+
+    <section id="api">
+      <h2>3. Start Endpoint Creation</h2>
+      <p><b>startEndPoint</b> starts API generation from the existing Express application.</p>
+      <ol>
+        <li>Open <code>app.js</code>.</li>
+        <li>Run the <b>startEndPoint</b> action.</li>
+        <li>Enter an optional API folder name such as <code>Api</code>.</li>
+        <li>Select the endpoint style and build it.</li>
+      </ol>
+      <p>The generator creates the API structure and prepares it for router registration.</p>
+    </section>
+
+    <section>
+      <h2>4. Add Sub-Route</h2>
+      <p><b>AddSubRoute</b> creates a version-level router and connects it to the parent router.</p>
+      <div class="flow"><span>Api/routes.js</span><b>→</b><span>Api/V1/routes.js</span><b>→</b><span>Table route</span>
+      </div>
+      <p>Example: the parent router mounts <code>/V1</code> and the V1 router handles table-level routes.</p>
+    </section>
+
+    <section>
+      <h2>5. Add Table Name HTML</h2>
+      <p><b>AddTableNameHtml</b> opens the schema/table selection UI and prepares the selected table for endpoint
+        generation.</p>
+      <div class="grid">
+        <div class="card"><b>Schema</b>
+          <p>Tables are selected from <code>Config/Schemas</code>.</p>
+        </div>
+        <div class="card"><b>Example</b>
+          <p>Select <code>doctors.json</code> for the Doctors table.</p>
+        </div>
+        <div class="card"><b>Result</b>
+          <p>The selected schema becomes the endpoint-generation target.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Generate Table API</h2>
+      <p>For a selected table such as <code>doctors.json</code>, the extension creates an <code>end-points.js</code>
+        file and action folders.</p>
+      <pre>Api/V1/doctors/
+├── end-points.js
+└── showAll/
+    └── controller.js</pre>
+      <p>The endpoint file keeps the table name, data path, schema/config path and Express router.</p>
+    </section>
+
+    <section id="actions">
+      <h2>7. GET Actions</h2>
+      <p>GET actions provide read-oriented operations for the selected table.</p>
+      <table>
+        <tr>
+          <th>Action</th>
+          <th>Help</th>
+        </tr>
+        <tr>
+          <td>showAll</td>
+          <td>Return all records.</td>
+        </tr>
+        <tr>
+          <td>find</td>
+          <td>Find matching records.</td>
+        </tr>
+        <tr>
+          <td>FilterQuery</td>
+          <td>Filter records from query information.</td>
+        </tr>
+        <tr>
+          <td>lastRecord</td>
+          <td>Return the last record.</td>
+        </tr>
+        <tr>
+          <td>firstRecord</td>
+          <td>Return the first record.</td>
+        </tr>
+        <tr>
+          <td>distinct</td>
+          <td>Return distinct values.</td>
+        </tr>
+        <tr>
+          <td>count</td>
+          <td>Return record count.</td>
+        </tr>
+        <tr>
+          <td>min / max</td>
+          <td>Return minimum or maximum values.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>8. POST Actions</h2>
+      <p>POST actions provide insert and query operations.</p>
+      <table>
+        <tr>
+          <th>Action</th>
+          <th>Help</th>
+        </tr>
+        <tr>
+          <td>insertGenPk</td>
+          <td>Insert data with generated primary key.</td>
+        </tr>
+        <tr>
+          <td>find</td>
+          <td>Find matching records.</td>
+        </tr>
+        <tr>
+          <td>FilterQuery</td>
+          <td>Filter using query information.</td>
+        </tr>
+        <tr>
+          <td>groupBy</td>
+          <td>Group records by a query column.</td>
+        </tr>
+        <tr>
+          <td>insertWithMeta</td>
+          <td>Insert data with metadata such as date stamp and UUID.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>9. Generated Endpoint Example</h2>
+      <pre>router.get('/showAll', (req, res) =&gt;
+  funcFromshowAll({ req, res, inTablePath: tablePath })
+);</pre>
+      <p>For POST actions, the generator adds JSON body handling and the generated controller call.</p>
+    </section>
+
+    <section>
+      <h2>10. API Versioning</h2>
+      <pre>app.js
+  ↓
+/Api
+  ↓
+/V1
+  ↓
+/doctors
+  ↓
+/showAll</pre>
+      <p>Example URL pattern: <code>GET /Api/V1/doctors/showAll</code>. The final URL depends on the mount paths used by
+        the generated project.</p>
+    </section>
+
+    <section id="frontend">
+      <h2>11. Frontend — jsTableBuilder</h2>
+      <p><span class="badge">Frontend</span> <b>jsTableBuilder</b> converts JSON data, JSON column configuration and
+        table options into a dynamic HTML table. fileciteturn1file4L929-L969</p>
+      <div class="flow"><span>JSON Data</span><b>+</b><span>Column JSON</span><b>+</b><span>Table
+          Options</span><b>→</b><span>TableBuilder</span><b>→</b><span>HTML Table</span></div>
+    </section>
+
+    <section>
+      <h2>12. Frontend Installation</h2>
+      <div class="grid">
+        <div class="card"><b>NPM</b>
+          <pre>npm install js-table-builder</pre>
+        </div>
+        <div class="card"><b>Local Scaffold</b>
+          <pre>npx js-table-builder</pre>
+        </div>
+        <div class="card"><b>CDN</b>
+          <pre>&lt;script src="https://keshavsoft.github.io/jsTableBuilder/dist/v2/tableBuilder.umd.cjs"&gt;&lt;/script&gt;</pre>
+        </div>
+      </div>
+      <p class="small">The supplied README documents NPM, npx and CDN usage. fileciteturn1file5L1206-L1256</p>
+    </section>
+
+    <section>
+      <h2>13. Frontend Data and Columns</h2>
+      <p><code>all.json</code> contains table records; <code>columns.json</code> contains column definitions;
+        <code>config.json</code> can contain project/build configuration. fileciteturn1file2L457-L517</p>
+      <pre>// all.json
+[
+  { "id": 1, "name": "Srinivas", "role": "Developer" }
+]
+
+// columns.json
+[
+  { "key": "id", "label": "ID" },
+  { "key": "name", "label": "Name" },
+  { "key": "role", "label": "Role" }
+]</pre>
+      <p>The column configuration controls how fields appear in the table. fileciteturn1file6L1319-L1369</p>
+    </section>
+
+    <section>
+      <h2>14. Add Table to HTML</h2>
+      <p>Create an HTML container, load the library, fetch data/columns, create <code>TableBuilder</code>, and append it
+        to the DOM. fileciteturn1file7L1526-L1626</p>
+      <pre>&lt;div id="table-root"&gt;&lt;/div&gt;
+&lt;script src="https://keshavsoft.github.io/jsTableBuilder/dist/v10/tableBuilder.umd.cjs"&gt;&lt;/script&gt;
+
+const tableBuilder = new window.ks.TableBuilder(config);
+tableBuilder.appendToDom();</pre>
+    </section>
+
+    <section>
+      <h2>15. Frontend Configuration</h2>
+      <table>
+        <tr>
+          <th>Option</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>htmlId</td>
+          <td>HTML container for the generated table.</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td>JSON array used as table rows.</td>
+        </tr>
+        <tr>
+          <td>columns</td>
+          <td>Column configuration.</td>
+        </tr>
+        <tr>
+          <td>tableWidth</td>
+          <td>Table width.</td>
+        </tr>
+        <tr>
+          <td>tableBorder</td>
+          <td>Table border.</td>
+        </tr>
+        <tr>
+          <td>showSerialNo</td>
+          <td>Show/hide serial-number column.</td>
+        </tr>
+        <tr>
+          <td>showFooter</td>
+          <td>Show/hide footer.</td>
+        </tr>
+        <tr>
+          <td>topHeader.label</td>
+          <td>Table title.</td>
+        </tr>
+        <tr>
+          <td>topHeader.placeholder</td>
+          <td>Search placeholder.</td>
+        </tr>
+      </table>
+      <p class="small">These options are described in the supplied README. fileciteturn1file3L688-L908</p>
+    </section>
+
+    <section>
+      <h2>16. Backend + Frontend Integration</h2>
+      <p>The backend generator creates the API; the frontend calls the API and passes the returned JSON into
+        jsTableBuilder.</p>
+      <div class="flow"><span>Schema</span><b>→</b><span>Generated API</span><b>→</b><span>JSON
+          Data</span><b>→</b><span>Columns</span><b>→</b><span>TableBuilder</span></div>
+    </section>
+
+    <section id="flow">
+      <h2>17. Complete Workflow</h2>
+      <ol>
+        <li>Install the boilerplate extension.</li>
+        <li>Right-click the project and select a boilerplate template.</li>
+        <li>Open <b>Show Html</b> and select <b>labManagement</b> or another template.</li>
+        <li>Generate the starter project.</li>
+        <li>Open <code>app.js</code> and run <b>startEndPoint</b>.</li>
+        <li>Add the API root and a version such as <code>V1</code>.</li>
+        <li>Use <b>AddTableNameHtml</b> to select a schema/table.</li>
+        <li>Generate <code>end-points.js</code>.</li>
+        <li>Generate required GET and POST actions.</li>
+        <li>Connect the generated router to the Express application.</li>
+        <li>Load jsTableBuilder in the frontend.</li>
+        <li>Provide API/JSON data and column configuration.</li>
+        <li>Render the table using <code>TableBuilder</code>.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>18. Developer Checklist</h2>
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Done When</th>
+        </tr>
+        <tr>
+          <td>Boilerplate</td>
+          <td>Starter project is generated.</td>
+        </tr>
+        <tr>
+          <td>Router</td>
+          <td>API router is registered.</td>
+        </tr>
+        <tr>
+          <td>V1 Route</td>
+          <td>Version route is connected.</td>
+        </tr>
+        <tr>
+          <td>Schema</td>
+          <td>Required table JSON exists.</td>
+        </tr>
+        <tr>
+          <td>Endpoint</td>
+          <td>Table <code>end-points.js</code> exists.</td>
+        </tr>
+        <tr>
+          <td>Actions</td>
+          <td>Required GET/POST actions exist.</td>
+        </tr>
+        <tr>
+          <td>Frontend</td>
+          <td>TableBuilder loads correctly.</td>
+        </tr>
+        <tr>
+          <td>Integration</td>
+          <td>API data is rendered in the table.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>19. One-Line Summary</h2>
+      <p><b>Boilerplate creates the project → Endpoint tools create routes/APIs → Schema selects the table → GET/POST
+          actions create operations → jsTableBuilder converts data + columns into the frontend table UI.</b></p>
+    </section>
+
+  </main>
+  <footer>Full-Stack Project Generator • Backend + API Generator + Frontend Table Builder</footer>
+</body>
+
+</html>
